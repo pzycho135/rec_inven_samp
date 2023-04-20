@@ -23,6 +23,7 @@ namespace rec_inven_samp
             InitializeComponent();
 
             panel3.Controls.Add(dash_control);
+            dash_control.Location = new Point((panel3.Width - dash_control.Width) / 2, (panel3.Height - dash_control.Height) / 2);
 
         }
 
