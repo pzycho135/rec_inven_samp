@@ -30,8 +30,13 @@ namespace rec_inven_samp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Node1");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Node2");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Node3");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Node0", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2,
+            treeNode3});
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.radButton1 = new Telerik.WinControls.UI.RadButton();
             this.object_fdc623eb_e90c_4777_9e4d_4c9a0023c0e1 = new Telerik.WinControls.RootRadElement();
@@ -44,6 +49,10 @@ namespace rec_inven_samp
             this.customShape1 = new Telerik.WinControls.CustomShape(this.components);
             this.roundRectShape1 = new Telerik.WinControls.RoundRectShape(this.components);
             this.roundRectShape2 = new Telerik.WinControls.RoundRectShape(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.treeView1 = new System.Windows.Forms.TreeView();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
@@ -58,31 +67,11 @@ namespace rec_inven_samp
             ((System.ComponentModel.ISupportInitialize)(this.radButton4)).BeginInit();
             this.SuspendLayout();
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 19);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(335, 35);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Inventory of Records";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(118, 69);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(276, 25);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Total Submissions : 0000";
-            // 
             // radPanel1
             // 
             this.radPanel1.BackColor = System.Drawing.Color.Transparent;
             this.radPanel1.Controls.Add(this.radButton1);
-            this.radPanel1.Location = new System.Drawing.Point(56, 123);
+            this.radPanel1.Location = new System.Drawing.Point(37, 24);
             this.radPanel1.Name = "radPanel1";
             this.radPanel1.Size = new System.Drawing.Size(175, 121);
             this.radPanel1.TabIndex = 2;
@@ -121,7 +110,7 @@ namespace rec_inven_samp
             // 
             this.radPanel2.BackColor = System.Drawing.Color.Transparent;
             this.radPanel2.Controls.Add(this.radButton2);
-            this.radPanel2.Location = new System.Drawing.Point(284, 123);
+            this.radPanel2.Location = new System.Drawing.Point(265, 24);
             this.radPanel2.Name = "radPanel2";
             this.radPanel2.Size = new System.Drawing.Size(175, 121);
             this.radPanel2.TabIndex = 3;
@@ -154,7 +143,7 @@ namespace rec_inven_samp
             // 
             this.radPanel3.BackColor = System.Drawing.Color.Transparent;
             this.radPanel3.Controls.Add(this.radButton3);
-            this.radPanel3.Location = new System.Drawing.Point(510, 123);
+            this.radPanel3.Location = new System.Drawing.Point(491, 24);
             this.radPanel3.Name = "radPanel3";
             this.radPanel3.Size = new System.Drawing.Size(175, 121);
             this.radPanel3.TabIndex = 3;
@@ -187,7 +176,7 @@ namespace rec_inven_samp
             // 
             this.radPanel4.BackColor = System.Drawing.Color.Transparent;
             this.radPanel4.Controls.Add(this.radButton4);
-            this.radPanel4.Location = new System.Drawing.Point(737, 123);
+            this.radPanel4.Location = new System.Drawing.Point(718, 24);
             this.radPanel4.Name = "radPanel4";
             this.radPanel4.Size = new System.Drawing.Size(175, 121);
             this.radPanel4.TabIndex = 3;
@@ -232,21 +221,70 @@ namespace rec_inven_samp
             this.roundRectShape2.TopLeftRounded = false;
             this.roundRectShape2.TopRightRounded = false;
             // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(34, 175);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(178, 31);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Total Submissions";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
+            this.label3.Location = new System.Drawing.Point(34, 206);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(200, 1);
+            this.label3.TabIndex = 5;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(170, 216);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(64, 21);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "000000";
+            // 
+            // treeView1
+            // 
+            this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.treeView1.Location = new System.Drawing.Point(37, 290);
+            this.treeView1.Name = "treeView1";
+            treeNode1.Name = "Node1";
+            treeNode1.Text = "Node1";
+            treeNode2.Name = "Node2";
+            treeNode2.Text = "Node2";
+            treeNode3.Name = "Node3";
+            treeNode3.Text = "Node3";
+            treeNode4.Name = "Node0";
+            treeNode4.Text = "Node0";
+            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode4});
+            this.treeView1.ShowPlusMinus = false;
+            this.treeView1.Size = new System.Drawing.Size(121, 97);
+            this.treeView1.TabIndex = 7;
+            // 
             // dashboard_control
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.treeView1);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.radPanel4);
             this.Controls.Add(this.radPanel3);
             this.Controls.Add(this.radPanel2);
             this.Controls.Add(this.radPanel1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
             this.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "dashboard_control";
-            this.Size = new System.Drawing.Size(986, 655);
+            this.Size = new System.Drawing.Size(926, 655);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             this.radPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
@@ -265,8 +303,6 @@ namespace rec_inven_samp
         }
 
         #endregion
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
         private Telerik.WinControls.UI.RadPanel radPanel1;
         private Telerik.WinControls.UI.RadButton radButton1;
         private Telerik.WinControls.RootRadElement object_fdc623eb_e90c_4777_9e4d_4c9a0023c0e1;
@@ -279,5 +315,9 @@ namespace rec_inven_samp
         private Telerik.WinControls.CustomShape customShape1;
         private Telerik.WinControls.RoundRectShape roundRectShape1;
         private Telerik.WinControls.RoundRectShape roundRectShape2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TreeView treeView1;
     }
 }
