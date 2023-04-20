@@ -36,6 +36,8 @@ namespace rec_inven_samp
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -51,7 +53,7 @@ namespace rec_inven_samp
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(181, 413);
+            this.label3.Location = new System.Drawing.Point(23, 522);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(200, 17);
             this.label3.TabIndex = 1;
@@ -61,7 +63,7 @@ namespace rec_inven_samp
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(23, 162);
+            this.label1.Location = new System.Drawing.Point(22, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(208, 17);
             this.label1.TabIndex = 1;
@@ -81,7 +83,7 @@ namespace rec_inven_samp
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(76, 211);
+            this.label5.Location = new System.Drawing.Point(75, 72);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(240, 17);
             this.label5.TabIndex = 1;
@@ -91,7 +93,7 @@ namespace rec_inven_samp
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(385, 162);
+            this.label6.Location = new System.Drawing.Point(560, 162);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(224, 17);
             this.label6.TabIndex = 1;
@@ -101,27 +103,38 @@ namespace rec_inven_samp
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(438, 211);
+            this.label7.Location = new System.Drawing.Point(613, 211);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(256, 17);
             this.label7.TabIndex = 1;
             this.label7.Text = "Districts with NO Submissions :";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Location = new System.Drawing.Point(57, 137);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(337, 188);
+            this.panel1.TabIndex = 2;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
             // dashboard_control
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "dashboard_control";
             this.Size = new System.Drawing.Size(986, 655);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,5 +148,6 @@ namespace rec_inven_samp
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panel1;
     }
 }

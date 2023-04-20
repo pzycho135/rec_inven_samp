@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,5 +17,13 @@ namespace rec_inven_samp
         {
             InitializeComponent();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            //ControlPaint.DrawBorder(e.Graphics, panel1.ClientRectangle, Color.DarkBlue, ButtonBorderStyle.Solid);
+
+        }
+
+
     }
 }

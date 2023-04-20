@@ -68,9 +68,9 @@ namespace rec_inven_samp
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.button5);
+            this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -106,7 +106,7 @@ namespace rec_inven_samp
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(148)))), ((int)(((byte)(96)))));
-            this.button4.Location = new System.Drawing.Point(0, 114);
+            this.button4.Location = new System.Drawing.Point(0, 76);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(117, 38);
             this.button4.TabIndex = 3;
@@ -124,7 +124,7 @@ namespace rec_inven_samp
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(148)))), ((int)(((byte)(96)))));
-            this.button3.Location = new System.Drawing.Point(0, 76);
+            this.button3.Location = new System.Drawing.Point(0, 38);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(117, 38);
             this.button3.TabIndex = 2;
@@ -142,7 +142,7 @@ namespace rec_inven_samp
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(148)))), ((int)(((byte)(96)))));
-            this.button2.Location = new System.Drawing.Point(0, 38);
+            this.button2.Location = new System.Drawing.Point(0, 114);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(117, 38);
             this.button2.TabIndex = 1;
