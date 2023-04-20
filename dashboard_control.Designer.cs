@@ -30,13 +30,6 @@ namespace rec_inven_samp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Node1");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Node2");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Node3");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Node0", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3});
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.radButton1 = new Telerik.WinControls.UI.RadButton();
             this.object_fdc623eb_e90c_4777_9e4d_4c9a0023c0e1 = new Telerik.WinControls.RootRadElement();
@@ -52,7 +45,6 @@ namespace rec_inven_samp
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.treeView1 = new System.Windows.Forms.TreeView();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
@@ -248,31 +240,11 @@ namespace rec_inven_samp
             this.label4.TabIndex = 6;
             this.label4.Text = "000000";
             // 
-            // treeView1
-            // 
-            this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.treeView1.Location = new System.Drawing.Point(37, 290);
-            this.treeView1.Name = "treeView1";
-            treeNode1.Name = "Node1";
-            treeNode1.Text = "Node1";
-            treeNode2.Name = "Node2";
-            treeNode2.Text = "Node2";
-            treeNode3.Name = "Node3";
-            treeNode3.Text = "Node3";
-            treeNode4.Name = "Node0";
-            treeNode4.Text = "Node0";
-            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode4});
-            this.treeView1.ShowPlusMinus = false;
-            this.treeView1.Size = new System.Drawing.Size(121, 97);
-            this.treeView1.TabIndex = 7;
-            // 
             // dashboard_control
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.treeView1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
@@ -318,6 +290,5 @@ namespace rec_inven_samp
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TreeView treeView1;
     }
 }
