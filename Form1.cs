@@ -23,7 +23,12 @@ namespace rec_inven_samp
             InitializeComponent();
 
             panel3.Controls.Add(dash_control);
+
+            // center alignment inside panel3
             dash_control.Location = new Point((panel3.Width - dash_control.Width) / 2, (panel3.Height - dash_control.Height) / 2);
+            rep_control.Location = new Point((panel3.Width - rep_control.Width) / 2, (panel3.Height - rep_control.Height) / 2);
+            inven_control.Location = new Point((panel3.Width - inven_control.Width) / 2, (panel3.Height - inven_control.Height) / 2);
+            disp_control.Location = new Point((panel3.Width - disp_control.Width) / 2, (panel3.Height - disp_control.Height) / 2);
 
         }
 
