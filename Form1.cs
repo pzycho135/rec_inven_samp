@@ -12,6 +12,14 @@ namespace rec_inven_samp
 {
     public partial class Form1 : Form
     {
+        /* 
+            ------ colors
+        #829460
+        #456268
+
+        */
+
+
         dashboard_control dash_control = new dashboard_control();
         report_control rep_control = new report_control();
         inventory_control inven_control = new inventory_control();
@@ -24,10 +32,7 @@ namespace rec_inven_samp
 
             panel3.Controls.Add(dash_control);
 
-
             // location inside panel 3
-            
-
             // center alignment
             dash_control.Location = new Point((panel3.Width - dash_control.Width) / 2);
             //rep_control.Location = new Point((panel3.Width - rep_control.Width) / 2, (panel3.Height - rep_control.Height) / 2);
@@ -36,10 +41,36 @@ namespace rec_inven_samp
 
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            foreach (Button bu in panel2.Controls)
+            {
+                bu.BackColor = Color.Transparent;
+                bu.ForeColor = Color.FromArgb(130, 148, 96);
+            }
+
+            button1.BackColor = Color.FromArgb(130, 148, 96);
+            button1.ForeColor = Color.White;
+        }
+
+        public void _btn_change(object sender)
+        {
+            foreach (Button bu in panel2.Controls)
+            {
+                bu.BackColor = Color.Transparent;
+                bu.ForeColor = Color.FromArgb(130, 148, 96);
+            }
+
+            Control clk = (Control)sender;
+            clk.BackColor = Color.FromArgb(130, 148, 96);
+            clk.ForeColor = Color.White;
+            label1.Text = clk.Text;
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            label1.Text = button1.Text;
+            //label1.Text = button1.Text;
+            _btn_change(sender);
 
             panel3.Controls.Clear();
             panel3.Controls.Add(dash_control);
@@ -47,7 +78,8 @@ namespace rec_inven_samp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            label1.Text = button2.Text;
+            //label1.Text = button2.Text;
+            _btn_change(sender);
 
             panel3.Controls.Clear();
             panel3.Controls.Add(rep_control);
@@ -55,7 +87,8 @@ namespace rec_inven_samp
 
         private void button3_Click(object sender, EventArgs e)
         {
-            label1.Text = button3.Text;
+            //label1.Text = button3.Text;
+            _btn_change(sender);
 
             panel3.Controls.Clear();
             panel3.Controls.Add(inven_control);
@@ -63,10 +96,12 @@ namespace rec_inven_samp
 
         private void button4_Click(object sender, EventArgs e)
         {
-            label1.Text = button4.Text;
+            //label1.Text = button4.Text;
+            _btn_change(sender);
 
             panel3.Controls.Clear();
             panel3.Controls.Add(disp_control);
         }
+
     }
 }
