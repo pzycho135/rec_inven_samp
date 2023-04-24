@@ -18,11 +18,9 @@ namespace rec_inven_samp
             InitializeComponent();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void dashboard_control_Load(object sender, EventArgs e)
         {
-            //ControlPaint.DrawBorder(e.Graphics, panel1.ClientRectangle, Color.DarkBlue, ButtonBorderStyle.Solid);
-
+            comboBox1.SelectedIndex = 0;
         }
-
     }
 }
