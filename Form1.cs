@@ -51,6 +51,7 @@ namespace rec_inven_samp
 
             button1.BackColor = Color.FromArgb(130, 148, 96);
             button1.ForeColor = Color.White;
+            label1.Text = button1.Text;
         }
 
         public void _btn_change(object sender)
