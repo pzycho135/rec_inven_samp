@@ -88,6 +88,22 @@ namespace rec_inven_samp
                 case "WEST III":
                     label7.Text = "West Butuan District III";
                     break;
+
+                case "OSDS":
+                    label7.Text = "Office of the Schools Division Superintendent";
+                    break;
+
+                case "SGOD":
+                    label7.Text = "School Governance and Operations Division";
+                    break;
+
+                case "CID":
+                    label7.Text = "Curriculum Implementation Division";
+                    break;
+
+                case "ALL":
+                    label7.Text = "Total";
+                    break;
             }
 
         }
@@ -163,6 +179,26 @@ namespace rec_inven_samp
         }
 
         private void button15_Click(object sender, EventArgs e)
+        {
+            _btn_district(sender);
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            _btn_district(sender);
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            _btn_district(sender);
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            _btn_district(sender);
+        }
+
+        private void button16_Click(object sender, EventArgs e)
         {
             _btn_district(sender);
         }
