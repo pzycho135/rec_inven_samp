@@ -62,6 +62,7 @@ namespace rec_inven_samp
             this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -187,6 +188,7 @@ namespace rec_inven_samp
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.label11);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(275, 57);
@@ -251,6 +253,7 @@ namespace rec_inven_samp
             this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
+            "Total",
             "1st Quarter",
             "2nd Quarter",
             "3rd Quarter",
@@ -425,6 +428,14 @@ namespace rec_inven_samp
             this.button15.UseVisualStyleBackColor = true;
             this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
+            // label11
+            // 
+            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
+            this.label11.Location = new System.Drawing.Point(6, 31);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(350, 1);
+            this.label11.TabIndex = 9;
+            // 
             // dashboard_control
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -485,5 +496,6 @@ namespace rec_inven_samp
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Label label11;
     }
 }
