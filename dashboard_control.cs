@@ -21,7 +21,6 @@ namespace rec_inven_samp
         private void dashboard_control_Load(object sender, EventArgs e)
         {
             comboBox1.SelectedIndex = 0;
-
         }
 
         public void _btn_district(object sender)
