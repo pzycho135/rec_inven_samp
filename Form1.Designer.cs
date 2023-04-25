@@ -50,7 +50,7 @@ namespace rec_inven_samp
             this.panel1.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(117, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1011, 58);
+            this.panel1.Size = new System.Drawing.Size(1117, 58);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -76,7 +76,7 @@ namespace rec_inven_samp
             this.panel2.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(117, 564);
+            this.panel2.Size = new System.Drawing.Size(117, 645);
             this.panel2.TabIndex = 1;
             // 
             // button5
@@ -89,7 +89,7 @@ namespace rec_inven_samp
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(148)))), ((int)(((byte)(96)))));
-            this.button5.Location = new System.Drawing.Point(0, 526);
+            this.button5.Location = new System.Drawing.Point(0, 607);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(117, 38);
             this.button5.TabIndex = 4;
@@ -173,11 +173,10 @@ namespace rec_inven_samp
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.AutoScroll = true;
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Location = new System.Drawing.Point(130, 64);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(986, 488);
+            this.panel3.Size = new System.Drawing.Size(1092, 569);
             this.panel3.TabIndex = 2;
             // 
             // Form1
@@ -185,7 +184,7 @@ namespace rec_inven_samp
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1128, 564);
+            this.ClientSize = new System.Drawing.Size(1234, 645);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
