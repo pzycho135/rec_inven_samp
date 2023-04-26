@@ -15,6 +15,7 @@ namespace rec_inven_samp
         /* 
             ------ colors
         https://colorhunt.co/palettes/light
+        https://www.w3schools.com/colors/colors_converter.asp
 
         #829460
         #456268
