@@ -55,7 +55,6 @@ namespace rec_inven_samp
             this.label7 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -368,7 +367,6 @@ namespace rec_inven_samp
             // 
             this.panel4.Controls.Add(this.comboBox1);
             this.panel4.Controls.Add(this.label7);
-            this.panel4.Controls.Add(this.label10);
             this.panel4.Controls.Add(this.label9);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
@@ -381,28 +379,15 @@ namespace rec_inven_samp
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox1.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "Total",
-            "1st Quarter",
-            "2nd Quarter",
-            "3rd Quarter",
-            "4th Quarter"});
-            this.comboBox1.Location = new System.Drawing.Point(151, 11);
+            "0000"});
+            this.comboBox1.Location = new System.Drawing.Point(80, 12);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(114, 25);
+            this.comboBox1.Size = new System.Drawing.Size(114, 29);
             this.comboBox1.TabIndex = 11;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Cascadia Mono", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(76, 9);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(60, 28);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "0000";
             // 
             // label9
             // 
@@ -605,7 +590,7 @@ namespace rec_inven_samp
             // label14
             // 
             this.label14.Font = new System.Drawing.Font("Cascadia Mono SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(210)))), ((int)(((byte)(172)))));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(202)))), ((int)(((byte)(156)))));
             this.label14.Location = new System.Drawing.Point(3, 10);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(265, 31);
@@ -615,8 +600,8 @@ namespace rec_inven_samp
             // 
             // label16
             // 
-            this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(210)))), ((int)(((byte)(172)))));
-            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(210)))), ((int)(((byte)(172)))));
+            this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(202)))), ((int)(((byte)(156)))));
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(202)))), ((int)(((byte)(156)))));
             this.label16.Location = new System.Drawing.Point(4, 44);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(300, 1);
@@ -671,7 +656,6 @@ namespace rec_inven_samp
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button7;
