@@ -18,11 +18,14 @@ namespace rec_inven_samp
         https://www.w3schools.com/colors/colors_converter.asp
 
         #829460
+        #dae2b6
         #456268
         #579bb1
         #ad8b73
         #cd5d7d
         #7eca9c
+        #ffe6e6
+
 
 
 
@@ -46,7 +49,7 @@ namespace rec_inven_samp
             // center alignment
             dash_control.Location = new Point((panel3.Width - dash_control.Width) / 2);
             //rep_control.Location = new Point((panel3.Width - rep_control.Width) / 2, (panel3.Height - rep_control.Height) / 2);
-            //inven_control.Location = new Point((panel3.Width - inven_control.Width) / 2, (panel3.Height - inven_control.Height) / 2);
+            inven_control.Location = new Point((panel3.Width - inven_control.Width) / 2);
             //disp_control.Location = new Point((panel3.Width - disp_control.Width) / 2, (panel3.Height - disp_control.Height) / 2);
 
         }

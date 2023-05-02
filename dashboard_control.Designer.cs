@@ -72,8 +72,8 @@ namespace rec_inven_samp
             this.label6 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -587,6 +587,15 @@ namespace rec_inven_samp
             this.label13.TabIndex = 12;
             this.label13.Text = "000000";
             // 
+            // label16
+            // 
+            this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(202)))), ((int)(((byte)(156)))));
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(202)))), ((int)(((byte)(156)))));
+            this.label16.Location = new System.Drawing.Point(4, 44);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(300, 1);
+            this.label16.TabIndex = 11;
+            // 
             // label14
             // 
             this.label14.Font = new System.Drawing.Font("Cascadia Mono SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -597,15 +606,6 @@ namespace rec_inven_samp
             this.label14.TabIndex = 6;
             this.label14.Text = "Schools / Offices Requested:";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label16
-            // 
-            this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(202)))), ((int)(((byte)(156)))));
-            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(202)))), ((int)(((byte)(156)))));
-            this.label16.Location = new System.Drawing.Point(4, 44);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(300, 1);
-            this.label16.TabIndex = 11;
             // 
             // dashboard_control
             // 
