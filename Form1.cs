@@ -21,6 +21,10 @@ namespace rec_inven_samp
         #456268
         #579bb1
         #ad8b73
+        #cd5d7d
+        #64d2ac
+
+
 
 
         */
