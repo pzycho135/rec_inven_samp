@@ -68,11 +68,11 @@
     <Compile Include="disposal_control.Designer.cs">
       <DependentUpon>disposal_control.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="main_form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="main_form.Designer.cs">
+      <DependentUpon>main_form.cs</DependentUpon>
     </Compile>
     <Compile Include="inventory_control.cs">
       <SubType>UserControl</SubType>
@@ -97,8 +97,8 @@
     <EmbeddedResource Include="disposal_control.resx">
       <DependentUpon>disposal_control.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="main_form.resx">
+      <DependentUpon>main_form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="inventory_control.resx">
       <DependentUpon>inventory_control.cs</DependentUpon>

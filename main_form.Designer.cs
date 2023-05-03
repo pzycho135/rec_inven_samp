@@ -1,7 +1,7 @@
 ﻿
 namespace rec_inven_samp
 {
-    partial class Form1
+    partial class main_form
     {
         /// <summary>
         /// Required designer variable.
@@ -180,7 +180,7 @@ namespace rec_inven_samp
             this.panel3.Size = new System.Drawing.Size(1092, 569);
             this.panel3.TabIndex = 2;
             // 
-            // Form1
+            // main_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -193,7 +193,7 @@ namespace rec_inven_samp
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form1";
+            this.Name = "main_form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Records Inventory";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -208,13 +208,13 @@ namespace rec_inven_samp
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Panel panel3;
+        public System.Windows.Forms.Button button4;
+        public System.Windows.Forms.Button button3;
+        public System.Windows.Forms.Button button2;
+        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button button5;
+        public System.Windows.Forms.Panel panel2;
+        public System.Windows.Forms.Panel panel3;
     }
 }
 

@@ -20,15 +20,60 @@ namespace rec_inven_samp
             button1.Enabled = false;
             button2.Hide();
             button2.Enabled = false;
-
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        public void enter_edit()
         {
             button1.Show();
             button1.Enabled = true;
             button2.Show();
             button2.Enabled = true;
+
+            Control ctrl = (Control)this.Parent; //--- panel containing usercontrol
+            main_form main = (main_form)ctrl.Parent; //--- form containing panel
+
+            foreach (Control bu in main.panel2.Controls)
+            {
+                if (bu is Button)
+                {
+                    bu.Enabled = false;
+                }
+            }
+        }
+
+        public void exit_edit()
+        {
+            DialogResult dr = MessageBox.Show("Exit Editing?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Stop, MessageBoxDefaultButton.Button2);
+
+            switch (dr)
+            {
+                case DialogResult.Yes:
+                    button1.Hide();
+                    button1.Enabled = false;
+                    button2.Hide();
+                    button2.Enabled = false;
+
+                    Control ctrl = (Control)this.Parent; //--- panel containing usercontrol
+                    main_form main = (main_form)ctrl.Parent; //--- form containing panel
+
+                    foreach (Control bu in main.panel2.Controls)
+                    {
+                        if (bu is Button)
+                        {
+                            bu.Enabled = true;
+                        }
+                    }
+                    break;
+
+                case DialogResult.No:
+                    break;
+            }
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            enter_edit();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -48,20 +93,7 @@ namespace rec_inven_samp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Exit Editing?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
-
-            switch (dr)
-            {
-                case DialogResult.Yes:
-                    button1.Hide();
-                    button1.Enabled = false;
-                    button2.Hide();
-                    button2.Enabled = false;
-                    break;
-
-                case DialogResult.No:
-                    break;
-            }
+            exit_edit();
         }
     }
 }

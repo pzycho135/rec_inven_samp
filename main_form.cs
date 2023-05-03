@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace rec_inven_samp
 {
-    public partial class Form1 : Form
+    public partial class main_form : Form
     {
         /* 
             ------ colors
@@ -39,7 +39,7 @@ namespace rec_inven_samp
         disposal_control disp_control = new disposal_control();
 
 
-        public Form1()
+        public main_form()
         {
             InitializeComponent();
 
@@ -79,6 +79,7 @@ namespace rec_inven_samp
             clk.BackColor = Color.FromArgb(130, 148, 96);
             clk.ForeColor = Color.White;
             label1.Text = clk.Text;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
