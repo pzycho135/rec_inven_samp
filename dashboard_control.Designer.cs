@@ -613,11 +613,11 @@ namespace rec_inven_samp
             // 
             this.button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button20.Font = new System.Drawing.Font("Cascadia Mono SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button20.Location = new System.Drawing.Point(479, 200);
+            this.button20.Location = new System.Drawing.Point(360, 200);
             this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(66, 32);
+            this.button20.Size = new System.Drawing.Size(185, 32);
             this.button20.TabIndex = 12;
-            this.button20.Text = "ALL";
+            this.button20.Text = "test loc";
             this.button20.UseVisualStyleBackColor = true;
             // 
             // dashboard_control
