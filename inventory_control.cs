@@ -16,6 +16,12 @@ namespace rec_inven_samp
         {
             InitializeComponent();
 
+            comboBox1.SelectedIndex = 0;
+            comboBox2.SelectedIndex = 0;
+            dataGridView1.ReadOnly = true;
+
+            label1.Hide();
+
             button1.Hide();
             button1.Enabled = false;
             button2.Hide();
@@ -29,9 +35,12 @@ namespace rec_inven_samp
             button2.Show();
             button2.Enabled = true;
 
+            label1.Show();
+
             button3.Enabled = false;
             button4.Enabled = false;
 
+            dataGridView1.ReadOnly = false;
             dataGridView1.BackgroundColor = Color.LightYellow;
 
             Control ctrl = (Control)this.Parent; //--- panel containing usercontrol
@@ -58,9 +67,12 @@ namespace rec_inven_samp
                     button2.Hide();
                     button2.Enabled = false;
 
+                    label1.Hide();
+
                     button3.Enabled = true;
                     button4.Enabled = true;
 
+                    dataGridView1.ReadOnly = true;
                     dataGridView1.BackgroundColor = Color.White;
 
                     Control ctrl = (Control)this.Parent; //--- panel containing usercontrol
