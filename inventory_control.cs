@@ -29,6 +29,11 @@ namespace rec_inven_samp
             button2.Show();
             button2.Enabled = true;
 
+            button3.Enabled = false;
+            button4.Enabled = false;
+
+            dataGridView1.BackgroundColor = Color.LightYellow;
+
             Control ctrl = (Control)this.Parent; //--- panel containing usercontrol
             main_form main = (main_form)ctrl.Parent; //--- form containing panel
 
@@ -43,7 +48,7 @@ namespace rec_inven_samp
 
         public void exit_edit()
         {
-            DialogResult dr = MessageBox.Show("Exit Editing?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Stop, MessageBoxDefaultButton.Button2);
+            DialogResult dr = MessageBox.Show("Exit Editing?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
 
             switch (dr)
             {
@@ -52,6 +57,11 @@ namespace rec_inven_samp
                     button1.Enabled = false;
                     button2.Hide();
                     button2.Enabled = false;
+
+                    button3.Enabled = true;
+                    button4.Enabled = true;
+
+                    dataGridView1.BackgroundColor = Color.White;
 
                     Control ctrl = (Control)this.Parent; //--- panel containing usercontrol
                     main_form main = (main_form)ctrl.Parent; //--- form containing panel
