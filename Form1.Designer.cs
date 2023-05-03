@@ -174,6 +174,7 @@ namespace rec_inven_samp
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Location = new System.Drawing.Point(130, 64);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1092, 569);

@@ -74,6 +74,7 @@ namespace rec_inven_samp
             this.label13 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.button20 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -531,6 +532,7 @@ namespace rec_inven_samp
             // 
             // splitContainer3.Panel2
             // 
+            this.splitContainer3.Panel2.Controls.Add(this.button20);
             this.splitContainer3.Panel2.Controls.Add(this.label16);
             this.splitContainer3.Panel2.Controls.Add(this.label14);
             this.splitContainer3.Size = new System.Drawing.Size(776, 235);
@@ -606,6 +608,17 @@ namespace rec_inven_samp
             this.label14.TabIndex = 6;
             this.label14.Text = "Schools / Offices Requested:";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // button20
+            // 
+            this.button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button20.Font = new System.Drawing.Font("Cascadia Mono SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button20.Location = new System.Drawing.Point(479, 200);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(66, 32);
+            this.button20.TabIndex = 12;
+            this.button20.Text = "ALL";
+            this.button20.UseVisualStyleBackColor = true;
             // 
             // dashboard_control
             // 
@@ -692,5 +705,6 @@ namespace rec_inven_samp
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button button20;
     }
 }

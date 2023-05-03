@@ -50,7 +50,7 @@ namespace rec_inven_samp
             dash_control.Location = new Point((panel3.Width - dash_control.Width) / 2);
             //rep_control.Location = new Point((panel3.Width - rep_control.Width) / 2, (panel3.Height - rep_control.Height) / 2);
             inven_control.Location = new Point((panel3.Width - inven_control.Width) / 2);
-            //disp_control.Location = new Point((panel3.Width - disp_control.Width) / 2, (panel3.Height - disp_control.Height) / 2);
+            //disp_control.Location = new Point((panel3.Width - disp_control.Width) / 2);
 
         }
 
