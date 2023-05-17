@@ -29,7 +29,7 @@ namespace rec_inven_samp
             switch (comboBox2.SelectedIndex)
             {
                 case 0:
-                    label7.Text = "TOTAL";
+                    label7.Text = "Total";
                     break;
                 case 1:
                     label7.Text = "Office of the Schools Division Superintendent";
