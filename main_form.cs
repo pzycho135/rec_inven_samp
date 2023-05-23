@@ -37,6 +37,7 @@ namespace rec_inven_samp
         report_control rep_control = new report_control();
         inventory_control inven_control = new inventory_control();
         disposal_control disp_control = new disposal_control();
+        rds_control rds_list_control = new rds_control();
 
 
         public main_form()
@@ -114,5 +115,12 @@ namespace rec_inven_samp
             panel3.Controls.Add(disp_control);
         }
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+            _btn_change(sender);
+
+            panel3.Controls.Clear();
+            panel3.Controls.Add(rds_list_control);
+        }
     }
 }
