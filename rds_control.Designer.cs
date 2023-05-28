@@ -30,9 +30,9 @@ namespace rec_inven_samp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.SelectQuery selectQuery2 = new DevExpress.DataAccess.Sql.SelectQuery();
-            DevExpress.DataAccess.Sql.AllColumns allColumns2 = new DevExpress.DataAccess.Sql.AllColumns();
-            DevExpress.DataAccess.Sql.Table table2 = new DevExpress.DataAccess.Sql.Table();
+            DevExpress.DataAccess.Sql.SelectQuery selectQuery5 = new DevExpress.DataAccess.Sql.SelectQuery();
+            DevExpress.DataAccess.Sql.AllColumns allColumns5 = new DevExpress.DataAccess.Sql.AllColumns();
+            DevExpress.DataAccess.Sql.Table table5 = new DevExpress.DataAccess.Sql.Table();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rds_control));
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
@@ -73,18 +73,20 @@ namespace rec_inven_samp
             // 
             this.sqlDataSource1.ConnectionName = "localhost_records_inventory_Connection 1";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            table2.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"263\" />";
-            table2.Name = "rds_grds_list";
-            allColumns2.Table = table2;
-            selectQuery2.Columns.Add(allColumns2);
-            selectQuery2.Name = "rds_grds_list";
-            selectQuery2.Tables.Add(table2);
+            table5.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"263\" />";
+            table5.Name = "rds_grds_list";
+            allColumns5.Table = table5;
+            selectQuery5.Columns.Add(allColumns5);
+            selectQuery5.Name = "rds_grds_list";
+            selectQuery5.Tables.Add(table5);
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            selectQuery2});
+            selectQuery5});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // gridView1
             // 
+            this.gridView1.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.gridView1.Appearance.EvenRow.Options.UseBackColor = true;
             this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridView1.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
             this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
@@ -114,11 +116,14 @@ namespace rec_inven_samp
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.gridView1.OptionsView.EnableAppearanceEvenRow = true;
             this.gridView1.OptionsView.RowAutoHeight = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // colid
             // 
+            this.colid.AppearanceCell.Options.UseTextOptions = true;
+            this.colid.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colid.Caption = "#";
             this.colid.ColumnEdit = this.repositoryItemMemoEdit1;
             this.colid.FieldName = "id";
@@ -140,6 +145,8 @@ namespace rec_inven_samp
             // 
             // colrds_grds_id
             // 
+            this.colrds_grds_id.AppearanceCell.Options.UseTextOptions = true;
+            this.colrds_grds_id.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colrds_grds_id.Caption = "RDS / GRDS ID";
             this.colrds_grds_id.ColumnEdit = this.repositoryItemMemoEdit1;
             this.colrds_grds_id.FieldName = "rds_grds_id";
@@ -152,10 +159,12 @@ namespace rec_inven_samp
             this.colrds_grds_id.OptionsColumn.ReadOnly = true;
             this.colrds_grds_id.Visible = true;
             this.colrds_grds_id.VisibleIndex = 1;
-            this.colrds_grds_id.Width = 103;
+            this.colrds_grds_id.Width = 104;
             // 
             // colitem_name
             // 
+            this.colitem_name.AppearanceCell.Options.UseTextOptions = true;
+            this.colitem_name.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colitem_name.Caption = "Records Series";
             this.colitem_name.ColumnEdit = this.repositoryItemMemoEdit1;
             this.colitem_name.FieldName = "item_name";
@@ -168,10 +177,12 @@ namespace rec_inven_samp
             this.colitem_name.OptionsColumn.ReadOnly = true;
             this.colitem_name.Visible = true;
             this.colitem_name.VisibleIndex = 2;
-            this.colitem_name.Width = 238;
+            this.colitem_name.Width = 210;
             // 
             // colcategory
             // 
+            this.colcategory.AppearanceCell.Options.UseTextOptions = true;
+            this.colcategory.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colcategory.Caption = "Category";
             this.colcategory.ColumnEdit = this.repositoryItemMemoEdit1;
             this.colcategory.FieldName = "category";
@@ -184,10 +195,12 @@ namespace rec_inven_samp
             this.colcategory.OptionsColumn.ReadOnly = true;
             this.colcategory.Visible = true;
             this.colcategory.VisibleIndex = 3;
-            this.colcategory.Width = 103;
+            this.colcategory.Width = 124;
             // 
             // colretention_active
             // 
+            this.colretention_active.AppearanceCell.Options.UseTextOptions = true;
+            this.colretention_active.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colretention_active.Caption = "Retention Period - Active";
             this.colretention_active.ColumnEdit = this.repositoryItemMemoEdit1;
             this.colretention_active.FieldName = "retention_active";
@@ -202,6 +215,8 @@ namespace rec_inven_samp
             // 
             // colretention_storage
             // 
+            this.colretention_storage.AppearanceCell.Options.UseTextOptions = true;
+            this.colretention_storage.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colretention_storage.Caption = "Retention Period - Storage";
             this.colretention_storage.ColumnEdit = this.repositoryItemMemoEdit1;
             this.colretention_storage.FieldName = "retention_storage";
@@ -216,6 +231,8 @@ namespace rec_inven_samp
             // 
             // colretention_total
             // 
+            this.colretention_total.AppearanceCell.Options.UseTextOptions = true;
+            this.colretention_total.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colretention_total.Caption = "Retention Period - Total";
             this.colretention_total.ColumnEdit = this.repositoryItemMemoEdit1;
             this.colretention_total.FieldName = "retention_total";
@@ -228,10 +245,12 @@ namespace rec_inven_samp
             this.colretention_total.OptionsColumn.ReadOnly = true;
             this.colretention_total.Visible = true;
             this.colretention_total.VisibleIndex = 6;
-            this.colretention_total.Width = 158;
+            this.colretention_total.Width = 142;
             // 
             // colremarks
             // 
+            this.colremarks.AppearanceCell.Options.UseTextOptions = true;
+            this.colremarks.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colremarks.Caption = "Remarks";
             this.colremarks.ColumnEdit = this.repositoryItemMemoEdit1;
             this.colremarks.FieldName = "remarks";
@@ -244,10 +263,12 @@ namespace rec_inven_samp
             this.colremarks.OptionsColumn.ReadOnly = true;
             this.colremarks.Visible = true;
             this.colremarks.VisibleIndex = 5;
-            this.colremarks.Width = 102;
+            this.colremarks.Width = 136;
             // 
             // coladd_info
             // 
+            this.coladd_info.AppearanceCell.Options.UseTextOptions = true;
+            this.coladd_info.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.coladd_info.Caption = "Additional Information";
             this.coladd_info.ColumnEdit = this.repositoryItemMemoEdit1;
             this.coladd_info.FieldName = "add_info";
@@ -260,10 +281,12 @@ namespace rec_inven_samp
             this.coladd_info.OptionsColumn.ReadOnly = true;
             this.coladd_info.Visible = true;
             this.coladd_info.VisibleIndex = 4;
-            this.coladd_info.Width = 220;
+            this.coladd_info.Width = 202;
             // 
             // coltime_value
             // 
+            this.coltime_value.AppearanceCell.Options.UseTextOptions = true;
+            this.coltime_value.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.coltime_value.Caption = "Time Value";
             this.coltime_value.ColumnEdit = this.repositoryItemMemoEdit1;
             this.coltime_value.FieldName = "time_value";
@@ -276,7 +299,7 @@ namespace rec_inven_samp
             this.coltime_value.OptionsColumn.ReadOnly = true;
             this.coltime_value.Visible = true;
             this.coltime_value.VisibleIndex = 7;
-            this.coltime_value.Width = 61;
+            this.coltime_value.Width = 67;
             // 
             // rds_control
             // 
