@@ -30,9 +30,9 @@ namespace rec_inven_samp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.SelectQuery selectQuery5 = new DevExpress.DataAccess.Sql.SelectQuery();
-            DevExpress.DataAccess.Sql.AllColumns allColumns5 = new DevExpress.DataAccess.Sql.AllColumns();
-            DevExpress.DataAccess.Sql.Table table5 = new DevExpress.DataAccess.Sql.Table();
+            DevExpress.DataAccess.Sql.SelectQuery selectQuery2 = new DevExpress.DataAccess.Sql.SelectQuery();
+            DevExpress.DataAccess.Sql.AllColumns allColumns2 = new DevExpress.DataAccess.Sql.AllColumns();
+            DevExpress.DataAccess.Sql.Table table2 = new DevExpress.DataAccess.Sql.Table();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rds_control));
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
@@ -73,14 +73,14 @@ namespace rec_inven_samp
             // 
             this.sqlDataSource1.ConnectionName = "localhost_records_inventory_Connection 1";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            table5.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"263\" />";
-            table5.Name = "rds_grds_list";
-            allColumns5.Table = table5;
-            selectQuery5.Columns.Add(allColumns5);
-            selectQuery5.Name = "rds_grds_list";
-            selectQuery5.Tables.Add(table5);
+            table2.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"263\" />";
+            table2.Name = "rds_grds_list";
+            allColumns2.Table = table2;
+            selectQuery2.Columns.Add(allColumns2);
+            selectQuery2.Name = "rds_grds_list";
+            selectQuery2.Tables.Add(table2);
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            selectQuery5});
+            selectQuery2});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // gridView1
@@ -147,7 +147,7 @@ namespace rec_inven_samp
             // 
             this.colrds_grds_id.AppearanceCell.Options.UseTextOptions = true;
             this.colrds_grds_id.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.colrds_grds_id.Caption = "RDS / GRDS ID";
+            this.colrds_grds_id.Caption = "RDS/GRDS ID";
             this.colrds_grds_id.ColumnEdit = this.repositoryItemMemoEdit1;
             this.colrds_grds_id.FieldName = "rds_grds_id";
             this.colrds_grds_id.Name = "colrds_grds_id";
@@ -159,7 +159,7 @@ namespace rec_inven_samp
             this.colrds_grds_id.OptionsColumn.ReadOnly = true;
             this.colrds_grds_id.Visible = true;
             this.colrds_grds_id.VisibleIndex = 1;
-            this.colrds_grds_id.Width = 104;
+            this.colrds_grds_id.Width = 88;
             // 
             // colitem_name
             // 
@@ -177,7 +177,7 @@ namespace rec_inven_samp
             this.colitem_name.OptionsColumn.ReadOnly = true;
             this.colitem_name.Visible = true;
             this.colitem_name.VisibleIndex = 2;
-            this.colitem_name.Width = 210;
+            this.colitem_name.Width = 212;
             // 
             // colcategory
             // 
@@ -233,7 +233,7 @@ namespace rec_inven_samp
             // 
             this.colretention_total.AppearanceCell.Options.UseTextOptions = true;
             this.colretention_total.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.colretention_total.Caption = "Retention Period - Total";
+            this.colretention_total.Caption = "Retention Period-Total";
             this.colretention_total.ColumnEdit = this.repositoryItemMemoEdit1;
             this.colretention_total.FieldName = "retention_total";
             this.colretention_total.Name = "colretention_total";
@@ -245,7 +245,7 @@ namespace rec_inven_samp
             this.colretention_total.OptionsColumn.ReadOnly = true;
             this.colretention_total.Visible = true;
             this.colretention_total.VisibleIndex = 6;
-            this.colretention_total.Width = 142;
+            this.colretention_total.Width = 120;
             // 
             // colremarks
             // 
@@ -263,7 +263,7 @@ namespace rec_inven_samp
             this.colremarks.OptionsColumn.ReadOnly = true;
             this.colremarks.Visible = true;
             this.colremarks.VisibleIndex = 5;
-            this.colremarks.Width = 136;
+            this.colremarks.Width = 176;
             // 
             // coladd_info
             // 
@@ -281,7 +281,7 @@ namespace rec_inven_samp
             this.coladd_info.OptionsColumn.ReadOnly = true;
             this.coladd_info.Visible = true;
             this.coladd_info.VisibleIndex = 4;
-            this.coladd_info.Width = 202;
+            this.coladd_info.Width = 204;
             // 
             // coltime_value
             // 
@@ -299,7 +299,7 @@ namespace rec_inven_samp
             this.coltime_value.OptionsColumn.ReadOnly = true;
             this.coltime_value.Visible = true;
             this.coltime_value.VisibleIndex = 7;
-            this.coltime_value.Width = 67;
+            this.coltime_value.Width = 61;
             // 
             // rds_control
             // 
