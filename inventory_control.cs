@@ -21,7 +21,6 @@ namespace rec_inven_samp
 
             comboBox1.SelectedIndex = 0;
             comboBox2.SelectedIndex = 0;
-            dataGridView1.ReadOnly = true;
 
             label1.Hide();
 
@@ -125,6 +124,7 @@ namespace rec_inven_samp
 
         private void button3_Click(object sender, EventArgs e)
         {
+            open_form:
             add_test add_Test = new add_test();
             // Show testDialog as a modal dialog and determine if DialogResult = OK.
             if (add_Test.ShowDialog(this) == DialogResult.OK)
@@ -134,7 +134,7 @@ namespace rec_inven_samp
                 if (string.IsNullOrWhiteSpace(add_Test.textBox1.Text))
                 {
                     MessageBox.Show("Textbox is empty!");
-                    
+                    goto open_form;
                 }
                 else
                 {
@@ -174,7 +174,7 @@ namespace rec_inven_samp
         {
             try
             {
-                string sql1 = "select * from test_table";
+                string sql1 = "select * from test_table;";
 
                 //con.mycon.Open();
                 using (con.cmd = new MySqlCommand(sql1, con.mycon))
@@ -193,6 +193,38 @@ namespace rec_inven_samp
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string get_index = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            MessageBox.Show("index is: " + get_index);
+
+            try
+            {
+                string sql1 = "delete from test_table where idtest_table = '" + get_index + "';";
+
+                //con.mycon.Open();
+                using (con.cmd = new MySqlCommand(sql1, con.mycon))
+                {
+                    con.adapter = new MySqlDataAdapter(con.cmd);
+                    con.ds = new DataSet();
+                    con.adapter.Fill(con.ds);
+                    //cmd.ExecuteNonQuery();
+                }
+                //con.mycon.Close();
+                dgv_refresh();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            MessageBox.Show(dataGridView1.CurrentRow.Cells[1].Value.ToString());
         }
     }
 }
