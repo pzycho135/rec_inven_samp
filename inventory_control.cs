@@ -26,6 +26,7 @@ namespace rec_inven_samp
             button1.Enabled = false;
             button2.Hide();
             button2.Enabled = false;
+
         }
 
         public void enter_edit()
@@ -38,7 +39,9 @@ namespace rec_inven_samp
             label1.Show();
 
             button3.Enabled = false;
+            button3.Hide();
             button4.Enabled = false;
+            button4.Hide();
 
             dataGridView1.ReadOnly = false;
             dataGridView1.BackgroundColor = Color.LightYellow;
@@ -70,7 +73,9 @@ namespace rec_inven_samp
                     label1.Hide();
 
                     button3.Enabled = true;
+                    button3.Show();
                     button4.Enabled = true;
+                    button4.Show();
 
                     dataGridView1.ReadOnly = true;
                     dataGridView1.BackgroundColor = Color.White;
