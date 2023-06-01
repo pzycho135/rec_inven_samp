@@ -107,6 +107,12 @@
     <Reference Include="TelerikCommon, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="add_test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="add_test.Designer.cs">
+      <DependentUpon>add_test.cs</DependentUpon>
+    </Compile>
     <Compile Include="db_con.cs" />
     <Compile Include="disposal_control.cs">
       <SubType>UserControl</SubType>
@@ -146,6 +152,9 @@
     <Compile Include="report_control.Designer.cs">
       <DependentUpon>report_control.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="add_test.resx">
+      <DependentUpon>add_test.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="disposal_control.resx">
       <DependentUpon>disposal_control.cs</DependentUpon>
     </EmbeddedResource>

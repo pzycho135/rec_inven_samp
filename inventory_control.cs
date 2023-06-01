@@ -14,6 +14,7 @@ namespace rec_inven_samp
     public partial class inventory_control : UserControl
     {
         db_con con = new db_con();
+
         public inventory_control()
         {
             InitializeComponent();
@@ -29,26 +30,26 @@ namespace rec_inven_samp
             button2.Hide();
             button2.Enabled = false;
 
-            try
+            dgv_refresh();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            enter_edit();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Confirm Changes?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+            switch (dr)
             {
-                string sql1 = "select * from test_table";
+                case DialogResult.OK:
+                    MessageBox.Show("Changes Saved!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
 
-                con.mycon.Open();
-                using (con.cmd = new MySqlCommand(sql1, con.mycon))
-                {
-                    con.adapter = new MySqlDataAdapter(con.cmd);
-                    con.ds = new DataSet();
-                    con.adapter.Fill(con.ds);
-                    //cmd.ExecuteNonQuery();
-
-                    dataGridView1.DataSource = con.ds.Tables[0];
-                }
-                con.mycon.Close();
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                case DialogResult.Cancel:
+                    break;
             }
         }
 
@@ -117,29 +118,81 @@ namespace rec_inven_samp
 
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            enter_edit();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            DialogResult dr = MessageBox.Show("Confirm Changes?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-
-            switch (dr)
-            {
-                case DialogResult.OK:
-                    MessageBox.Show("Changes Saved!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    break;
-
-                case DialogResult.Cancel:
-                    break;
-            }
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             exit_edit();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            add_test add_Test = new add_test();
+            // Show testDialog as a modal dialog and determine if DialogResult = OK.
+            if (add_Test.ShowDialog(this) == DialogResult.OK)
+            {
+                // Read the contents of testDialog's TextBox.
+
+                if (string.IsNullOrWhiteSpace(add_Test.textBox1.Text))
+                {
+                    MessageBox.Show("Textbox is empty!");
+                    
+                }
+                else
+                {
+                    try
+                    {
+                        string sql1 = "insert into test_table (test_tablecol) values ('" + add_Test.textBox1.Text + "');";
+
+                        //con.mycon.Open();
+                        using (con.cmd = new MySqlCommand(sql1, con.mycon))
+                        {
+                            con.adapter = new MySqlDataAdapter(con.cmd);
+                            con.ds = new DataSet();
+                            con.adapter.Fill(con.ds);
+                            //cmd.ExecuteNonQuery();
+                        }
+                        //con.mycon.Close();
+
+                        MessageBox.Show(add_Test.textBox1.Text);
+                        dgv_refresh();
+                        add_Test.Dispose();
+                    }
+
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+                
+            }
+            else
+            {
+                //this.txtResult.Text = "Cancelled";
+            }
+        }
+
+        private void dgv_refresh()
+        {
+            try
+            {
+                string sql1 = "select * from test_table";
+
+                //con.mycon.Open();
+                using (con.cmd = new MySqlCommand(sql1, con.mycon))
+                {
+                    con.adapter = new MySqlDataAdapter(con.cmd);
+                    con.ds = new DataSet();
+                    con.adapter.Fill(con.ds);
+                    //cmd.ExecuteNonQuery();
+
+                    dataGridView1.DataSource = con.ds.Tables[0];
+                }
+                //con.mycon.Close();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

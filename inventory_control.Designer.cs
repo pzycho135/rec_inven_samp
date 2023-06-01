@@ -106,6 +106,7 @@ namespace rec_inven_samp
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -140,6 +141,7 @@ namespace rec_inven_samp
             this.button3.TabIndex = 3;
             this.button3.Text = "Add";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -160,6 +162,7 @@ namespace rec_inven_samp
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.Transparent;
+            this.button5.Enabled = false;
             this.button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(139)))), ((int)(((byte)(115)))));
             this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(228)))), ((int)(((byte)(223)))));
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
