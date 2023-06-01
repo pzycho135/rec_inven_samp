@@ -123,7 +123,4 @@
   <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
     <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9InJkc19ncmRzX2xpc3QiPjxGaWVsZCBOYW1lPSJpZCIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9InJkc19ncmRzX2lkIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Iml0ZW1fbmFtZSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJjYXRlZ29yeSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJyZXRlbnRpb25fYWN0aXZlIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9InJldGVudGlvbl9zdG9yYWdlIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9InJldGVudGlvbl90b3RhbCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJyZW1hcmtzIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9ImFkZF9pbmZvIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9InRpbWVfdmFsdWUiIFR5cGU9IlN0cmluZyIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
   </data>
-  <metadata name="behaviorManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>153, 17</value>
-  </metadata>
 </root>
