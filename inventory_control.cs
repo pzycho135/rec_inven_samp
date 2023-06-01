@@ -148,7 +148,7 @@ namespace rec_inven_samp
                             con.adapter = new MySqlDataAdapter(con.cmd);
                             con.ds = new DataSet();
                             con.adapter.Fill(con.ds);
-                            //cmd.ExecuteNonQuery();
+                            //con.cmd.ExecuteNonQuery();
                         }
                         //con.mycon.Close();
 
