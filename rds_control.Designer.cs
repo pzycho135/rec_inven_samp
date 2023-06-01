@@ -197,7 +197,7 @@ namespace rec_inven_samp
             this.colcategory.OptionsColumn.ReadOnly = true;
             this.colcategory.Visible = true;
             this.colcategory.VisibleIndex = 3;
-            this.colcategory.Width = 123;
+            this.colcategory.Width = 134;
             // 
             // colretention_active
             // 
@@ -247,7 +247,7 @@ namespace rec_inven_samp
             this.colretention_total.OptionsColumn.ReadOnly = true;
             this.colretention_total.Visible = true;
             this.colretention_total.VisibleIndex = 6;
-            this.colretention_total.Width = 133;
+            this.colretention_total.Width = 126;
             // 
             // colremarks
             // 
@@ -265,7 +265,7 @@ namespace rec_inven_samp
             this.colremarks.OptionsColumn.ReadOnly = true;
             this.colremarks.Visible = true;
             this.colremarks.VisibleIndex = 5;
-            this.colremarks.Width = 177;
+            this.colremarks.Width = 186;
             // 
             // coladd_info
             // 
@@ -283,7 +283,7 @@ namespace rec_inven_samp
             this.coladd_info.OptionsColumn.ReadOnly = true;
             this.coladd_info.Visible = true;
             this.coladd_info.VisibleIndex = 4;
-            this.coladd_info.Width = 193;
+            this.coladd_info.Width = 189;
             // 
             // coltime_value
             // 
@@ -301,7 +301,7 @@ namespace rec_inven_samp
             this.coltime_value.OptionsColumn.ReadOnly = true;
             this.coltime_value.Visible = true;
             this.coltime_value.VisibleIndex = 7;
-            this.coltime_value.Width = 67;
+            this.coltime_value.Width = 58;
             // 
             // rds_control
             // 
