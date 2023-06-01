@@ -1,7 +1,7 @@
 ﻿
 namespace rec_inven_samp
 {
-    partial class inventory_control
+    partial class ctrl_inventory
     {
         /// <summary> 
         /// Required designer variable.

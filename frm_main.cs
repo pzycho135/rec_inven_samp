@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace rec_inven_samp
 {
-    public partial class main_form : Form
+    public partial class frm_main : Form
     {
         /* 
             ------ colors
@@ -40,14 +40,14 @@ namespace rec_inven_samp
         */
 
 
-        dashboard_control dash_control = new dashboard_control();
-        report_control rep_control = new report_control();
-        inventory_control inven_control = new inventory_control();
-        disposal_control disp_control = new disposal_control();
-        rds_control rds_list_control = new rds_control();
+        ctrl_dashboard dash_control = new ctrl_dashboard();
+        ctrl_report rep_control = new ctrl_report();
+        ctrl_inventory inven_control = new ctrl_inventory();
+        ctrl_disposal disp_control = new ctrl_disposal();
+        ctrl_rds rds_list_control = new ctrl_rds();
 
 
-        public main_form()
+        public frm_main()
         {
             InitializeComponent();
 

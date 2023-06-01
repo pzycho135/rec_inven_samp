@@ -1,7 +1,7 @@
 ﻿
 namespace rec_inven_samp
 {
-    partial class dashboard_control
+    partial class ctrl_dashboard
     {
         /// <summary> 
         /// Required designer variable.

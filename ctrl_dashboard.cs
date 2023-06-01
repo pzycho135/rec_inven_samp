@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace rec_inven_samp
 {
-    public partial class dashboard_control : UserControl
+    public partial class ctrl_dashboard : UserControl
     {
-        public dashboard_control()
+        public ctrl_dashboard()
         {
             InitializeComponent();
         }

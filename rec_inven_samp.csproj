@@ -114,55 +114,55 @@
       <DependentUpon>add_test.cs</DependentUpon>
     </Compile>
     <Compile Include="db_con.cs" />
-    <Compile Include="disposal_control.cs">
+    <Compile Include="ctrl_disposal.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="disposal_control.Designer.cs">
-      <DependentUpon>disposal_control.cs</DependentUpon>
+    <Compile Include="ctrl_disposal.Designer.cs">
+      <DependentUpon>ctrl_disposal.cs</DependentUpon>
     </Compile>
-    <Compile Include="main_form.cs">
+    <Compile Include="frm_main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="main_form.Designer.cs">
-      <DependentUpon>main_form.cs</DependentUpon>
+    <Compile Include="frm_main.Designer.cs">
+      <DependentUpon>frm_main.cs</DependentUpon>
     </Compile>
-    <Compile Include="inventory_control.cs">
+    <Compile Include="ctrl_inventory.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="inventory_control.Designer.cs">
-      <DependentUpon>inventory_control.cs</DependentUpon>
+    <Compile Include="ctrl_inventory.Designer.cs">
+      <DependentUpon>ctrl_inventory.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="dashboard_control.cs">
+    <Compile Include="ctrl_dashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="dashboard_control.Designer.cs">
-      <DependentUpon>dashboard_control.cs</DependentUpon>
+    <Compile Include="ctrl_dashboard.Designer.cs">
+      <DependentUpon>ctrl_dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="rds_control.cs">
+    <Compile Include="ctrl_rds.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="rds_control.Designer.cs">
-      <DependentUpon>rds_control.cs</DependentUpon>
+    <Compile Include="ctrl_rds.Designer.cs">
+      <DependentUpon>ctrl_rds.cs</DependentUpon>
     </Compile>
-    <Compile Include="report_control.cs">
+    <Compile Include="ctrl_report.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="report_control.Designer.cs">
-      <DependentUpon>report_control.cs</DependentUpon>
+    <Compile Include="ctrl_report.Designer.cs">
+      <DependentUpon>ctrl_report.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="add_test.resx">
       <DependentUpon>add_test.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="disposal_control.resx">
-      <DependentUpon>disposal_control.cs</DependentUpon>
+    <EmbeddedResource Include="ctrl_disposal.resx">
+      <DependentUpon>ctrl_disposal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="main_form.resx">
-      <DependentUpon>main_form.cs</DependentUpon>
+    <EmbeddedResource Include="frm_main.resx">
+      <DependentUpon>frm_main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="inventory_control.resx">
-      <DependentUpon>inventory_control.cs</DependentUpon>
+    <EmbeddedResource Include="ctrl_inventory.resx">
+      <DependentUpon>ctrl_inventory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -174,14 +174,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="dashboard_control.resx">
-      <DependentUpon>dashboard_control.cs</DependentUpon>
+    <EmbeddedResource Include="ctrl_dashboard.resx">
+      <DependentUpon>ctrl_dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rds_control.resx">
-      <DependentUpon>rds_control.cs</DependentUpon>
+    <EmbeddedResource Include="ctrl_rds.resx">
+      <DependentUpon>ctrl_rds.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="report_control.resx">
-      <DependentUpon>report_control.cs</DependentUpon>
+    <EmbeddedResource Include="ctrl_report.resx">
+      <DependentUpon>ctrl_report.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

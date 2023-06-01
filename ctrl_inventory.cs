@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace rec_inven_samp
 {
-    public partial class inventory_control : UserControl
+    public partial class ctrl_inventory : UserControl
     {
         db_con con = new db_con();
 
-        public inventory_control()
+        public ctrl_inventory()
         {
             InitializeComponent();
 
@@ -68,7 +68,7 @@ namespace rec_inven_samp
             dataGridView1.BackgroundColor = Color.LightYellow;
 
             Control ctrl = (Control)this.Parent; //--- panel containing usercontrol
-            main_form main = (main_form)ctrl.Parent; //--- form containing panel
+            frm_main main = (frm_main)ctrl.Parent; //--- form containing panel
 
             foreach (Control bu in main.panel2.Controls)
             {
@@ -100,7 +100,7 @@ namespace rec_inven_samp
                     dataGridView1.BackgroundColor = Color.White;
 
                     Control ctrl = (Control)this.Parent; //--- panel containing usercontrol
-                    main_form main = (main_form)ctrl.Parent; //--- form containing panel
+                    frm_main main = (frm_main)ctrl.Parent; //--- form containing panel
 
                     foreach (Control bu in main.panel2.Controls)
                     {

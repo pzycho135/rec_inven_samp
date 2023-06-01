@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace rec_inven_samp
 {
-    public partial class disposal_control : UserControl
+    public partial class ctrl_report : UserControl
     {
-        public disposal_control()
+        public ctrl_report()
         {
             InitializeComponent();
         }

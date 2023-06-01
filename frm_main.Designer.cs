@@ -1,7 +1,7 @@
 ﻿
 namespace rec_inven_samp
 {
-    partial class main_form
+    partial class frm_main
     {
         /// <summary>
         /// Required designer variable.
