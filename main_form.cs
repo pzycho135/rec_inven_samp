@@ -17,16 +17,23 @@ namespace rec_inven_samp
         https://colorhunt.co/palettes/light
         https://www.w3schools.com/colors/colors_converter.asp
 
+        green:
         #829460
         #dae2b6
+        #7eca9c
+
+        blue:
         #456268
         #579bb1
-        #ad8b73
-        #cd5d7d
-        #7eca9c
-        #ffe6e6
-        #ece4df
         #dceaef
+
+        brown:
+        #ad8b73
+        #ece4df
+
+        red:
+        #cd5d7d
+        #ffe6e6
 
 
 
