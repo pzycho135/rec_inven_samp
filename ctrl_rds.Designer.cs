@@ -48,6 +48,7 @@ namespace rec_inven_samp
             this.colremarks = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coladd_info = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltime_value = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
@@ -57,12 +58,12 @@ namespace rec_inven_samp
             // 
             this.gridControl1.DataMember = "rds_grds_list";
             this.gridControl1.DataSource = this.sqlDataSource1;
-            this.gridControl1.Location = new System.Drawing.Point(23, 3);
+            this.gridControl1.Location = new System.Drawing.Point(23, 39);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemMemoEdit1});
-            this.gridControl1.Size = new System.Drawing.Size(1051, 563);
+            this.gridControl1.Size = new System.Drawing.Size(1051, 527);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -83,7 +84,7 @@ namespace rec_inven_samp
             // 
             // gridView1
             // 
-            this.gridView1.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.gridView1.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(226)))), ((int)(((byte)(182)))));
             this.gridView1.Appearance.EvenRow.Options.UseBackColor = true;
             this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9F, System.Drawing.FontStyle.Bold);
             this.gridView1.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
@@ -303,16 +304,31 @@ namespace rec_inven_samp
             this.coltime_value.VisibleIndex = 7;
             this.coltime_value.Width = 58;
             // 
-            // rds_control
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(226)))), ((int)(((byte)(182)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(148)))), ((int)(((byte)(96)))));
+            this.button1.Location = new System.Drawing.Point(918, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(171, 30);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Add RDS / GRDS";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // ctrl_rds
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.gridControl1);
             this.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "rds_control";
+            this.Name = "ctrl_rds";
             this.Size = new System.Drawing.Size(1092, 569);
             this.Load += new System.EventHandler(this.rds_control_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
@@ -337,5 +353,6 @@ namespace rec_inven_samp
         private DevExpress.XtraGrid.Columns.GridColumn coltime_value;
         private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
+        private System.Windows.Forms.Button button1;
     }
 }
