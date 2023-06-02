@@ -81,15 +81,5 @@ namespace rec_inven_samp
         {
             ActiveControl = null;
         }
-
-        private void gridControl1_Enter(object sender, EventArgs e)
-        {
-            button2.Enabled = true;
-        }
-
-        private void gridControl1_Leave(object sender, EventArgs e)
-        {
-            button2.Enabled = false;
-        }
     }
 }
