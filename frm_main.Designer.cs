@@ -200,7 +200,7 @@ namespace rec_inven_samp
             this.panel3.Size = new System.Drawing.Size(1092, 569);
             this.panel3.TabIndex = 2;
             // 
-            // main_form
+            // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -213,7 +213,7 @@ namespace rec_inven_samp
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "main_form";
+            this.Name = "frm_main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Records Inventory";
             this.Load += new System.EventHandler(this.Form1_Load);

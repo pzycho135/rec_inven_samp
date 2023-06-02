@@ -30,9 +30,9 @@ namespace rec_inven_samp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.SelectQuery selectQuery4 = new DevExpress.DataAccess.Sql.SelectQuery();
-            DevExpress.DataAccess.Sql.AllColumns allColumns4 = new DevExpress.DataAccess.Sql.AllColumns();
-            DevExpress.DataAccess.Sql.Table table4 = new DevExpress.DataAccess.Sql.Table();
+            DevExpress.DataAccess.Sql.SelectQuery selectQuery6 = new DevExpress.DataAccess.Sql.SelectQuery();
+            DevExpress.DataAccess.Sql.AllColumns allColumns6 = new DevExpress.DataAccess.Sql.AllColumns();
+            DevExpress.DataAccess.Sql.Table table6 = new DevExpress.DataAccess.Sql.Table();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrl_rds));
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
@@ -49,6 +49,7 @@ namespace rec_inven_samp
             this.coladd_info = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltime_value = new DevExpress.XtraGrid.Columns.GridColumn();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
@@ -67,21 +68,21 @@ namespace rec_inven_samp
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
+            this.gridControl1.Enter += new System.EventHandler(this.gridControl1_Enter);
             this.gridControl1.Leave += new System.EventHandler(this.gridControl1_Leave);
             // 
             // sqlDataSource1
             // 
             this.sqlDataSource1.ConnectionName = "localhost_records_inventory_Connection 1";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            table4.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"263\" />";
-            table4.Name = "rds_grds_list";
-            allColumns4.Table = table4;
-            selectQuery4.Columns.Add(allColumns4);
-            selectQuery4.Name = "rds_grds_list";
-            selectQuery4.Tables.Add(table4);
+            table6.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"263\" />";
+            table6.Name = "rds_grds_list";
+            allColumns6.Table = table6;
+            selectQuery6.Columns.Add(allColumns6);
+            selectQuery6.Name = "rds_grds_list";
+            selectQuery6.Tables.Add(table6);
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            selectQuery4});
+            selectQuery6});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // gridView1
@@ -126,6 +127,7 @@ namespace rec_inven_samp
             this.gridView1.OptionsView.RowAutoHeight = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.OptionsView.ShowIndicator = false;
+            this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
             // colid
             // 
@@ -166,7 +168,7 @@ namespace rec_inven_samp
             this.colrds_grds_id.OptionsColumn.ReadOnly = true;
             this.colrds_grds_id.Visible = true;
             this.colrds_grds_id.VisibleIndex = 1;
-            this.colrds_grds_id.Width = 87;
+            this.colrds_grds_id.Width = 88;
             // 
             // colitem_name
             // 
@@ -184,7 +186,7 @@ namespace rec_inven_samp
             this.colitem_name.OptionsColumn.ReadOnly = true;
             this.colitem_name.Visible = true;
             this.colitem_name.VisibleIndex = 2;
-            this.colitem_name.Width = 205;
+            this.colitem_name.Width = 209;
             // 
             // colcategory
             // 
@@ -202,7 +204,7 @@ namespace rec_inven_samp
             this.colcategory.OptionsColumn.ReadOnly = true;
             this.colcategory.Visible = true;
             this.colcategory.VisibleIndex = 3;
-            this.colcategory.Width = 134;
+            this.colcategory.Width = 137;
             // 
             // colretention_active
             // 
@@ -252,7 +254,7 @@ namespace rec_inven_samp
             this.colretention_total.OptionsColumn.ReadOnly = true;
             this.colretention_total.Visible = true;
             this.colretention_total.VisibleIndex = 6;
-            this.colretention_total.Width = 126;
+            this.colretention_total.Width = 125;
             // 
             // colremarks
             // 
@@ -270,7 +272,7 @@ namespace rec_inven_samp
             this.colremarks.OptionsColumn.ReadOnly = true;
             this.colremarks.Visible = true;
             this.colremarks.VisibleIndex = 5;
-            this.colremarks.Width = 186;
+            this.colremarks.Width = 194;
             // 
             // coladd_info
             // 
@@ -288,7 +290,7 @@ namespace rec_inven_samp
             this.coladd_info.OptionsColumn.ReadOnly = true;
             this.coladd_info.Visible = true;
             this.coladd_info.VisibleIndex = 4;
-            this.coladd_info.Width = 189;
+            this.coladd_info.Width = 193;
             // 
             // coltime_value
             // 
@@ -306,7 +308,7 @@ namespace rec_inven_samp
             this.coltime_value.OptionsColumn.ReadOnly = true;
             this.coltime_value.Visible = true;
             this.coltime_value.VisibleIndex = 7;
-            this.coltime_value.Width = 58;
+            this.coltime_value.Width = 62;
             // 
             // button1
             // 
@@ -322,11 +324,28 @@ namespace rec_inven_samp
             this.button1.Text = "Add RDS / GRDS";
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.Enabled = false;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(226)))), ((int)(((byte)(182)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(148)))), ((int)(((byte)(96)))));
+            this.button2.Location = new System.Drawing.Point(444, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(171, 30);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Edit RDS / GRDS";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // ctrl_rds
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.gridControl1);
             this.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -358,5 +377,6 @@ namespace rec_inven_samp
         private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
