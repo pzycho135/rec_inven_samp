@@ -50,6 +50,16 @@ namespace rec_inven_samp
 
         private void button2_Click(object sender, EventArgs e)
         {
+            get_info();
+        }
+
+        private void ctrl_rds_Click(object sender, EventArgs e)
+        {
+            ActiveControl = null;
+        }
+
+        private void get_info()
+        {
             frm_rds_edit edit_rds = new frm_rds_edit();
 
             str1 = Convert.ToString(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "id"));
@@ -74,12 +84,9 @@ namespace rec_inven_samp
             edit_rds.textBox9.Text = str9;
             edit_rds.textBox10.Text = str10;
 
-            edit_rds.ShowDialog();
-        }
+            edit_rds.Text = str2 + " :: " + str3;
 
-        private void ctrl_rds_Click(object sender, EventArgs e)
-        {
-            ActiveControl = null;
+            edit_rds.ShowDialog();
         }
     }
 }

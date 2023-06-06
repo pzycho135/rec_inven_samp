@@ -88,7 +88,6 @@ namespace rec_inven_samp
             clk.BackColor = Color.FromArgb(130, 148, 96);
             clk.ForeColor = Color.White;
             label1.Text = clk.Text;
-
         }
 
         private void button1_Click(object sender, EventArgs e)
