@@ -93,6 +93,5 @@ namespace rec_inven_samp
                     break;
             }
         }
-
     }
 }

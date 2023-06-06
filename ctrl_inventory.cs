@@ -162,7 +162,6 @@ namespace rec_inven_samp
                         MessageBox.Show(ex.Message);
                     }
                 }
-                
             }
             else
             {
