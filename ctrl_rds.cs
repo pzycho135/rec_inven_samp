@@ -62,7 +62,7 @@ namespace rec_inven_samp
         {
             frm_rds_edit edit_rds = new frm_rds_edit();
 
-            str1 = Convert.ToString(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "id"));
+            //str1 = Convert.ToString(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "id"));
             str2 = Convert.ToString(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "rds_grds_id"));
             str3 = Convert.ToString(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "item_name"));
             str4 = Convert.ToString(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "category"));
@@ -73,18 +73,17 @@ namespace rec_inven_samp
             str9 = Convert.ToString(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "add_info"));
             str10 = Convert.ToString(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "time_value"));
 
-            edit_rds.textBox1.Text = str1;
-            edit_rds.textBox2.Text = str2;
-            edit_rds.textBox3.Text = str3;
-            edit_rds.textBox4.Text = str4;
-            edit_rds.textBox5.Text = str5;
-            edit_rds.textBox6.Text = str6;
-            edit_rds.textBox7.Text = str7;
-            edit_rds.textBox8.Text = str8;
-            edit_rds.textBox9.Text = str9;
-            edit_rds.textBox10.Text = str10;
+            edit_rds.richTextBox1.Text = str2;
+            edit_rds.richTextBox2.Text = str3;
+            edit_rds.richTextBox3.Text = str4;
+            edit_rds.richTextBox4.Text = str5;
+            edit_rds.richTextBox5.Text = str6;
+            edit_rds.richTextBox6.Text = str7;
+            edit_rds.richTextBox7.Text = str8;
+            edit_rds.richTextBox8.Text = str9;
+            edit_rds.richTextBox9.Text = str10;
 
-            edit_rds.Text = str2 + " :: " + str3;
+            edit_rds.Text = str2;
 
             edit_rds.ShowDialog();
         }

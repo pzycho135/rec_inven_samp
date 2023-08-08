@@ -16,5 +16,10 @@ namespace rec_inven_samp
         {
             InitializeComponent();
         }
+
+        private void frm_rds_edit_Click(object sender, EventArgs e)
+        {
+            ActiveControl = null;
+        }
     }
 }
