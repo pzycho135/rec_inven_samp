@@ -15,6 +15,13 @@ namespace rec_inven_samp
         public frm_rds_edit()
         {
             InitializeComponent();
+
+            textBox1.TextAlign = HorizontalAlignment.Center;
+            textBox2.TextAlign = HorizontalAlignment.Center;
+            textBox3.TextAlign = HorizontalAlignment.Center;
+            textBox4.TextAlign = HorizontalAlignment.Center;
+            textBox5.TextAlign = HorizontalAlignment.Center;
+
         }
 
         private void frm_rds_edit_Click(object sender, EventArgs e)
