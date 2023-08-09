@@ -46,10 +46,16 @@ namespace rec_inven_samp
             this.label8 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
@@ -59,26 +65,20 @@ namespace rec_inven_samp
             this.label15 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.label28 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -259,6 +259,48 @@ namespace rec_inven_samp
             this.splitContainer2.SplitterDistance = 325;
             this.splitContainer2.TabIndex = 9;
             // 
+            // label20
+            // 
+            this.label20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(155)))), ((int)(((byte)(177)))));
+            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(155)))), ((int)(((byte)(177)))));
+            this.label20.Location = new System.Drawing.Point(28, 137);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(175, 1);
+            this.label20.TabIndex = 15;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(155)))), ((int)(((byte)(177)))));
+            this.label21.Location = new System.Drawing.Point(28, 151);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(56, 17);
+            this.label21.TabIndex = 14;
+            this.label21.Text = "Total:";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(155)))), ((int)(((byte)(177)))));
+            this.label18.Location = new System.Drawing.Point(28, 100);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(72, 17);
+            this.label18.TabIndex = 14;
+            this.label18.Text = "Offices:";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(155)))), ((int)(((byte)(177)))));
+            this.label17.Location = new System.Drawing.Point(28, 79);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(72, 17);
+            this.label17.TabIndex = 14;
+            this.label17.Text = "Schools:";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.label2);
@@ -298,6 +340,30 @@ namespace rec_inven_samp
             this.label3.Size = new System.Drawing.Size(175, 1);
             this.label3.TabIndex = 11;
             // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(155)))), ((int)(((byte)(177)))));
+            this.label19.Location = new System.Drawing.Point(106, 97);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(64, 21);
+            this.label19.TabIndex = 12;
+            this.label19.Text = "000000";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(155)))), ((int)(((byte)(177)))));
+            this.label22.Location = new System.Drawing.Point(106, 76);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(64, 21);
+            this.label22.TabIndex = 12;
+            this.label22.Text = "000000";
+            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -309,7 +375,6 @@ namespace rec_inven_samp
             this.label4.TabIndex = 12;
             this.label4.Text = "000000";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label4.Paint += new System.Windows.Forms.PaintEventHandler(this.label4_Paint);
             // 
             // gridControl1
             // 
@@ -410,6 +475,15 @@ namespace rec_inven_samp
             this.splitContainer3.SplitterDistance = 325;
             this.splitContainer3.TabIndex = 11;
             // 
+            // label28
+            // 
+            this.label28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(139)))), ((int)(((byte)(115)))));
+            this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(139)))), ((int)(((byte)(115)))));
+            this.label28.Location = new System.Drawing.Point(28, 137);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(175, 1);
+            this.label28.TabIndex = 15;
+            // 
             // panel6
             // 
             this.panel6.Controls.Add(this.label5);
@@ -430,6 +504,17 @@ namespace rec_inven_samp
             this.label5.TabIndex = 7;
             this.label5.Text = "Disposal";
             // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(139)))), ((int)(((byte)(115)))));
+            this.label27.Location = new System.Drawing.Point(28, 151);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(56, 17);
+            this.label27.TabIndex = 14;
+            this.label27.Text = "Total:";
+            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // label6
             // 
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(139)))), ((int)(((byte)(115)))));
@@ -440,6 +525,17 @@ namespace rec_inven_samp
             this.label6.Text = "REQUESTS";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(139)))), ((int)(((byte)(115)))));
+            this.label26.Location = new System.Drawing.Point(28, 100);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(72, 17);
+            this.label26.TabIndex = 14;
+            this.label26.Text = "Offices:";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // label12
             // 
             this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(139)))), ((int)(((byte)(115)))));
@@ -448,6 +544,53 @@ namespace rec_inven_samp
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(175, 1);
             this.label12.TabIndex = 11;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(139)))), ((int)(((byte)(115)))));
+            this.label25.Location = new System.Drawing.Point(28, 79);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(72, 17);
+            this.label25.TabIndex = 14;
+            this.label25.Text = "Schools:";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(139)))), ((int)(((byte)(115)))));
+            this.label13.Location = new System.Drawing.Point(106, 148);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(64, 21);
+            this.label13.TabIndex = 12;
+            this.label13.Text = "000000";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(139)))), ((int)(((byte)(115)))));
+            this.label23.Location = new System.Drawing.Point(106, 76);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(64, 21);
+            this.label23.TabIndex = 12;
+            this.label23.Text = "000000";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(139)))), ((int)(((byte)(115)))));
+            this.label24.Location = new System.Drawing.Point(106, 97);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(64, 21);
+            this.label24.TabIndex = 12;
+            this.label24.Text = "000000";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // dataGridView2
             // 
@@ -491,150 +634,6 @@ namespace rec_inven_samp
             this.label14.TabIndex = 6;
             this.label14.Text = "Schools / Offices Requested:";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(155)))), ((int)(((byte)(177)))));
-            this.label17.Location = new System.Drawing.Point(28, 79);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(72, 17);
-            this.label17.TabIndex = 14;
-            this.label17.Text = "Schools:";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(155)))), ((int)(((byte)(177)))));
-            this.label18.Location = new System.Drawing.Point(28, 100);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(72, 17);
-            this.label18.TabIndex = 14;
-            this.label18.Text = "Offices:";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(155)))), ((int)(((byte)(177)))));
-            this.label19.Location = new System.Drawing.Point(106, 97);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(64, 21);
-            this.label19.TabIndex = 12;
-            this.label19.Text = "000000";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label20
-            // 
-            this.label20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(155)))), ((int)(((byte)(177)))));
-            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(155)))), ((int)(((byte)(177)))));
-            this.label20.Location = new System.Drawing.Point(28, 137);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(175, 1);
-            this.label20.TabIndex = 15;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(155)))), ((int)(((byte)(177)))));
-            this.label21.Location = new System.Drawing.Point(28, 151);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(56, 17);
-            this.label21.TabIndex = 14;
-            this.label21.Text = "Total:";
-            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(155)))), ((int)(((byte)(177)))));
-            this.label22.Location = new System.Drawing.Point(106, 76);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(64, 21);
-            this.label22.TabIndex = 12;
-            this.label22.Text = "000000";
-            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(139)))), ((int)(((byte)(115)))));
-            this.label13.Location = new System.Drawing.Point(106, 148);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(64, 21);
-            this.label13.TabIndex = 12;
-            this.label13.Text = "000000";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(139)))), ((int)(((byte)(115)))));
-            this.label23.Location = new System.Drawing.Point(106, 76);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(64, 21);
-            this.label23.TabIndex = 12;
-            this.label23.Text = "000000";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(139)))), ((int)(((byte)(115)))));
-            this.label24.Location = new System.Drawing.Point(106, 97);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(64, 21);
-            this.label24.TabIndex = 12;
-            this.label24.Text = "000000";
-            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(139)))), ((int)(((byte)(115)))));
-            this.label25.Location = new System.Drawing.Point(28, 79);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(72, 17);
-            this.label25.TabIndex = 14;
-            this.label25.Text = "Schools:";
-            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(139)))), ((int)(((byte)(115)))));
-            this.label26.Location = new System.Drawing.Point(28, 100);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(72, 17);
-            this.label26.TabIndex = 14;
-            this.label26.Text = "Offices:";
-            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(139)))), ((int)(((byte)(115)))));
-            this.label27.Location = new System.Drawing.Point(28, 151);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(56, 17);
-            this.label27.TabIndex = 14;
-            this.label27.Text = "Total:";
-            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label28
-            // 
-            this.label28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(139)))), ((int)(((byte)(115)))));
-            this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(139)))), ((int)(((byte)(115)))));
-            this.label28.Location = new System.Drawing.Point(28, 137);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(175, 1);
-            this.label28.TabIndex = 15;
             // 
             // ctrl_dashboard
             // 

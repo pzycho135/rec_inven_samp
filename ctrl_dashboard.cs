@@ -98,9 +98,15 @@ namespace rec_inven_samp
 
         public void refresher()
         {
+            fill_grid();
+            counter();
+        }
+
+        private void counter()
+        {
             try
             {
-                string sql1 = "select count(*) from test_table;"; //--- total 
+                string sql1 = "select count(*) from test_table;"; //--- total submission
                 con.mycon.Open();
                 using (con.cmd = new MySqlCommand(sql1, con.mycon))
                 {
@@ -109,10 +115,21 @@ namespace rec_inven_samp
                     label4.Text = cnt.ToString("000000");
                 }
                 con.mycon.Close();
+            }
 
-                string sql2 = "select * from test_table;"; //--- gridview
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void fill_grid()
+        {
+            try
+            {
+                string sql1 = "select * from test_table;"; //--- gridview
                 //con.mycon.Open();
-                using (con.cmd = new MySqlCommand(sql2, con.mycon))
+                using (con.cmd = new MySqlCommand(sql1, con.mycon))
                 {
                     con.adapter = new MySqlDataAdapter(con.cmd);
                     con.ds = new DataSet();
@@ -128,15 +145,6 @@ namespace rec_inven_samp
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void label4_Paint(object sender, PaintEventArgs e)
-        {
-            ControlPaint.DrawBorder(e.Graphics, label4.ClientRectangle,
-                                         Color.Red, 0, ButtonBorderStyle.Solid,
-                                         Color.Red, 0, ButtonBorderStyle.Solid,
-                                         Color.FromArgb(87, 155, 177), 1, ButtonBorderStyle.Solid,
-                                         Color.FromArgb(87, 155, 177), 1, ButtonBorderStyle.Solid);
         }
     }
 }
