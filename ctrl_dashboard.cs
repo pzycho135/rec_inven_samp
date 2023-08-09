@@ -100,7 +100,7 @@ namespace rec_inven_samp
         {
             try
             {
-                string sql1 = "select count(*) from test_table;"; //--- total
+                string sql1 = "select count(*) from test_table;"; //--- total 
                 con.mycon.Open();
                 using (con.cmd = new MySqlCommand(sql1, con.mycon))
                 {
@@ -110,7 +110,7 @@ namespace rec_inven_samp
                 }
                 con.mycon.Close();
 
-                string sql2 = "select * from test_table;";
+                string sql2 = "select * from test_table;"; //--- gridview
                 //con.mycon.Open();
                 using (con.cmd = new MySqlCommand(sql2, con.mycon))
                 {
