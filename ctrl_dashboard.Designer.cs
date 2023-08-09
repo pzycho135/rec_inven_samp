@@ -30,11 +30,11 @@ namespace rec_inven_samp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.SelectQuery selectQuery4 = new DevExpress.DataAccess.Sql.SelectQuery();
-            DevExpress.DataAccess.Sql.AllColumns allColumns4 = new DevExpress.DataAccess.Sql.AllColumns();
-            DevExpress.DataAccess.Sql.Table table4 = new DevExpress.DataAccess.Sql.Table();
+            DevExpress.DataAccess.Sql.SelectQuery selectQuery2 = new DevExpress.DataAccess.Sql.SelectQuery();
+            DevExpress.DataAccess.Sql.AllColumns allColumns2 = new DevExpress.DataAccess.Sql.AllColumns();
+            DevExpress.DataAccess.Sql.Table table2 = new DevExpress.DataAccess.Sql.Table();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrl_dashboard));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.object_fdc623eb_e90c_4777_9e4d_4c9a0023c0e1 = new Telerik.WinControls.RootRadElement();
             this.customShape1 = new Telerik.WinControls.CustomShape(this.components);
             this.label7 = new System.Windows.Forms.Label();
@@ -63,10 +63,22 @@ namespace rec_inven_samp
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -227,9 +239,15 @@ namespace rec_inven_samp
             // 
             // splitContainer2.Panel1
             // 
+            this.splitContainer2.Panel1.Controls.Add(this.label20);
+            this.splitContainer2.Panel1.Controls.Add(this.label21);
+            this.splitContainer2.Panel1.Controls.Add(this.label18);
+            this.splitContainer2.Panel1.Controls.Add(this.label17);
             this.splitContainer2.Panel1.Controls.Add(this.panel2);
             this.splitContainer2.Panel1.Controls.Add(this.label1);
             this.splitContainer2.Panel1.Controls.Add(this.label3);
+            this.splitContainer2.Panel1.Controls.Add(this.label19);
+            this.splitContainer2.Panel1.Controls.Add(this.label22);
             this.splitContainer2.Panel1.Controls.Add(this.label4);
             // 
             // splitContainer2.Panel2
@@ -268,7 +286,7 @@ namespace rec_inven_samp
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(152, 31);
             this.label1.TabIndex = 10;
-            this.label1.Text = "Total Submissions";
+            this.label1.Text = "SUBMISSIONS";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label3
@@ -285,11 +303,13 @@ namespace rec_inven_samp
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(155)))), ((int)(((byte)(177)))));
-            this.label4.Location = new System.Drawing.Point(108, 79);
+            this.label4.Location = new System.Drawing.Point(106, 148);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 21);
             this.label4.TabIndex = 12;
             this.label4.Text = "000000";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label4.Paint += new System.Windows.Forms.PaintEventHandler(this.label4_Paint);
             // 
             // gridControl1
             // 
@@ -307,14 +327,14 @@ namespace rec_inven_samp
             // 
             this.sqlDataSource1.ConnectionName = "localhost_records_inventory_Connection 1";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            table4.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"103\" />";
-            table4.Name = "test_table";
-            allColumns4.Table = table4;
-            selectQuery4.Columns.Add(allColumns4);
-            selectQuery4.Name = "test_table";
-            selectQuery4.Tables.Add(table4);
+            table2.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"103\" />";
+            table2.Name = "test_table";
+            allColumns2.Table = table2;
+            selectQuery2.Columns.Add(allColumns2);
+            selectQuery2.Name = "test_table";
+            selectQuery2.Tables.Add(table2);
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            selectQuery4});
+            selectQuery2});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // gridView1
@@ -370,10 +390,16 @@ namespace rec_inven_samp
             // 
             // splitContainer3.Panel1
             // 
+            this.splitContainer3.Panel1.Controls.Add(this.label28);
             this.splitContainer3.Panel1.Controls.Add(this.panel6);
+            this.splitContainer3.Panel1.Controls.Add(this.label27);
             this.splitContainer3.Panel1.Controls.Add(this.label6);
+            this.splitContainer3.Panel1.Controls.Add(this.label26);
             this.splitContainer3.Panel1.Controls.Add(this.label12);
+            this.splitContainer3.Panel1.Controls.Add(this.label25);
             this.splitContainer3.Panel1.Controls.Add(this.label13);
+            this.splitContainer3.Panel1.Controls.Add(this.label23);
+            this.splitContainer3.Panel1.Controls.Add(this.label24);
             // 
             // splitContainer3.Panel2
             // 
@@ -411,7 +437,7 @@ namespace rec_inven_samp
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(152, 31);
             this.label6.TabIndex = 10;
-            this.label6.Text = "Total Requests";
+            this.label6.Text = "REQUESTS";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label12
@@ -423,30 +449,19 @@ namespace rec_inven_samp
             this.label12.Size = new System.Drawing.Size(175, 1);
             this.label12.TabIndex = 11;
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(139)))), ((int)(((byte)(115)))));
-            this.label13.Location = new System.Drawing.Point(111, 79);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(64, 21);
-            this.label13.TabIndex = 12;
-            this.label13.Text = "000000";
-            // 
             // dataGridView2
             // 
             this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
             this.dataGridView2.Location = new System.Drawing.Point(7, 49);
@@ -476,6 +491,150 @@ namespace rec_inven_samp
             this.label14.TabIndex = 6;
             this.label14.Text = "Schools / Offices Requested:";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(155)))), ((int)(((byte)(177)))));
+            this.label17.Location = new System.Drawing.Point(28, 79);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(72, 17);
+            this.label17.TabIndex = 14;
+            this.label17.Text = "Schools:";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(155)))), ((int)(((byte)(177)))));
+            this.label18.Location = new System.Drawing.Point(28, 100);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(72, 17);
+            this.label18.TabIndex = 14;
+            this.label18.Text = "Offices:";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(155)))), ((int)(((byte)(177)))));
+            this.label19.Location = new System.Drawing.Point(106, 97);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(64, 21);
+            this.label19.TabIndex = 12;
+            this.label19.Text = "000000";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label20
+            // 
+            this.label20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(155)))), ((int)(((byte)(177)))));
+            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(155)))), ((int)(((byte)(177)))));
+            this.label20.Location = new System.Drawing.Point(28, 137);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(175, 1);
+            this.label20.TabIndex = 15;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(155)))), ((int)(((byte)(177)))));
+            this.label21.Location = new System.Drawing.Point(28, 151);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(56, 17);
+            this.label21.TabIndex = 14;
+            this.label21.Text = "Total:";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(155)))), ((int)(((byte)(177)))));
+            this.label22.Location = new System.Drawing.Point(106, 76);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(64, 21);
+            this.label22.TabIndex = 12;
+            this.label22.Text = "000000";
+            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(139)))), ((int)(((byte)(115)))));
+            this.label13.Location = new System.Drawing.Point(106, 148);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(64, 21);
+            this.label13.TabIndex = 12;
+            this.label13.Text = "000000";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(139)))), ((int)(((byte)(115)))));
+            this.label23.Location = new System.Drawing.Point(106, 76);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(64, 21);
+            this.label23.TabIndex = 12;
+            this.label23.Text = "000000";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(139)))), ((int)(((byte)(115)))));
+            this.label24.Location = new System.Drawing.Point(106, 97);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(64, 21);
+            this.label24.TabIndex = 12;
+            this.label24.Text = "000000";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(139)))), ((int)(((byte)(115)))));
+            this.label25.Location = new System.Drawing.Point(28, 79);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(72, 17);
+            this.label25.TabIndex = 14;
+            this.label25.Text = "Schools:";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(139)))), ((int)(((byte)(115)))));
+            this.label26.Location = new System.Drawing.Point(28, 100);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(72, 17);
+            this.label26.TabIndex = 14;
+            this.label26.Text = "Offices:";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(139)))), ((int)(((byte)(115)))));
+            this.label27.Location = new System.Drawing.Point(28, 151);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(56, 17);
+            this.label27.TabIndex = 14;
+            this.label27.Text = "Total:";
+            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label28
+            // 
+            this.label28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(139)))), ((int)(((byte)(115)))));
+            this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(139)))), ((int)(((byte)(115)))));
+            this.label28.Location = new System.Drawing.Point(28, 137);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(175, 1);
+            this.label28.TabIndex = 15;
             // 
             // ctrl_dashboard
             // 
@@ -540,7 +699,6 @@ namespace rec_inven_samp
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ComboBox comboBox2;
@@ -551,5 +709,18 @@ namespace rec_inven_samp
         public DevExpress.XtraGrid.GridControl gridControl1;
         public DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         public System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
     }
 }
