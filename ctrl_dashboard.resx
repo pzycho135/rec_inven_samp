@@ -121,7 +121,7 @@
     <value>17, 17</value>
   </metadata>
   <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
-    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9InRlc3RfdGFibGUiPjxGaWVsZCBOYW1lPSJpZHRlc3RfdGFibGUiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJ0ZXN0X3RhYmxlY29sIiBUeXBlPSJTdHJpbmciIC8+PC9WaWV3PjwvRGF0YVNldD4=</value>
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9InRlc3RfdGFibGUiPjxGaWVsZCBOYW1lPSJpZHRlc3RfdGFibGUiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJ0ZXN0X3RhYmxlY29sIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9InRlc3RfaWQiIFR5cGU9IlN0cmluZyIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>69</value>

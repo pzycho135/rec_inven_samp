@@ -108,7 +108,7 @@ namespace rec_inven_samp
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
@@ -221,7 +221,7 @@ namespace rec_inven_samp
             this.comboBox2.Size = new System.Drawing.Size(192, 28);
             this.comboBox2.TabIndex = 12;
             // 
-            // inventory_control
+            // ctrl_inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -238,7 +238,7 @@ namespace rec_inven_samp
             this.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
             this.Margin = new System.Windows.Forms.Padding(5);
-            this.Name = "inventory_control";
+            this.Name = "ctrl_inventory";
             this.Size = new System.Drawing.Size(1092, 569);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
