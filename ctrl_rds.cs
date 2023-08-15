@@ -94,15 +94,19 @@ namespace rec_inven_samp
         }
 
         private void gridView1_CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
-        {
+        {   //--- IN ORDER (not working if not in order)
+
+            //--- add numbers to indicator row
             if (e.RowHandle >= 0)
             {
                 e.Info.DisplayText = (e.RowHandle + 1).ToString();
             }
 
+            //--- remove triangle in indicator row
             e.Info.ImageIndex = -1;  // <<< NEW LINE  
             e.Painter.DrawObject(e.Info);
 
+            //--- add borders to indicator row
             GridView view = sender as GridView;
             var pen = view.PaintAppearance.HorzLine.GetBackPen(e.Cache);
             var startPoint = new Point(e.Bounds.Location.X, e.Bounds.Bottom - (int)pen.Width);
@@ -114,11 +118,12 @@ namespace rec_inven_samp
 
         private void gridView1_RowCountChanged(object sender, EventArgs e)
         {
+            //--- set indicator row width according to # of char
             GridView gridView = ((GridView)sender);
             if (!gridView.GridControl.IsHandleCreated) return;
             Graphics gr = Graphics.FromHwnd(gridView.GridControl.Handle);
             SizeF size = gr.MeasureString(gridView.RowCount.ToString(), gridView.PaintAppearance.Row.GetFont());
-            gridView.IndicatorWidth = Convert.ToInt32(size.Width + 0.999f) + GridPainter.Indicator.ImageSize.Width + 10;
+            gridView.IndicatorWidth = Convert.ToInt32(size.Width + 0.999f) + GridPainter.Indicator.ImageSize.Width + 5;
         }
     }
 }
