@@ -180,7 +180,7 @@ namespace rec_inven_samp
             }
         }
 
-        public void enter_edit()
+        private void enter_edit()
         {
             button_edit_exit.Show();
             button_edit_exit.Enabled = true;
@@ -207,7 +207,7 @@ namespace rec_inven_samp
             }
         }
 
-        public void exit_edit()
+        private void exit_edit()
         {
             DialogResult dr = MessageBox.Show("Exit Editing?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
 
