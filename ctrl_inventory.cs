@@ -126,6 +126,7 @@ namespace rec_inven_samp
                         }
                         con.mycon.Close();
 
+                        //--- sidenote for selecting last insert https://thispointer.com/4-ways-to-get-last-inserted-id-of-a-mysql-table/
                         string sql2 = "update test_table" +
                                       " set test_id = concat(coalesce(test_table.test_tablecol, ''), '-', coalesce(test_table.idtest_table, ''))" +
                                       " where test_table.idtest_table = (select last_insert_id());";
