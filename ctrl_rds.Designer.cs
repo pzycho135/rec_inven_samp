@@ -47,8 +47,8 @@ namespace rec_inven_samp
             this.colremarks = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coladd_info = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltime_value = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.button_add = new System.Windows.Forms.Button();
+            this.button_edit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
@@ -288,42 +288,42 @@ namespace rec_inven_samp
             this.coltime_value.VisibleIndex = 6;
             this.coltime_value.Width = 71;
             // 
-            // button1
+            // button_add
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(226)))), ((int)(((byte)(182)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(148)))), ((int)(((byte)(96)))));
-            this.button1.Location = new System.Drawing.Point(918, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(171, 30);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Add RDS / GRDS";
-            this.button1.UseVisualStyleBackColor = false;
+            this.button_add.BackColor = System.Drawing.Color.Transparent;
+            this.button_add.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(226)))), ((int)(((byte)(182)))));
+            this.button_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_add.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_add.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(148)))), ((int)(((byte)(96)))));
+            this.button_add.Location = new System.Drawing.Point(918, 3);
+            this.button_add.Name = "button_add";
+            this.button_add.Size = new System.Drawing.Size(171, 30);
+            this.button_add.TabIndex = 2;
+            this.button_add.Text = "Add RDS / GRDS";
+            this.button_add.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // button_edit
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(226)))), ((int)(((byte)(182)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(148)))), ((int)(((byte)(96)))));
-            this.button2.Location = new System.Drawing.Point(444, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(171, 30);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Edit RDS / GRDS";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button_edit.BackColor = System.Drawing.Color.Transparent;
+            this.button_edit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(226)))), ((int)(((byte)(182)))));
+            this.button_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_edit.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(148)))), ((int)(((byte)(96)))));
+            this.button_edit.Location = new System.Drawing.Point(444, 3);
+            this.button_edit.Name = "button_edit";
+            this.button_edit.Size = new System.Drawing.Size(171, 30);
+            this.button_edit.TabIndex = 2;
+            this.button_edit.Text = "Edit RDS / GRDS";
+            this.button_edit.UseVisualStyleBackColor = false;
+            this.button_edit.Click += new System.EventHandler(this.button_edit_Click);
             // 
             // ctrl_rds
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button_edit);
+            this.Controls.Add(this.button_add);
             this.Controls.Add(this.gridControl1);
             this.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
@@ -352,7 +352,7 @@ namespace rec_inven_samp
         private DevExpress.XtraGrid.Columns.GridColumn coltime_value;
         private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button_add;
+        private System.Windows.Forms.Button button_edit;
     }
 }

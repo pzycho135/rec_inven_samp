@@ -33,6 +33,11 @@ namespace rec_inven_samp
             sqlDataSource1.FillAsync();
         }
 
+        private void button_edit_Click(object sender, EventArgs e)
+        {
+            get_info();
+        }
+
         private void grid_unselect()
         {
             // Disable appearance settings that paint the focused row.
@@ -47,11 +52,6 @@ namespace rec_inven_samp
         {
             var str = Convert.ToString(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "item_name"));
             MessageBox.Show(str);
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            get_info();
         }
 
         private void ctrl_rds_Click(object sender, EventArgs e)
