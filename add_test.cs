@@ -28,6 +28,7 @@ namespace rec_inven_samp
         {
             try
             {
+                //--- office
                 string sql1 = "select * from list_office;";
 
                 con.mycon.Open();
@@ -43,6 +44,26 @@ namespace rec_inven_samp
                         comboBox3.Items.Add(drd[2].ToString()); //--- column office_short
                         comboBox3.ValueMember = drd[3].ToString(); //--- column office_code
                         comboBox3.DisplayMember = drd[2].ToString();
+                    }
+                }
+                con.mycon.Close();
+
+                //--- category
+                string sql2 = "select distinct(category) from rds_grds_list;";
+
+                con.mycon.Open();
+                using (con.cmd = new MySqlCommand(sql2, con.mycon))
+                {
+                    //con.adapter = new MySqlDataAdapter(con.cmd);
+                    //con.ds = new DataSet();
+                    //con.adapter.Fill(con.ds);
+
+                    MySqlDataReader drd = con.cmd.ExecuteReader();
+                    while (drd.Read())
+                    {
+                        comboBox1.Items.Add(drd[0].ToString());
+                        comboBox1.ValueMember = drd[0].ToString();
+                        comboBox1.DisplayMember = drd[0].ToString();
                     }
                 }
                 con.mycon.Close();
