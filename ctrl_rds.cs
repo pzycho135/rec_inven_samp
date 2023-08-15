@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid.Views.Grid.Drawing;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -90,6 +91,34 @@ namespace rec_inven_samp
             edit_rds.Text = str2;
 
             edit_rds.ShowDialog();
+        }
+
+        private void gridView1_CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
+        {
+            if (e.RowHandle >= 0)
+            {
+                e.Info.DisplayText = (e.RowHandle + 1).ToString();
+            }
+
+            e.Info.ImageIndex = -1;  // <<< NEW LINE  
+            e.Painter.DrawObject(e.Info);
+
+            GridView view = sender as GridView;
+            var pen = view.PaintAppearance.HorzLine.GetBackPen(e.Cache);
+            var startPoint = new Point(e.Bounds.Location.X, e.Bounds.Bottom - (int)pen.Width);
+            var endPoint = new Point(e.Bounds.Right, e.Bounds.Bottom - (int)pen.Width);
+            e.DefaultDraw();
+            e.Cache.DrawLine(pen, startPoint, endPoint);
+            e.Handled = true;
+        }
+
+        private void gridView1_RowCountChanged(object sender, EventArgs e)
+        {
+            GridView gridView = ((GridView)sender);
+            if (!gridView.GridControl.IsHandleCreated) return;
+            Graphics gr = Graphics.FromHwnd(gridView.GridControl.Handle);
+            SizeF size = gr.MeasureString(gridView.RowCount.ToString(), gridView.PaintAppearance.Row.GetFont());
+            gridView.IndicatorWidth = Convert.ToInt32(size.Width + 0.999f) + GridPainter.Indicator.ImageSize.Width + 10;
         }
     }
 }
