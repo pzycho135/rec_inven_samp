@@ -30,9 +30,9 @@ namespace rec_inven_samp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.SelectQuery selectQuery1 = new DevExpress.DataAccess.Sql.SelectQuery();
-            DevExpress.DataAccess.Sql.AllColumns allColumns1 = new DevExpress.DataAccess.Sql.AllColumns();
-            DevExpress.DataAccess.Sql.Table table1 = new DevExpress.DataAccess.Sql.Table();
+            DevExpress.DataAccess.Sql.SelectQuery selectQuery2 = new DevExpress.DataAccess.Sql.SelectQuery();
+            DevExpress.DataAccess.Sql.AllColumns allColumns2 = new DevExpress.DataAccess.Sql.AllColumns();
+            DevExpress.DataAccess.Sql.Table table2 = new DevExpress.DataAccess.Sql.Table();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrl_rds));
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
@@ -72,14 +72,14 @@ namespace rec_inven_samp
             // 
             this.sqlDataSource1.ConnectionName = "localhost_records_inventory_Connection 1";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            table1.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"263\" />";
-            table1.Name = "rds_grds_list";
-            allColumns1.Table = table1;
-            selectQuery1.Columns.Add(allColumns1);
-            selectQuery1.Name = "rds_grds_list";
-            selectQuery1.Tables.Add(table1);
+            table2.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"263\" />";
+            table2.Name = "rds_grds_list";
+            allColumns2.Table = table2;
+            selectQuery2.Columns.Add(allColumns2);
+            selectQuery2.Name = "rds_grds_list";
+            selectQuery2.Tables.Add(table2);
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            selectQuery1});
+            selectQuery2});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // gridView1
@@ -142,7 +142,7 @@ namespace rec_inven_samp
             this.colrds_grds_id.OptionsColumn.ReadOnly = true;
             this.colrds_grds_id.Visible = true;
             this.colrds_grds_id.VisibleIndex = 0;
-            this.colrds_grds_id.Width = 88;
+            this.colrds_grds_id.Width = 99;
             // 
             // repositoryItemMemoEdit1
             // 
@@ -164,7 +164,7 @@ namespace rec_inven_samp
             this.colitem_name.OptionsColumn.ReadOnly = true;
             this.colitem_name.Visible = true;
             this.colitem_name.VisibleIndex = 1;
-            this.colitem_name.Width = 209;
+            this.colitem_name.Width = 208;
             // 
             // colcategory
             // 
@@ -182,7 +182,7 @@ namespace rec_inven_samp
             this.colcategory.OptionsColumn.ReadOnly = true;
             this.colcategory.Visible = true;
             this.colcategory.VisibleIndex = 2;
-            this.colcategory.Width = 137;
+            this.colcategory.Width = 136;
             // 
             // colretention_active
             // 
@@ -232,7 +232,7 @@ namespace rec_inven_samp
             this.colretention_total.OptionsColumn.ReadOnly = true;
             this.colretention_total.Visible = true;
             this.colretention_total.VisibleIndex = 5;
-            this.colretention_total.Width = 125;
+            this.colretention_total.Width = 124;
             // 
             // colremarks
             // 
@@ -250,7 +250,7 @@ namespace rec_inven_samp
             this.colremarks.OptionsColumn.ReadOnly = true;
             this.colremarks.Visible = true;
             this.colremarks.VisibleIndex = 4;
-            this.colremarks.Width = 194;
+            this.colremarks.Width = 193;
             // 
             // coladd_info
             // 
@@ -268,7 +268,7 @@ namespace rec_inven_samp
             this.coladd_info.OptionsColumn.ReadOnly = true;
             this.coladd_info.Visible = true;
             this.coladd_info.VisibleIndex = 3;
-            this.coladd_info.Width = 193;
+            this.coladd_info.Width = 195;
             // 
             // coltime_value
             // 
@@ -286,7 +286,7 @@ namespace rec_inven_samp
             this.coltime_value.OptionsColumn.ReadOnly = true;
             this.coltime_value.Visible = true;
             this.coltime_value.VisibleIndex = 6;
-            this.coltime_value.Width = 62;
+            this.coltime_value.Width = 71;
             // 
             // button1
             // 
