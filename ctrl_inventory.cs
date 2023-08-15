@@ -126,9 +126,10 @@ namespace rec_inven_samp
                         }
                         con.mycon.Close();
 
-                        string sql2 = "update test_table " +
-                                      "set test_id = concat(coalesce(test_table.test_tablecol, ''), '-', coalesce(test_table.idtest_table, '')); ";
-                        //---- MUST PUT WHERE CLAUSE
+                        string sql2 = "update test_table" +
+                                      " set test_id = concat(coalesce(test_table.test_tablecol, ''), '-', coalesce(test_table.idtest_table, ''))" +
+                                      " where test_table.idtest_table = (select last_insert_id());";
+                        
                         con.mycon.Open();
                         using (con.cmd = new MySqlCommand(sql2, con.mycon))
                         {
