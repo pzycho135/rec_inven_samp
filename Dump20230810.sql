@@ -221,6 +221,38 @@ LOCK TABLES `nap1_school` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `nap1_total_submission`
+--
+
+DROP TABLE IF EXISTS `nap1_total_submission`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `nap1_total_submission` (
+  `id_nap1_total_submission` int NOT NULL AUTO_INCREMENT,
+  `office` varchar(45) DEFAULT NULL,
+  `office_type` varchar(45) DEFAULT NULL,
+  `nap1_id` int(10) unsigned zerofill NOT NULL,
+  `nap1_office` varchar(45) DEFAULT NULL,
+  `date_submitted` date DEFAULT NULL,
+  PRIMARY KEY (`id_nap1_total_submission`),
+  UNIQUE KEY `idnap1_total_submission_UNIQUE` (`id_nap1_total_submission`),
+  KEY `nap1_id_div_idx` (`nap1_id`),
+  CONSTRAINT `nap1_id_district` FOREIGN KEY (`nap1_id`) REFERENCES `nap1_district` (`idnap1_district`),
+  CONSTRAINT `nap1_id_div` FOREIGN KEY (`nap1_id`) REFERENCES `nap1_division` (`idnap1_division`),
+  CONSTRAINT `nap1_id_school` FOREIGN KEY (`nap1_id`) REFERENCES `nap1_school` (`idnap1_school`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `nap1_total_submission`
+--
+
+LOCK TABLES `nap1_total_submission` WRITE;
+/*!40000 ALTER TABLE `nap1_total_submission` DISABLE KEYS */;
+/*!40000 ALTER TABLE `nap1_total_submission` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `rds_grds_list`
 --
 
@@ -390,8 +422,9 @@ DROP TABLE IF EXISTS `test_table`;
 CREATE TABLE `test_table` (
   `idtest_table` int NOT NULL AUTO_INCREMENT,
   `test_tablecol` varchar(45) DEFAULT NULL,
+  `test_id` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idtest_table`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -400,7 +433,7 @@ CREATE TABLE `test_table` (
 
 LOCK TABLES `test_table` WRITE;
 /*!40000 ALTER TABLE `test_table` DISABLE KEYS */;
-INSERT INTO `test_table` VALUES (7,'qqqq'),(17,'ffffffffff'),(18,'afaafafff'),(19,'asdasdasd'),(20,'dasdawqwq'),(21,'DQDQ'),(22,'ghgjjjj'),(23,'sdfsdfffff');
+INSERT INTO `test_table` VALUES (22,'ghgjjjj','ghgjjjj-22'),(23,'sdfsdfffff','sdfsdfffff-23'),(25,'dad12ed  ffff','dad12ed  ffff-25'),(26,'FFFFFF','FFFFFF-26'),(27,'dasdddvvvvvv','dasdddvvvvvv-27'),(28,'qqqqqqqqqq','qqqqqqqqqq-28'),(29,'fg g g g g ','fg g g g g -29'),(30,'dsfa 32r 23234','dsfa 32r 23234-30'),(31,'asd34542 235 23521','asd34542 235 23521-31'),(32,'123 r3543256346fsdgg fg','123 r3543256346fsdgg fg-32'),(33,'11111','11111-33'),(34,NULL,'-34'),(35,'ddddd','ddddd-35'),(36,'iiiiiiiiiiii','iiiiiiiiiiii-36'),(37,'ttttt','ttttt-37'),(38,'ggggg','ggggg-38'),(39,'kljlkjlkj','kljlkjlkj-39'),(40,'kljlkjlkj','kljlkjlkj-40');
 /*!40000 ALTER TABLE `test_table` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -421,4 +454,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-08-08 16:55:06
+-- Dump completed on 2023-08-10 16:20:12
