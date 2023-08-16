@@ -108,7 +108,7 @@ namespace rec_inven_samp
             {
                 // Read the contents of testDialog's TextBox.
 
-                if (string.IsNullOrWhiteSpace(add_Test.textBox1.Text))
+                if (string.IsNullOrWhiteSpace(add_Test.test_text))
                 {
                     MessageBox.Show("Textbox is empty!");
                     goto open_form;
@@ -117,6 +117,7 @@ namespace rec_inven_samp
                 {
                     try
                     {
+                        MessageBox.Show(add_Test.test_text);
                         add_Test.Dispose();
                     }
 
@@ -226,7 +227,7 @@ namespace rec_inven_samp
 
         //--- test for adding entry
         private void add_test()
-        {
+        {/*
             open_form:
             add_test add_Test = new add_test();
             // Show testDialog as a modal dialog and determine if DialogResult = OK.
@@ -277,7 +278,7 @@ namespace rec_inven_samp
             else
             {
                 //this.txtResult.Text = "Cancelled";
-            }
+            }*/
         }
     }
 }
