@@ -49,22 +49,28 @@ namespace rec_inven_samp
                 con.mycon.Close();
 
                 //--- category
-                string sql2 = "select distinct(category) from rds_grds_list;";
+                string sql2 = "select * from rds_grds_category;";
 
                 con.mycon.Open();
                 using (con.cmd = new MySqlCommand(sql2, con.mycon))
                 {
-                    //con.adapter = new MySqlDataAdapter(con.cmd);
-                    //con.ds = new DataSet();
-                    //con.adapter.Fill(con.ds);
+                    con.adapter = new MySqlDataAdapter(con.cmd);
+                    con.ds = new DataSet();
+                    con.adapter.Fill(con.ds);
 
+                    comboBox1.ValueMember = "idrds_grds_category";
+                    comboBox1.DisplayMember = "category";
+                    comboBox1.DataSource = con.ds.Tables[0];
+                    comboBox1.BindingContext = this.BindingContext;
+
+                    /*
                     MySqlDataReader drd = con.cmd.ExecuteReader();
                     while (drd.Read())
                     {
-                        comboBox1.Items.Add(drd[0].ToString());
+                        comboBox1.Items.Add(drd[1].ToString());
                         comboBox1.ValueMember = drd[0].ToString();
-                        comboBox1.DisplayMember = drd[0].ToString();
-                    }
+                        comboBox1.DisplayMember = drd[1].ToString();
+                    }*/
                 }
                 con.mycon.Close();
             }
@@ -73,6 +79,43 @@ namespace rec_inven_samp
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            MessageBox.Show(comboBox1.SelectedItem.ToString() + '\n' + comboBox1.SelectedValue.ToString()); //--- still not working properly
+
+            /*
+            try
+            {
+                //--- records series
+                if (comboBox1.SelectedValue != null)
+                {
+                    string sql3 = "select id, item_name from rds_grds_list where category_id = '5';";
+
+                    con.mycon.Open();
+                    using (con.cmd = new MySqlCommand(sql3, con.mycon))
+                    {
+                        //con.adapter = new MySqlDataAdapter(con.cmd);
+                        //con.ds = new DataSet();
+                        //con.adapter.Fill(con.ds);
+
+                        MySqlDataReader drd = con.cmd.ExecuteReader();
+                        while (drd.Read())
+                        {
+                            comboBox2.Items.Add(drd[1].ToString());
+                            comboBox2.ValueMember = drd[0].ToString();
+                            comboBox2.DisplayMember = drd[1].ToString();
+                        }
+                    }
+                    con.mycon.Close();
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }*/
         }
     }
 }
