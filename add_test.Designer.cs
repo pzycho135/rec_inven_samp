@@ -87,6 +87,7 @@ namespace rec_inven_samp
             // 
             // button1
             // 
+            this.button1.Enabled = false;
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
             this.button1.Location = new System.Drawing.Point(839, 542);
             this.button1.Margin = new System.Windows.Forms.Padding(4);

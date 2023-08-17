@@ -25,7 +25,7 @@ namespace rec_inven_samp
         }
         public string categ_value
         {
-            get {return cmb_categ.SelectedValue.ToString() ?? string.Empty;} set => cmb_categ.SelectedValue = value; //--- ERROR WHEN USED AND CMB IS EMPTY
+            get => s_categ; set => s_categ = value;
         }
         public string series_text
         {
@@ -33,14 +33,19 @@ namespace rec_inven_samp
         }
         public string series_value
         {
-            get => cmb_series.SelectedValue.ToString(); set => cmb_series.SelectedValue = value;
+            get => s_series; set => s_series = value;
         }
+
+        private string s_categ = null;
+        private string s_series = null;
+
+        private bool ch = false;
 
         public add_test()
         {
             InitializeComponent();
 
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
+            //this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
 
             fill_cmb();
             cmb_categ.SelectedIndex = -1;
@@ -95,6 +100,46 @@ namespace rec_inven_samp
         {
             cmb_series.DataSource = null;
             cmb_series.Items.Clear();
+
+            cmb_series_fill();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            _checker();
+
+            if (ch == true)
+            {
+                s_categ = cmb_categ.SelectedValue.ToString();
+                s_series = cmb_series.SelectedValue.ToString();
+
+                MessageBox.Show(categ_text + " - " + categ_value + "\n" +
+                               series_text + " - " + series_value);
+
+                button1.Enabled = true;
+            }
+        }
+
+        private void _checker()
+        {
+            foreach (var c in Controls.OfType<GroupBox>().SelectMany(groupBox => groupBox.Controls.OfType<ComboBox>()))
+            {
+                if (string.IsNullOrEmpty(c.Text))
+                {
+                    MessageBox.Show(c.Name + " is empty");
+                    c.Select();
+                    ch = false;
+                    break;
+                }
+                else
+                {
+                    ch = true;
+                }
+            }
+        }
+
+        private void cmb_series_fill()
+        {
             try
             {
                 //--- records series
@@ -121,29 +166,6 @@ namespace rec_inven_samp
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            _checker();
-        }
-
-        private void _checker()
-        {
-            foreach (var c in Controls.OfType<GroupBox>().SelectMany(groupBox => groupBox.Controls.OfType<ComboBox>()))
-            {
-                if (string.IsNullOrEmpty(c.Text))
-                {
-                    MessageBox.Show(c.Name + " is empty");
-                    c.Select();
-                    break;
-                }
-                else
-                {
-                    //MessageBox.Show(categ_text + " - " + categ_value + "\n" +
-                    //                series_text + " - " + series_value);
-                }
             }
         }
     }
