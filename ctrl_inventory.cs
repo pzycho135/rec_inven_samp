@@ -110,7 +110,7 @@ namespace rec_inven_samp
 
                 if (string.IsNullOrWhiteSpace(add_Test.test_text))
                 {
-                    MessageBox.Show("Textbox is empty!");
+                    MessageBox.Show("empty!");
                     goto open_form;
                 }
                 else

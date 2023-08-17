@@ -17,8 +17,23 @@ namespace rec_inven_samp
 
         public string test_text
         {
-            get => textBox1.Text;
-            set => textBox1.Text = value;
+            get => textBox1.Text; set => textBox1.Text = value;
+        }
+        public string categ_text
+        {
+            get => cmb_categ.Text; set => cmb_categ.Text = value;
+        }
+        public string categ_value
+        {
+            get {return cmb_categ.SelectedValue.ToString() ?? string.Empty;} set => cmb_categ.SelectedValue = value; //--- ERROR WHEN USED AND CMB IS EMPTY
+        }
+        public string series_text
+        {
+            get => cmb_series.Text; set => cmb_series.Text = value;
+        }
+        public string series_value
+        {
+            get => cmb_series.SelectedValue.ToString(); set => cmb_series.SelectedValue = value;
         }
 
         public add_test()
@@ -28,8 +43,9 @@ namespace rec_inven_samp
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
 
             fill_cmb();
-            comboBox1.SelectedIndex = -1;
-            comboBox3.SelectedIndex = -1;
+            cmb_categ.SelectedIndex = -1;
+            cmb_series.SelectedIndex = -1;
+            cmb_office.SelectedIndex = -1;
         }
 
         private void fill_cmb()
@@ -46,9 +62,9 @@ namespace rec_inven_samp
                     con.ds = new DataSet();
                     con.adapter.Fill(con.ds);
 
-                    comboBox3.DataSource = con.ds.Tables[0];
-                    comboBox3.ValueMember = "office_code";
-                    comboBox3.DisplayMember = "office_short";
+                    cmb_office.DataSource = con.ds.Tables[0];
+                    cmb_office.ValueMember = "office_code";
+                    cmb_office.DisplayMember = "office_short";
                 }
                 con.mycon.Close();
 
@@ -62,9 +78,9 @@ namespace rec_inven_samp
                     con.ds = new DataSet();
                     con.adapter.Fill(con.ds);
 
-                    comboBox1.DataSource = con.ds.Tables[0];
-                    comboBox1.ValueMember = "idrds_grds_category";
-                    comboBox1.DisplayMember = "category";
+                    cmb_categ.DataSource = con.ds.Tables[0];
+                    cmb_categ.ValueMember = "idrds_grds_category";
+                    cmb_categ.DisplayMember = "category";
                 }
                 con.mycon.Close();
             }
@@ -75,39 +91,59 @@ namespace rec_inven_samp
             }
         }
 
-        private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
+        private void cmb_categ_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            MessageBox.Show(comboBox1.Text + '\n' + comboBox1.SelectedValue + '\n' + comboBox3.Text + '\n' + comboBox3.SelectedValue);
-
+            cmb_series.DataSource = null;
+            cmb_series.Items.Clear();
             try
             {
                 //--- records series
-                if (comboBox1.SelectedValue != null)
+                if (cmb_categ.SelectedValue != null)
                 {
-                    string sql3 = "select id, item_name from rds_grds_list where category_id = '5';";
+                    string sql3 = "select rds_grds_id, item_name from rds_grds_list where category_id = '" + cmb_categ.SelectedValue + "' order by item_name asc;";
 
                     con.mycon.Open();
                     using (con.cmd = new MySqlCommand(sql3, con.mycon))
                     {
-                        //con.adapter = new MySqlDataAdapter(con.cmd);
-                        //con.ds = new DataSet();
-                        //con.adapter.Fill(con.ds);
+                        con.adapter = new MySqlDataAdapter(con.cmd);
+                        con.ds = new DataSet();
+                        con.adapter.Fill(con.ds);
 
-                        MySqlDataReader drd = con.cmd.ExecuteReader();
-                        while (drd.Read())
-                        {
-                            comboBox2.Items.Add(drd[1].ToString());
-                            comboBox2.ValueMember = drd[0].ToString();
-                            comboBox2.DisplayMember = drd[1].ToString();
-                        }
+                        cmb_series.DataSource = con.ds.Tables[0];
+                        cmb_series.ValueMember = "rds_grds_id";
+                        cmb_series.DisplayMember = "item_name";
                     }
                     con.mycon.Close();
+                    cmb_series.SelectedIndex = -1;
                 }
             }
 
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            _checker();
+        }
+
+        private void _checker()
+        {
+            foreach (var c in Controls.OfType<GroupBox>().SelectMany(groupBox => groupBox.Controls.OfType<ComboBox>()))
+            {
+                if (string.IsNullOrEmpty(c.Text))
+                {
+                    MessageBox.Show(c.Name + " is empty");
+                    c.Select();
+                    break;
+                }
+                else
+                {
+                    //MessageBox.Show(categ_text + " - " + categ_value + "\n" +
+                    //                series_text + " - " + series_value);
+                }
             }
         }
     }

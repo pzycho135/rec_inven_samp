@@ -32,23 +32,23 @@ namespace rec_inven_samp
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmb_categ = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmb_series = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_rds_id = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cmb_office = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txt_name = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txt_location = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txt_vol = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txt_use = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txt_dupe = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -58,6 +58,7 @@ namespace rec_inven_samp
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -95,18 +96,20 @@ namespace rec_inven_samp
             this.button1.Text = "save";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // cmb_categ
             // 
-            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(585, 25);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(341, 29);
-            this.comboBox1.TabIndex = 3;
-            this.comboBox1.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
+            this.cmb_categ.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmb_categ.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmb_categ.DropDownHeight = 150;
+            this.cmb_categ.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_categ.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
+            this.cmb_categ.FormattingEnabled = true;
+            this.cmb_categ.IntegralHeight = false;
+            this.cmb_categ.Location = new System.Drawing.Point(142, 66);
+            this.cmb_categ.Name = "cmb_categ";
+            this.cmb_categ.Size = new System.Drawing.Size(753, 29);
+            this.cmb_categ.TabIndex = 2;
+            this.cmb_categ.SelectionChangeCommitted += new System.EventHandler(this.cmb_categ_SelectionChangeCommitted);
             // 
             // label2
             // 
@@ -119,18 +122,20 @@ namespace rec_inven_samp
             this.label2.TabIndex = 1;
             this.label2.Text = "Records Series:";
             // 
-            // comboBox2
+            // cmb_series
             // 
-            this.comboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(142, 101);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(332, 29);
-            this.comboBox2.Sorted = true;
-            this.comboBox2.TabIndex = 3;
+            this.cmb_series.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmb_series.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmb_series.DropDownHeight = 150;
+            this.cmb_series.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_series.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
+            this.cmb_series.FormattingEnabled = true;
+            this.cmb_series.IntegralHeight = false;
+            this.cmb_series.ItemHeight = 21;
+            this.cmb_series.Location = new System.Drawing.Point(142, 101);
+            this.cmb_series.Name = "cmb_series";
+            this.cmb_series.Size = new System.Drawing.Size(753, 29);
+            this.cmb_series.TabIndex = 3;
             // 
             // label3
             // 
@@ -143,17 +148,17 @@ namespace rec_inven_samp
             this.label3.TabIndex = 1;
             this.label3.Text = "RDS / GRDS ID:";
             // 
-            // textBox2
+            // txt_rds_id
             // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
-            this.textBox2.Location = new System.Drawing.Point(142, 25);
-            this.textBox2.MaxLength = 10;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(126, 26);
-            this.textBox2.TabIndex = 4;
-            this.textBox2.TabStop = false;
+            this.txt_rds_id.BackColor = System.Drawing.Color.White;
+            this.txt_rds_id.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
+            this.txt_rds_id.Location = new System.Drawing.Point(142, 25);
+            this.txt_rds_id.MaxLength = 10;
+            this.txt_rds_id.Name = "txt_rds_id";
+            this.txt_rds_id.ReadOnly = true;
+            this.txt_rds_id.Size = new System.Drawing.Size(126, 26);
+            this.txt_rds_id.TabIndex = 4;
+            this.txt_rds_id.TabStop = false;
             // 
             // label4
             // 
@@ -166,16 +171,16 @@ namespace rec_inven_samp
             this.label4.TabIndex = 1;
             this.label4.Text = "Office:";
             // 
-            // comboBox3
+            // cmb_office
             // 
-            this.comboBox3.BackColor = System.Drawing.Color.White;
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(480, 22);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(113, 29);
-            this.comboBox3.TabIndex = 3;
+            this.cmb_office.BackColor = System.Drawing.Color.White;
+            this.cmb_office.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_office.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
+            this.cmb_office.FormattingEnabled = true;
+            this.cmb_office.Location = new System.Drawing.Point(480, 22);
+            this.cmb_office.Name = "cmb_office";
+            this.cmb_office.Size = new System.Drawing.Size(113, 29);
+            this.cmb_office.TabIndex = 1;
             // 
             // label5
             // 
@@ -188,15 +193,15 @@ namespace rec_inven_samp
             this.label5.TabIndex = 1;
             this.label5.Text = "Name:";
             // 
-            // textBox3
+            // txt_name
             // 
-            this.textBox3.BackColor = System.Drawing.Color.White;
-            this.textBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
-            this.textBox3.Location = new System.Drawing.Point(71, 25);
-            this.textBox3.MaxLength = 50;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(321, 26);
-            this.textBox3.TabIndex = 4;
+            this.txt_name.BackColor = System.Drawing.Color.White;
+            this.txt_name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
+            this.txt_name.Location = new System.Drawing.Point(71, 25);
+            this.txt_name.MaxLength = 50;
+            this.txt_name.Name = "txt_name";
+            this.txt_name.Size = new System.Drawing.Size(321, 26);
+            this.txt_name.TabIndex = 4;
             // 
             // label7
             // 
@@ -209,15 +214,15 @@ namespace rec_inven_samp
             this.label7.TabIndex = 1;
             this.label7.Text = "Volume in Cubic Meter:";
             // 
-            // textBox5
+            // txt_location
             // 
-            this.textBox5.BackColor = System.Drawing.Color.White;
-            this.textBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
-            this.textBox5.Location = new System.Drawing.Point(142, 182);
-            this.textBox5.MaxLength = 100;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(332, 26);
-            this.textBox5.TabIndex = 4;
+            this.txt_location.BackColor = System.Drawing.Color.White;
+            this.txt_location.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
+            this.txt_location.Location = new System.Drawing.Point(142, 182);
+            this.txt_location.MaxLength = 100;
+            this.txt_location.Name = "txt_location";
+            this.txt_location.Size = new System.Drawing.Size(332, 26);
+            this.txt_location.TabIndex = 4;
             // 
             // label8
             // 
@@ -230,15 +235,15 @@ namespace rec_inven_samp
             this.label8.TabIndex = 1;
             this.label8.Text = "Location:";
             // 
-            // textBox6
+            // txt_vol
             // 
-            this.textBox6.BackColor = System.Drawing.Color.White;
-            this.textBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
-            this.textBox6.Location = new System.Drawing.Point(198, 235);
-            this.textBox6.MaxLength = 100;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(276, 26);
-            this.textBox6.TabIndex = 4;
+            this.txt_vol.BackColor = System.Drawing.Color.White;
+            this.txt_vol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
+            this.txt_vol.Location = new System.Drawing.Point(198, 235);
+            this.txt_vol.MaxLength = 100;
+            this.txt_vol.Name = "txt_vol";
+            this.txt_vol.Size = new System.Drawing.Size(276, 26);
+            this.txt_vol.TabIndex = 4;
             // 
             // label9
             // 
@@ -251,15 +256,15 @@ namespace rec_inven_samp
             this.label9.TabIndex = 1;
             this.label9.Text = "Use Frequency:";
             // 
-            // textBox7
+            // txt_use
             // 
-            this.textBox7.BackColor = System.Drawing.Color.White;
-            this.textBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
-            this.textBox7.Location = new System.Drawing.Point(660, 307);
-            this.textBox7.MaxLength = 10;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(276, 26);
-            this.textBox7.TabIndex = 4;
+            this.txt_use.BackColor = System.Drawing.Color.White;
+            this.txt_use.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
+            this.txt_use.Location = new System.Drawing.Point(660, 307);
+            this.txt_use.MaxLength = 10;
+            this.txt_use.Name = "txt_use";
+            this.txt_use.Size = new System.Drawing.Size(276, 26);
+            this.txt_use.TabIndex = 4;
             // 
             // label10
             // 
@@ -272,15 +277,15 @@ namespace rec_inven_samp
             this.label10.TabIndex = 1;
             this.label10.Text = "Duplication:";
             // 
-            // textBox8
+            // txt_dupe
             // 
-            this.textBox8.BackColor = System.Drawing.Color.White;
-            this.textBox8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
-            this.textBox8.Location = new System.Drawing.Point(660, 359);
-            this.textBox8.MaxLength = 100;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(276, 26);
-            this.textBox8.TabIndex = 4;
+            this.txt_dupe.BackColor = System.Drawing.Color.White;
+            this.txt_dupe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
+            this.txt_dupe.Location = new System.Drawing.Point(660, 359);
+            this.txt_dupe.MaxLength = 100;
+            this.txt_dupe.Name = "txt_dupe";
+            this.txt_dupe.Size = new System.Drawing.Size(276, 26);
+            this.txt_dupe.TabIndex = 4;
             // 
             // dateTimePicker1
             // 
@@ -301,17 +306,17 @@ namespace rec_inven_samp
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txt_rds_id);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox8);
+            this.groupBox1.Controls.Add(this.txt_dupe);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox7);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.txt_use);
+            this.groupBox1.Controls.Add(this.cmb_categ);
+            this.groupBox1.Controls.Add(this.txt_vol);
+            this.groupBox1.Controls.Add(this.cmb_series);
+            this.groupBox1.Controls.Add(this.txt_location);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label9);
@@ -401,9 +406,9 @@ namespace rec_inven_samp
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBox3);
+            this.groupBox3.Controls.Add(this.txt_name);
             this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.comboBox3);
+            this.groupBox3.Controls.Add(this.cmb_office);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(12, 12);
@@ -413,12 +418,23 @@ namespace rec_inven_samp
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Encoder Details";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(83, 530);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(107, 35);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // add_test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1000, 590);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dateTimePicker1);
@@ -448,23 +464,23 @@ namespace rec_inven_samp
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmb_categ;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmb_series;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_rds_id;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cmb_office;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txt_name;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txt_location;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txt_vol;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txt_use;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txt_dupe;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
@@ -475,5 +491,6 @@ namespace rec_inven_samp
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button2;
     }
 }
