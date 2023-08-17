@@ -35,8 +35,8 @@ namespace rec_inven_samp
             DevExpress.DataAccess.Sql.Table table1 = new DevExpress.DataAccess.Sql.Table();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrl_dashboard));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.object_fdc623eb_e90c_4777_9e4d_4c9a0023c0e1 = new Telerik.WinControls.RootRadElement();
-            this.customShape1 = new Telerik.WinControls.CustomShape(this.components);
+            //this.object_fdc623eb_e90c_4777_9e4d_4c9a0023c0e1 = new Telerik.WinControls.RootRadElement();
+            //this.customShape1 = new Telerik.WinControls.CustomShape(this.components);
             this.label7 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -102,15 +102,15 @@ namespace rec_inven_samp
             // 
             // object_fdc623eb_e90c_4777_9e4d_4c9a0023c0e1
             // 
-            this.object_fdc623eb_e90c_4777_9e4d_4c9a0023c0e1.Name = "object_fdc623eb_e90c_4777_9e4d_4c9a0023c0e1";
-            this.object_fdc623eb_e90c_4777_9e4d_4c9a0023c0e1.StretchHorizontally = true;
-            this.object_fdc623eb_e90c_4777_9e4d_4c9a0023c0e1.StretchVertically = true;
+            //this.object_fdc623eb_e90c_4777_9e4d_4c9a0023c0e1.Name = "object_fdc623eb_e90c_4777_9e4d_4c9a0023c0e1";
+            //this.object_fdc623eb_e90c_4777_9e4d_4c9a0023c0e1.StretchHorizontally = true;
+            //this.object_fdc623eb_e90c_4777_9e4d_4c9a0023c0e1.StretchVertically = true;
             // 
             // customShape1
             // 
-            this.customShape1.AsString = "20,20,200,100:20,20,False,0,0,0,0,0:220,20,False,0,0,0,0,0:220,120,False,0,0,0,0," +
-    "0:20,120,False,0,0,0,0,0:";
-            this.customShape1.IsRightToLeft = false;
+            //this.customShape1.AsString = "20,20,200,100:20,20,False,0,0,0,0,0:220,20,False,0,0,0,0,0:220,120,False,0,0,0,0," +
+    //"0:20,120,False,0,0,0,0,0:";
+            //this.customShape1.IsRightToLeft = false;
             // 
             // label7
             // 
@@ -686,8 +686,8 @@ namespace rec_inven_samp
         }
 
         #endregion
-        private Telerik.WinControls.RootRadElement object_fdc623eb_e90c_4777_9e4d_4c9a0023c0e1;
-        private Telerik.WinControls.CustomShape customShape1;
+        //private Telerik.WinControls.RootRadElement object_fdc623eb_e90c_4777_9e4d_4c9a0023c0e1;
+        //private Telerik.WinControls.CustomShape customShape1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label8;
