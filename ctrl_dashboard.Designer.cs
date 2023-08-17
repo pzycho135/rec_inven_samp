@@ -35,8 +35,6 @@ namespace rec_inven_samp
             DevExpress.DataAccess.Sql.Table table1 = new DevExpress.DataAccess.Sql.Table();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrl_dashboard));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            //this.object_fdc623eb_e90c_4777_9e4d_4c9a0023c0e1 = new Telerik.WinControls.RootRadElement();
-            //this.customShape1 = new Telerik.WinControls.CustomShape(this.components);
             this.label7 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -60,6 +58,9 @@ namespace rec_inven_samp
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colidtest_table = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltest_tablecol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltest_id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label15 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
@@ -77,9 +78,6 @@ namespace rec_inven_samp
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.colidtest_table = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coltest_tablecol = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coltest_id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -99,18 +97,6 @@ namespace rec_inven_samp
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // object_fdc623eb_e90c_4777_9e4d_4c9a0023c0e1
-            // 
-            //this.object_fdc623eb_e90c_4777_9e4d_4c9a0023c0e1.Name = "object_fdc623eb_e90c_4777_9e4d_4c9a0023c0e1";
-            //this.object_fdc623eb_e90c_4777_9e4d_4c9a0023c0e1.StretchHorizontally = true;
-            //this.object_fdc623eb_e90c_4777_9e4d_4c9a0023c0e1.StretchVertically = true;
-            // 
-            // customShape1
-            // 
-            //this.customShape1.AsString = "20,20,200,100:20,20,False,0,0,0,0,0:220,20,False,0,0,0,0,0:220,120,False,0,0,0,0," +
-    //"0:20,120,False,0,0,0,0,0:";
-            //this.customShape1.IsRightToLeft = false;
             // 
             // label7
             // 
@@ -414,6 +400,27 @@ namespace rec_inven_samp
             this.gridView1.OptionsCustomization.AllowFilter = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
+            // colidtest_table
+            // 
+            this.colidtest_table.FieldName = "idtest_table";
+            this.colidtest_table.Name = "colidtest_table";
+            this.colidtest_table.Visible = true;
+            this.colidtest_table.VisibleIndex = 0;
+            // 
+            // coltest_tablecol
+            // 
+            this.coltest_tablecol.FieldName = "test_tablecol";
+            this.coltest_tablecol.Name = "coltest_tablecol";
+            this.coltest_tablecol.Visible = true;
+            this.coltest_tablecol.VisibleIndex = 1;
+            // 
+            // coltest_id
+            // 
+            this.coltest_id.FieldName = "test_id";
+            this.coltest_id.Name = "coltest_id";
+            this.coltest_id.Visible = true;
+            this.coltest_id.VisibleIndex = 2;
+            // 
             // label15
             // 
             this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(93)))), ((int)(((byte)(125)))));
@@ -622,27 +629,6 @@ namespace rec_inven_samp
             this.label14.TabIndex = 6;
             this.label14.Text = "Schools / Offices Requested:";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // colidtest_table
-            // 
-            this.colidtest_table.FieldName = "idtest_table";
-            this.colidtest_table.Name = "colidtest_table";
-            this.colidtest_table.Visible = true;
-            this.colidtest_table.VisibleIndex = 0;
-            // 
-            // coltest_tablecol
-            // 
-            this.coltest_tablecol.FieldName = "test_tablecol";
-            this.coltest_tablecol.Name = "coltest_tablecol";
-            this.coltest_tablecol.Visible = true;
-            this.coltest_tablecol.VisibleIndex = 1;
-            // 
-            // coltest_id
-            // 
-            this.coltest_id.FieldName = "test_id";
-            this.coltest_id.Name = "coltest_id";
-            this.coltest_id.Visible = true;
-            this.coltest_id.VisibleIndex = 2;
             // 
             // ctrl_dashboard
             // 
