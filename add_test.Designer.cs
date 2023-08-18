@@ -61,7 +61,7 @@ namespace rec_inven_samp
             this.button2 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txt_time = new System.Windows.Forms.TextBox();
             this.cmb_util = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -141,6 +141,7 @@ namespace rec_inven_samp
             this.cmb_series.Name = "cmb_series";
             this.cmb_series.Size = new System.Drawing.Size(753, 29);
             this.cmb_series.TabIndex = 3;
+            this.cmb_series.SelectionChangeCommitted += new System.EventHandler(this.cmb_series_SelectionChangeCommitted);
             // 
             // label3
             // 
@@ -322,7 +323,7 @@ namespace rec_inven_samp
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txt_use);
             this.groupBox1.Controls.Add(this.cmb_categ);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txt_time);
             this.groupBox1.Controls.Add(this.txt_vol);
             this.groupBox1.Controls.Add(this.cmb_series);
             this.groupBox1.Controls.Add(this.txt_location);
@@ -459,15 +460,16 @@ namespace rec_inven_samp
             this.label14.TabIndex = 8;
             this.label14.Text = "Utility Value:";
             // 
-            // textBox3
+            // txt_time
             // 
-            this.textBox3.BackColor = System.Drawing.Color.White;
-            this.textBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
-            this.textBox3.Location = new System.Drawing.Point(134, 301);
-            this.textBox3.MaxLength = 100;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(275, 26);
-            this.textBox3.TabIndex = 4;
+            this.txt_time.BackColor = System.Drawing.Color.White;
+            this.txt_time.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
+            this.txt_time.Location = new System.Drawing.Point(134, 301);
+            this.txt_time.MaxLength = 50;
+            this.txt_time.Name = "txt_time";
+            this.txt_time.ReadOnly = true;
+            this.txt_time.Size = new System.Drawing.Size(275, 26);
+            this.txt_time.TabIndex = 4;
             // 
             // cmb_util
             // 
@@ -477,7 +479,7 @@ namespace rec_inven_samp
             this.cmb_util.FormattingEnabled = true;
             this.cmb_util.Location = new System.Drawing.Point(134, 341);
             this.cmb_util.Name = "cmb_util";
-            this.cmb_util.Size = new System.Drawing.Size(113, 29);
+            this.cmb_util.Size = new System.Drawing.Size(177, 29);
             this.cmb_util.TabIndex = 1;
             // 
             // add_test
@@ -547,6 +549,6 @@ namespace rec_inven_samp
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cmb_util;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txt_time;
     }
 }

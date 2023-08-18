@@ -51,6 +51,7 @@ namespace rec_inven_samp
             cmb_categ.SelectedIndex = -1;
             cmb_series.SelectedIndex = -1;
             cmb_office.SelectedIndex = -1;
+            cmb_util.SelectedIndex = -1;
         }
 
         private void fill_cmb()
@@ -88,6 +89,22 @@ namespace rec_inven_samp
                     cmb_categ.DisplayMember = "category";
                 }
                 con.mycon.Close();
+
+                //--- utility value
+                string sql3 = "select * from rds_util_value;";
+
+                con.mycon.Open();
+                using (con.cmd = new MySqlCommand(sql3, con.mycon))
+                {
+                    con.adapter = new MySqlDataAdapter(con.cmd);
+                    con.ds = new DataSet();
+                    con.adapter.Fill(con.ds);
+
+                    cmb_util.DataSource = con.ds.Tables[0];
+                    cmb_util.ValueMember = "util_code";
+                    cmb_util.DisplayMember = "util_value";
+                }
+                con.mycon.Close();
             }
 
             catch (Exception ex)
@@ -100,6 +117,8 @@ namespace rec_inven_samp
         {
             cmb_series.DataSource = null;
             cmb_series.Items.Clear();
+
+            txt_time.Text = null;
 
             cmb_series_fill();
         }
@@ -160,6 +179,43 @@ namespace rec_inven_samp
                     }
                     con.mycon.Close();
                     cmb_series.SelectedIndex = -1;
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cmb_series_SelectionChangeCommitted(object sender, EventArgs e)
+        { //--- practice return values for rds id
+            try
+            {
+                //--- time value
+                if (cmb_series.SelectedValue != null)
+                {
+                    string sql1 = "select time_value from rds_list where rds_id = '" + cmb_series.SelectedValue + "';";
+
+                    con.mycon.Open();
+                    using (con.cmd = new MySqlCommand(sql1, con.mycon))
+                    {
+                        string t = con.cmd.ExecuteScalar().ToString();
+
+                        switch (t)
+                        {
+                            case "t":
+                            case "T":
+                                txt_time.Text = "TEMPORARY";
+                                break;
+
+                            case "p":
+                            case "P":
+                                txt_time.Text = "PERMANENT";
+                                break;
+                        }
+                    }
+                    con.mycon.Close();
                 }
             }
 
