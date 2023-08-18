@@ -59,6 +59,10 @@ namespace rec_inven_samp
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.cmb_util = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -208,7 +212,7 @@ namespace rec_inven_samp
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(7, 238);
+            this.label7.Location = new System.Drawing.Point(7, 223);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(184, 17);
@@ -219,7 +223,7 @@ namespace rec_inven_samp
             // 
             this.txt_location.BackColor = System.Drawing.Color.White;
             this.txt_location.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
-            this.txt_location.Location = new System.Drawing.Point(142, 182);
+            this.txt_location.Location = new System.Drawing.Point(141, 172);
             this.txt_location.MaxLength = 100;
             this.txt_location.Name = "txt_location";
             this.txt_location.Size = new System.Drawing.Size(332, 26);
@@ -229,7 +233,7 @@ namespace rec_inven_samp
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(7, 188);
+            this.label8.Location = new System.Drawing.Point(7, 178);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(80, 17);
@@ -240,17 +244,17 @@ namespace rec_inven_samp
             // 
             this.txt_vol.BackColor = System.Drawing.Color.White;
             this.txt_vol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
-            this.txt_vol.Location = new System.Drawing.Point(198, 235);
+            this.txt_vol.Location = new System.Drawing.Point(198, 217);
             this.txt_vol.MaxLength = 100;
             this.txt_vol.Name = "txt_vol";
-            this.txt_vol.Size = new System.Drawing.Size(276, 26);
+            this.txt_vol.Size = new System.Drawing.Size(275, 26);
             this.txt_vol.TabIndex = 4;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(533, 312);
+            this.label9.Location = new System.Drawing.Point(510, 307);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(120, 17);
@@ -261,7 +265,7 @@ namespace rec_inven_samp
             // 
             this.txt_use.BackColor = System.Drawing.Color.White;
             this.txt_use.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
-            this.txt_use.Location = new System.Drawing.Point(660, 307);
+            this.txt_use.Location = new System.Drawing.Point(637, 301);
             this.txt_use.MaxLength = 10;
             this.txt_use.Name = "txt_use";
             this.txt_use.Size = new System.Drawing.Size(276, 26);
@@ -271,7 +275,7 @@ namespace rec_inven_samp
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(533, 362);
+            this.label10.Location = new System.Drawing.Point(510, 347);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(104, 17);
@@ -282,7 +286,7 @@ namespace rec_inven_samp
             // 
             this.txt_dupe.BackColor = System.Drawing.Color.White;
             this.txt_dupe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
-            this.txt_dupe.Location = new System.Drawing.Point(660, 359);
+            this.txt_dupe.Location = new System.Drawing.Point(637, 341);
             this.txt_dupe.MaxLength = 100;
             this.txt_dupe.Name = "txt_dupe";
             this.txt_dupe.Size = new System.Drawing.Size(276, 26);
@@ -306,6 +310,9 @@ namespace rec_inven_samp
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.cmb_util);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.txt_rds_id);
             this.groupBox1.Controls.Add(this.label1);
@@ -315,6 +322,7 @@ namespace rec_inven_samp
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txt_use);
             this.groupBox1.Controls.Add(this.cmb_categ);
+            this.groupBox1.Controls.Add(this.textBox3);
             this.groupBox1.Controls.Add(this.txt_vol);
             this.groupBox1.Controls.Add(this.cmb_series);
             this.groupBox1.Controls.Add(this.txt_location);
@@ -429,6 +437,49 @@ namespace rec_inven_samp
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(7, 307);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(96, 17);
+            this.label13.TabIndex = 8;
+            this.label13.Text = "Time Value:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(7, 347);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(120, 17);
+            this.label14.TabIndex = 8;
+            this.label14.Text = "Utility Value:";
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.White;
+            this.textBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
+            this.textBox3.Location = new System.Drawing.Point(134, 301);
+            this.textBox3.MaxLength = 100;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(275, 26);
+            this.textBox3.TabIndex = 4;
+            // 
+            // cmb_util
+            // 
+            this.cmb_util.BackColor = System.Drawing.Color.White;
+            this.cmb_util.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_util.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
+            this.cmb_util.FormattingEnabled = true;
+            this.cmb_util.Location = new System.Drawing.Point(134, 341);
+            this.cmb_util.Name = "cmb_util";
+            this.cmb_util.Size = new System.Drawing.Size(113, 29);
+            this.cmb_util.TabIndex = 1;
+            // 
             // add_test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -493,5 +544,9 @@ namespace rec_inven_samp
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox cmb_util;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }

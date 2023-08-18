@@ -74,7 +74,7 @@ namespace rec_inven_samp
                 con.mycon.Close();
 
                 //--- category
-                string sql2 = "select * from rds_grds_category order by category asc;";
+                string sql2 = "select * from rds_category order by category asc;";
 
                 con.mycon.Open();
                 using (con.cmd = new MySqlCommand(sql2, con.mycon))
@@ -84,7 +84,7 @@ namespace rec_inven_samp
                     con.adapter.Fill(con.ds);
 
                     cmb_categ.DataSource = con.ds.Tables[0];
-                    cmb_categ.ValueMember = "idrds_grds_category";
+                    cmb_categ.ValueMember = "idrds_category";
                     cmb_categ.DisplayMember = "category";
                 }
                 con.mycon.Close();
@@ -145,7 +145,7 @@ namespace rec_inven_samp
                 //--- records series
                 if (cmb_categ.SelectedValue != null)
                 {
-                    string sql3 = "select rds_grds_id, item_name from rds_grds_list where category_id = '" + cmb_categ.SelectedValue + "' order by item_name asc;";
+                    string sql3 = "select rds_id, item_name from rds_list where category_id = '" + cmb_categ.SelectedValue + "' order by item_name asc;";
 
                     con.mycon.Open();
                     using (con.cmd = new MySqlCommand(sql3, con.mycon))
@@ -155,7 +155,7 @@ namespace rec_inven_samp
                         con.adapter.Fill(con.ds);
 
                         cmb_series.DataSource = con.ds.Tables[0];
-                        cmb_series.ValueMember = "rds_grds_id";
+                        cmb_series.ValueMember = "rds_id";
                         cmb_series.DisplayMember = "item_name";
                     }
                     con.mycon.Close();
