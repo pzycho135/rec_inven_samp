@@ -39,7 +39,8 @@ namespace rec_inven_samp
         private string s_categ = null;
         private string s_series = null;
 
-        private bool ch = false;
+        private bool ch_cmb = false;
+        private bool ch_txt = false;
 
         public add_test()
         {
@@ -119,6 +120,8 @@ namespace rec_inven_samp
             cmb_series.Items.Clear();
 
             txt_time.Text = null;
+            txt_rds_id.Text = null;
+            cmb_util.SelectedIndex = -1;
 
             cmb_series_fill();
         }
@@ -127,7 +130,7 @@ namespace rec_inven_samp
         {
             _checker();
 
-            if (ch == true)
+            if (ch_cmb == true)
             {
                 s_categ = cmb_categ.SelectedValue.ToString();
                 s_series = cmb_series.SelectedValue.ToString();
@@ -141,18 +144,18 @@ namespace rec_inven_samp
 
         private void _checker()
         {
-            foreach (var c in Controls.OfType<GroupBox>().SelectMany(groupBox => groupBox.Controls.OfType<ComboBox>()))
+            foreach (var c in Controls.OfType<GroupBox>().SelectMany(groupBox => groupBox.Controls.OfType<ComboBox>().OrderBy(c => c.TabIndex)))
             {
                 if (string.IsNullOrEmpty(c.Text))
                 {
                     MessageBox.Show(c.Name + " is empty");
                     c.Select();
-                    ch = false;
+                    ch_cmb = false;
                     break;
                 }
                 else
                 {
-                    ch = true;
+                    ch_cmb = true;
                 }
             }
         }
@@ -189,7 +192,7 @@ namespace rec_inven_samp
         }
 
         private void cmb_series_SelectionChangeCommitted(object sender, EventArgs e)
-        { //--- practice return values for rds id
+        { 
             try
             {
                 //--- time value
@@ -214,6 +217,9 @@ namespace rec_inven_samp
                                 txt_time.Text = "PERMANENT";
                                 break;
                         }
+
+                        txt_rds_id.Text = cmb_series.SelectedValue.ToString();
+                        cmb_util.SelectedIndex = -1;
                     }
                     con.mycon.Close();
                 }

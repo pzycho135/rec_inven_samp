@@ -51,18 +51,18 @@ namespace rec_inven_samp
             this.txt_dupe = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.cmb_util = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.txt_time = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txt_time = new System.Windows.Forms.TextBox();
-            this.cmb_util = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -163,7 +163,7 @@ namespace rec_inven_samp
             this.txt_rds_id.Name = "txt_rds_id";
             this.txt_rds_id.ReadOnly = true;
             this.txt_rds_id.Size = new System.Drawing.Size(126, 26);
-            this.txt_rds_id.TabIndex = 4;
+            this.txt_rds_id.TabIndex = 1;
             this.txt_rds_id.TabStop = false;
             // 
             // label4
@@ -186,7 +186,7 @@ namespace rec_inven_samp
             this.cmb_office.Location = new System.Drawing.Point(480, 22);
             this.cmb_office.Name = "cmb_office";
             this.cmb_office.Size = new System.Drawing.Size(113, 29);
-            this.cmb_office.TabIndex = 1;
+            this.cmb_office.TabIndex = 2;
             // 
             // label5
             // 
@@ -207,7 +207,7 @@ namespace rec_inven_samp
             this.txt_name.MaxLength = 50;
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(321, 26);
-            this.txt_name.TabIndex = 4;
+            this.txt_name.TabIndex = 1;
             // 
             // label7
             // 
@@ -249,7 +249,7 @@ namespace rec_inven_samp
             this.txt_vol.MaxLength = 100;
             this.txt_vol.Name = "txt_vol";
             this.txt_vol.Size = new System.Drawing.Size(275, 26);
-            this.txt_vol.TabIndex = 4;
+            this.txt_vol.TabIndex = 5;
             // 
             // label9
             // 
@@ -270,7 +270,7 @@ namespace rec_inven_samp
             this.txt_use.MaxLength = 10;
             this.txt_use.Name = "txt_use";
             this.txt_use.Size = new System.Drawing.Size(276, 26);
-            this.txt_use.TabIndex = 4;
+            this.txt_use.TabIndex = 8;
             // 
             // label10
             // 
@@ -291,7 +291,7 @@ namespace rec_inven_samp
             this.txt_dupe.MaxLength = 100;
             this.txt_dupe.Name = "txt_dupe";
             this.txt_dupe.Size = new System.Drawing.Size(276, 26);
-            this.txt_dupe.TabIndex = 4;
+            this.txt_dupe.TabIndex = 9;
             // 
             // dateTimePicker1
             // 
@@ -337,6 +337,39 @@ namespace rec_inven_samp
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Records Series Details";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(7, 347);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(120, 17);
+            this.label14.TabIndex = 8;
+            this.label14.Text = "Utility Value:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(7, 307);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(96, 17);
+            this.label13.TabIndex = 8;
+            this.label13.Text = "Time Value:";
+            // 
+            // cmb_util
+            // 
+            this.cmb_util.BackColor = System.Drawing.Color.White;
+            this.cmb_util.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_util.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
+            this.cmb_util.FormattingEnabled = true;
+            this.cmb_util.Location = new System.Drawing.Point(134, 341);
+            this.cmb_util.Name = "cmb_util";
+            this.cmb_util.Size = new System.Drawing.Size(177, 29);
+            this.cmb_util.TabIndex = 7;
             // 
             // groupBox2
             // 
@@ -384,7 +417,7 @@ namespace rec_inven_samp
             this.dateTimePicker3.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(156, 25);
-            this.dateTimePicker3.TabIndex = 5;
+            this.dateTimePicker3.TabIndex = 2;
             this.dateTimePicker3.TabStop = false;
             this.dateTimePicker3.Value = new System.DateTime(2023, 8, 15, 15, 20, 21, 0);
             // 
@@ -399,9 +432,20 @@ namespace rec_inven_samp
             this.dateTimePicker2.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(156, 25);
-            this.dateTimePicker2.TabIndex = 5;
+            this.dateTimePicker2.TabIndex = 1;
             this.dateTimePicker2.TabStop = false;
             this.dateTimePicker2.Value = new System.DateTime(2023, 8, 15, 15, 20, 21, 0);
+            // 
+            // txt_time
+            // 
+            this.txt_time.BackColor = System.Drawing.Color.White;
+            this.txt_time.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
+            this.txt_time.Location = new System.Drawing.Point(134, 301);
+            this.txt_time.MaxLength = 50;
+            this.txt_time.Name = "txt_time";
+            this.txt_time.ReadOnly = true;
+            this.txt_time.Size = new System.Drawing.Size(275, 26);
+            this.txt_time.TabIndex = 6;
             // 
             // label12
             // 
@@ -437,50 +481,6 @@ namespace rec_inven_samp
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(7, 307);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(96, 17);
-            this.label13.TabIndex = 8;
-            this.label13.Text = "Time Value:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(7, 347);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(120, 17);
-            this.label14.TabIndex = 8;
-            this.label14.Text = "Utility Value:";
-            // 
-            // txt_time
-            // 
-            this.txt_time.BackColor = System.Drawing.Color.White;
-            this.txt_time.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
-            this.txt_time.Location = new System.Drawing.Point(134, 301);
-            this.txt_time.MaxLength = 50;
-            this.txt_time.Name = "txt_time";
-            this.txt_time.ReadOnly = true;
-            this.txt_time.Size = new System.Drawing.Size(275, 26);
-            this.txt_time.TabIndex = 4;
-            // 
-            // cmb_util
-            // 
-            this.cmb_util.BackColor = System.Drawing.Color.White;
-            this.cmb_util.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_util.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
-            this.cmb_util.FormattingEnabled = true;
-            this.cmb_util.Location = new System.Drawing.Point(134, 341);
-            this.cmb_util.Name = "cmb_util";
-            this.cmb_util.Size = new System.Drawing.Size(177, 29);
-            this.cmb_util.TabIndex = 1;
             // 
             // add_test
             // 
