@@ -40,7 +40,7 @@ namespace rec_inven_samp
         private string s_series = null;
 
         private bool ch_cmb = false;
-        private bool ch_txt = false;
+        private bool ch_txt = false; //--- not used yet
 
         public add_test()
         {
@@ -53,6 +53,23 @@ namespace rec_inven_samp
             cmb_series.SelectedIndex = -1;
             cmb_office.SelectedIndex = -1;
             cmb_util.SelectedIndex = -1;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //_checker();
+            _check2(this.Controls);
+
+            if (ch_cmb == true)
+            {
+                s_categ = cmb_categ.SelectedValue.ToString();
+                s_series = cmb_series.SelectedValue.ToString();
+
+                MessageBox.Show(categ_text + " - " + categ_value + "\n" +
+                               series_text + " - " + series_value);
+
+                button1.Enabled = true;
+            }
         }
 
         private void fill_cmb()
@@ -126,73 +143,8 @@ namespace rec_inven_samp
             cmb_series_fill();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            _checker();
-
-            if (ch_cmb == true)
-            {
-                s_categ = cmb_categ.SelectedValue.ToString();
-                s_series = cmb_series.SelectedValue.ToString();
-
-                MessageBox.Show(categ_text + " - " + categ_value + "\n" +
-                               series_text + " - " + series_value);
-
-                button1.Enabled = true;
-            }
-        }
-
-        private void _checker()
-        {
-            foreach (var c in Controls.OfType<GroupBox>().SelectMany(groupBox => groupBox.Controls.OfType<ComboBox>().OrderBy(c => c.TabIndex)))
-            {
-                if (string.IsNullOrEmpty(c.Text))
-                {
-                    MessageBox.Show(c.Name + " is empty");
-                    c.Select();
-                    ch_cmb = false;
-                    break;
-                }
-                else
-                {
-                    ch_cmb = true;
-                }
-            }
-        }
-
-        private void cmb_series_fill()
-        {
-            try
-            {
-                //--- records series
-                if (cmb_categ.SelectedValue != null)
-                {
-                    string sql3 = "select rds_id, item_name from rds_list where category_id = '" + cmb_categ.SelectedValue + "' order by item_name asc;";
-
-                    con.mycon.Open();
-                    using (con.cmd = new MySqlCommand(sql3, con.mycon))
-                    {
-                        con.adapter = new MySqlDataAdapter(con.cmd);
-                        con.ds = new DataSet();
-                        con.adapter.Fill(con.ds);
-
-                        cmb_series.DataSource = con.ds.Tables[0];
-                        cmb_series.ValueMember = "rds_id";
-                        cmb_series.DisplayMember = "item_name";
-                    }
-                    con.mycon.Close();
-                    cmb_series.SelectedIndex = -1;
-                }
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
         private void cmb_series_SelectionChangeCommitted(object sender, EventArgs e)
-        { 
+        {
             try
             {
                 //--- time value
@@ -229,6 +181,89 @@ namespace rec_inven_samp
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void _check2(Control.ControlCollection cn)
+        {//--- simultaneous selection
+            foreach (Control con in cn)
+            {
+                if (con.HasChildren)
+                {
+                    _check2(con.Controls);
+                }
+                else
+                {
+                    if (con is ComboBox)
+                    {
+                        if (string.IsNullOrEmpty(con.Text))
+                        {
+                            MessageBox.Show(con.Name + " is empty");
+                            con.Select();
+                            ch_cmb = false;
+                            break;
+                        }
+                        else
+                        {
+                            ch_cmb = true;
+                        }
+                    }
+                }
+            }
+        }
+
+        private void _checker()
+        {
+            /*
+            foreach (var c in Controls.OfType<GroupBox>().SelectMany(groupBox => groupBox.Controls.OfType<ComboBox>().OrderBy(c => c.TabIndex)))
+            {
+                if (string.IsNullOrEmpty(c.Text))
+                {
+                    MessageBox.Show(c.Name + " is empty");
+                    c.Select();
+                    ch_cmb = false;
+                    break;
+                }
+                else
+                {
+                    ch_cmb = true;
+                }
+            }*/
+        }
+
+        private void cmb_series_fill()
+        {
+            try
+            {
+                //--- records series
+                if (cmb_categ.SelectedValue != null)
+                {
+                    string sql3 = "select rds_id, item_name from rds_list where category_id = '" + cmb_categ.SelectedValue + "' order by item_name asc;";
+
+                    con.mycon.Open();
+                    using (con.cmd = new MySqlCommand(sql3, con.mycon))
+                    {
+                        con.adapter = new MySqlDataAdapter(con.cmd);
+                        con.ds = new DataSet();
+                        con.adapter.Fill(con.ds);
+
+                        cmb_series.DataSource = con.ds.Tables[0];
+                        cmb_series.ValueMember = "rds_id";
+                        cmb_series.DisplayMember = "item_name";
+                    }
+                    con.mycon.Close();
+                    cmb_series.SelectedIndex = -1;
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -106,26 +106,13 @@ namespace rec_inven_samp
             // Show testDialog as a modal dialog and determine if DialogResult = OK.
             if (add_Test.ShowDialog(this) == DialogResult.OK)
             {
-                // Read the contents of testDialog's TextBox.
+                // check for empty fields
 
-                if (string.IsNullOrWhiteSpace(add_Test.test_text))
+                foreach (var c in add_Test.Controls)
                 {
-                    MessageBox.Show("empty!");
-                    goto open_form;
-                }
-                else
-                {
-                    try
-                    {
-                        MessageBox.Show(add_Test.test_text);
-                        add_Test.Dispose();
-                    }
 
-                    catch (MySqlException ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
                 }
+
             }
             else
             {
