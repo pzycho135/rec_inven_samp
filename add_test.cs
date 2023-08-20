@@ -248,10 +248,10 @@ namespace rec_inven_samp
         }
 
         private void _check5()
-        {//--- not checked yet
-            foreach (var c in grp_period.Controls.OfType<DateTimePicker>().OrderBy(b => b.TabIndex))
+        {
+            foreach (var c in grp_period.Controls.OfType<DateTimePicker>().OrderBy(x => x.TabIndex))
             {
-                if (c.Checked)
+                if (c.Checked == false)
                 {
                     MessageBox.Show(c.Name + " is empty");
                     c.Select();
@@ -267,20 +267,7 @@ namespace rec_inven_samp
 
         private void _checker()
         {
-            foreach (var c in Controls.OfType<GroupBox>().SelectMany(groupBox => groupBox.Controls.OfType<ComboBox>().OrderBy(c => c.TabIndex)))
-            {
-                if (string.IsNullOrEmpty(c.Text))
-                {
-                    MessageBox.Show(c.Name + " is empty");
-                    c.Select();
-                    ch_cmb = false;
-                    break;
-                }
-                else
-                {
-                    ch_cmb = true;
-                }
-            }
+
         }
 
         private void cmb_series_fill()
