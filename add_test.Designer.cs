@@ -49,7 +49,6 @@ namespace rec_inven_samp
             this.txt_use = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txt_dupe = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.grp_series = new System.Windows.Forms.GroupBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -64,6 +63,7 @@ namespace rec_inven_samp
             this.grp_encoder = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.lbl_dt = new System.Windows.Forms.Label();
             this.grp_series.SuspendLayout();
             this.grp_period.SuspendLayout();
             this.grp_encoder.SuspendLayout();
@@ -295,22 +295,6 @@ namespace rec_inven_samp
             this.txt_dupe.Size = new System.Drawing.Size(276, 26);
             this.txt_dupe.TabIndex = 9;
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
-            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
-            this.dateTimePicker1.CustomFormat = "yyyy, MMMM dd";
-            this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(748, 12);
-            this.dateTimePicker1.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(240, 30);
-            this.dateTimePicker1.TabIndex = 5;
-            this.dateTimePicker1.TabStop = false;
-            this.dateTimePicker1.Value = new System.DateTime(2023, 8, 15, 15, 20, 21, 0);
-            // 
             // grp_series
             // 
             this.grp_series.Controls.Add(this.checkBox1);
@@ -382,7 +366,7 @@ namespace rec_inven_samp
             this.grp_period.Controls.Add(this.dtp_start);
             this.grp_period.Location = new System.Drawing.Point(575, 150);
             this.grp_period.Name = "grp_period";
-            this.grp_period.Size = new System.Drawing.Size(259, 105);
+            this.grp_period.Size = new System.Drawing.Size(320, 105);
             this.grp_period.TabIndex = 7;
             this.grp_period.TabStop = false;
             this.grp_period.Text = "Period Covered";
@@ -413,13 +397,15 @@ namespace rec_inven_samp
             // 
             this.dtp_end.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
             this.dtp_end.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
+            this.dtp_end.Checked = false;
             this.dtp_end.CustomFormat = "yyyy, MMM dd";
             this.dtp_end.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_end.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_end.Location = new System.Drawing.Point(86, 70);
             this.dtp_end.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dtp_end.Name = "dtp_end";
-            this.dtp_end.Size = new System.Drawing.Size(156, 25);
+            this.dtp_end.ShowCheckBox = true;
+            this.dtp_end.Size = new System.Drawing.Size(184, 25);
             this.dtp_end.TabIndex = 2;
             this.dtp_end.TabStop = false;
             this.dtp_end.Value = new System.DateTime(2023, 8, 15, 15, 20, 21, 0);
@@ -428,13 +414,15 @@ namespace rec_inven_samp
             // 
             this.dtp_start.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
             this.dtp_start.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
+            this.dtp_start.Checked = false;
             this.dtp_start.CustomFormat = "yyyy, MMM dd";
             this.dtp_start.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_start.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_start.Location = new System.Drawing.Point(86, 25);
             this.dtp_start.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dtp_start.Name = "dtp_start";
-            this.dtp_start.Size = new System.Drawing.Size(156, 25);
+            this.dtp_start.ShowCheckBox = true;
+            this.dtp_start.Size = new System.Drawing.Size(184, 25);
             this.dtp_start.TabIndex = 1;
             this.dtp_start.TabStop = false;
             this.dtp_start.Value = new System.DateTime(2023, 8, 15, 15, 20, 21, 0);
@@ -454,7 +442,7 @@ namespace rec_inven_samp
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(693, 19);
+            this.label12.Location = new System.Drawing.Point(751, 40);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(48, 17);
@@ -496,16 +484,26 @@ namespace rec_inven_samp
             this.checkBox1.Text = "Not Applicable";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
+            // lbl_dt
+            // 
+            this.lbl_dt.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_dt.Location = new System.Drawing.Point(806, 17);
+            this.lbl_dt.Name = "lbl_dt";
+            this.lbl_dt.Size = new System.Drawing.Size(182, 61);
+            this.lbl_dt.TabIndex = 11;
+            this.lbl_dt.Text = "2023, August 15 12:00:00 tt";
+            this.lbl_dt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // add_test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1000, 590);
+            this.Controls.Add(this.lbl_dt);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.grp_encoder);
             this.Controls.Add(this.grp_series);
-            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
@@ -549,7 +547,6 @@ namespace rec_inven_samp
         private System.Windows.Forms.TextBox txt_use;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txt_dupe;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.GroupBox grp_series;
         private System.Windows.Forms.DateTimePicker dtp_start;
         private System.Windows.Forms.DateTimePicker dtp_end;
@@ -565,5 +562,6 @@ namespace rec_inven_samp
         private System.Windows.Forms.ComboBox cmb_util;
         private System.Windows.Forms.TextBox txt_time;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label lbl_dt;
     }
 }

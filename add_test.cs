@@ -56,13 +56,25 @@ namespace rec_inven_samp
             cmb_office.SelectedIndex = -1;
             cmb_util.SelectedIndex = -1;
 
-            //dtp_start.Value = null;
+            lbl_dt.Text = DateTime.Now.ToString("yyyy, MMMM dd \n hh:mm:ss tt") ;
+            _dt_timer();
+        }
+
+        private void _dt_timer()
+        {
+            Timer timer1 = new System.Windows.Forms.Timer();
+            timer1.Interval = 1000;
+            timer1.Tick += new EventHandler(_timer_tick);
+            timer1.Enabled = true;
+        }
+
+        private void _timer_tick(object sender, EventArgs e)
+        {
+            lbl_dt.Text = DateTime.Now.ToString("yyyy, MMMM dd \n hh:mm:ss tt");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //_checker();
-            //_check2(this.Controls);
             _check3();
 
             if (ch_grp_encoder == true && ch_grp_series == true)
@@ -225,34 +237,6 @@ namespace rec_inven_samp
                 else
                 {
                     ch_grp_series = true;
-                }
-            }
-        }
-
-        private void _check2(Control.ControlCollection cn)
-        {//--- simultaneous selection
-            foreach (Control con in cn)
-            {
-                if (con.HasChildren)
-                {
-                    _check2(con.Controls);
-                }
-                else
-                {
-                    if (con is ComboBox)
-                    {
-                        if (string.IsNullOrEmpty(con.Text))
-                        {
-                            MessageBox.Show(con.Name + " is empty");
-                            con.Select();
-                            ch_cmb = false;
-                            break;
-                        }
-                        else
-                        {
-                            ch_cmb = true;
-                        }
-                    }
                 }
             }
         }
