@@ -41,6 +41,8 @@ namespace rec_inven_samp
 
         private bool ch_cmb = false;
         private bool ch_txt = false; //--- not used yet
+        private bool ch_grp_encoder = false;
+        private bool ch_grp_series = false;
 
         public add_test()
         {
@@ -53,14 +55,17 @@ namespace rec_inven_samp
             cmb_series.SelectedIndex = -1;
             cmb_office.SelectedIndex = -1;
             cmb_util.SelectedIndex = -1;
+
+            //dtp_start.Value = null;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             //_checker();
-            _check2(this.Controls);
+            //_check2(this.Controls);
+            _check3();
 
-            if (ch_cmb == true)
+            if (ch_grp_encoder == true && ch_grp_series == true)
             {
                 s_categ = cmb_categ.SelectedValue.ToString();
                 s_series = cmb_series.SelectedValue.ToString();
@@ -183,6 +188,47 @@ namespace rec_inven_samp
             }
         }
 
+        private void _check3()
+        {
+            foreach (Control c in grp_encoder.Controls.Cast<Control>().OrderBy(x => x.TabIndex))
+            {
+                if (string.IsNullOrWhiteSpace(c.Text))
+                {
+                    MessageBox.Show(c.Name + " is empty");
+                    c.Select();
+                    ch_grp_encoder = false;
+                    break;
+                }
+                else
+                {
+                    ch_grp_encoder = true;
+                }
+            }
+
+            if (ch_grp_encoder == true)
+            {
+                _check4();
+            }
+        }
+
+        private void _check4()
+        {
+            foreach (Control c in grp_series.Controls.Cast<Control>().OrderBy(x => x.TabIndex))
+            {
+                if (string.IsNullOrWhiteSpace(c.Text))
+                {
+                    MessageBox.Show(c.Name + " is empty");
+                    c.Select();
+                    ch_grp_series = false;
+                    break;
+                }
+                else
+                {
+                    ch_grp_series = true;
+                }
+            }
+        }
+
         private void _check2(Control.ControlCollection cn)
         {//--- simultaneous selection
             foreach (Control con in cn)
@@ -213,7 +259,6 @@ namespace rec_inven_samp
 
         private void _checker()
         {
-            /*
             foreach (var c in Controls.OfType<GroupBox>().SelectMany(groupBox => groupBox.Controls.OfType<ComboBox>().OrderBy(c => c.TabIndex)))
             {
                 if (string.IsNullOrEmpty(c.Text))
@@ -227,7 +272,7 @@ namespace rec_inven_samp
                 {
                     ch_cmb = true;
                 }
-            }*/
+            }
         }
 
         private void cmb_series_fill()

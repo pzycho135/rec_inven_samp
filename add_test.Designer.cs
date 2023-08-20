@@ -50,22 +50,23 @@ namespace rec_inven_samp
             this.label10 = new System.Windows.Forms.Label();
             this.txt_dupe = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grp_series = new System.Windows.Forms.GroupBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.cmb_util = new System.Windows.Forms.ComboBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.grp_period = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtp_end = new System.Windows.Forms.DateTimePicker();
+            this.dtp_start = new System.Windows.Forms.DateTimePicker();
             this.txt_time = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.grp_encoder = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.grp_series.SuspendLayout();
+            this.grp_period.SuspendLayout();
+            this.grp_encoder.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox1
@@ -310,34 +311,35 @@ namespace rec_inven_samp
             this.dateTimePicker1.TabStop = false;
             this.dateTimePicker1.Value = new System.DateTime(2023, 8, 15, 15, 20, 21, 0);
             // 
-            // groupBox1
+            // grp_series
             // 
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.cmb_util);
-            this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.txt_rds_id);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txt_dupe);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txt_use);
-            this.groupBox1.Controls.Add(this.cmb_categ);
-            this.groupBox1.Controls.Add(this.txt_time);
-            this.groupBox1.Controls.Add(this.txt_vol);
-            this.groupBox1.Controls.Add(this.cmb_series);
-            this.groupBox1.Controls.Add(this.txt_location);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 104);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(976, 407);
-            this.groupBox1.TabIndex = 6;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Records Series Details";
+            this.grp_series.Controls.Add(this.checkBox1);
+            this.grp_series.Controls.Add(this.label14);
+            this.grp_series.Controls.Add(this.label13);
+            this.grp_series.Controls.Add(this.cmb_util);
+            this.grp_series.Controls.Add(this.grp_period);
+            this.grp_series.Controls.Add(this.txt_rds_id);
+            this.grp_series.Controls.Add(this.label1);
+            this.grp_series.Controls.Add(this.label2);
+            this.grp_series.Controls.Add(this.txt_dupe);
+            this.grp_series.Controls.Add(this.label8);
+            this.grp_series.Controls.Add(this.label3);
+            this.grp_series.Controls.Add(this.txt_use);
+            this.grp_series.Controls.Add(this.cmb_categ);
+            this.grp_series.Controls.Add(this.txt_time);
+            this.grp_series.Controls.Add(this.txt_vol);
+            this.grp_series.Controls.Add(this.cmb_series);
+            this.grp_series.Controls.Add(this.txt_location);
+            this.grp_series.Controls.Add(this.label10);
+            this.grp_series.Controls.Add(this.label7);
+            this.grp_series.Controls.Add(this.label9);
+            this.grp_series.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grp_series.Location = new System.Drawing.Point(12, 104);
+            this.grp_series.Name = "grp_series";
+            this.grp_series.Size = new System.Drawing.Size(976, 407);
+            this.grp_series.TabIndex = 2;
+            this.grp_series.TabStop = false;
+            this.grp_series.Text = "Records Series Details";
             // 
             // label14
             // 
@@ -372,18 +374,18 @@ namespace rec_inven_samp
             this.cmb_util.Size = new System.Drawing.Size(177, 29);
             this.cmb_util.TabIndex = 7;
             // 
-            // groupBox2
+            // grp_period
             // 
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.dateTimePicker3);
-            this.groupBox2.Controls.Add(this.dateTimePicker2);
-            this.groupBox2.Location = new System.Drawing.Point(575, 150);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(259, 105);
-            this.groupBox2.TabIndex = 7;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Period Covered";
+            this.grp_period.Controls.Add(this.label11);
+            this.grp_period.Controls.Add(this.label6);
+            this.grp_period.Controls.Add(this.dtp_end);
+            this.grp_period.Controls.Add(this.dtp_start);
+            this.grp_period.Location = new System.Drawing.Point(575, 150);
+            this.grp_period.Name = "grp_period";
+            this.grp_period.Size = new System.Drawing.Size(259, 105);
+            this.grp_period.TabIndex = 7;
+            this.grp_period.TabStop = false;
+            this.grp_period.Text = "Period Covered";
             // 
             // label11
             // 
@@ -407,35 +409,35 @@ namespace rec_inven_samp
             this.label6.TabIndex = 1;
             this.label6.Text = "From:";
             // 
-            // dateTimePicker3
+            // dtp_end
             // 
-            this.dateTimePicker3.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
-            this.dateTimePicker3.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
-            this.dateTimePicker3.CustomFormat = "yyyy, MMM dd";
-            this.dateTimePicker3.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker3.Location = new System.Drawing.Point(86, 70);
-            this.dateTimePicker3.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(156, 25);
-            this.dateTimePicker3.TabIndex = 2;
-            this.dateTimePicker3.TabStop = false;
-            this.dateTimePicker3.Value = new System.DateTime(2023, 8, 15, 15, 20, 21, 0);
+            this.dtp_end.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
+            this.dtp_end.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
+            this.dtp_end.CustomFormat = "yyyy, MMM dd";
+            this.dtp_end.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_end.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_end.Location = new System.Drawing.Point(86, 70);
+            this.dtp_end.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.dtp_end.Name = "dtp_end";
+            this.dtp_end.Size = new System.Drawing.Size(156, 25);
+            this.dtp_end.TabIndex = 2;
+            this.dtp_end.TabStop = false;
+            this.dtp_end.Value = new System.DateTime(2023, 8, 15, 15, 20, 21, 0);
             // 
-            // dateTimePicker2
+            // dtp_start
             // 
-            this.dateTimePicker2.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
-            this.dateTimePicker2.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
-            this.dateTimePicker2.CustomFormat = "yyyy, MMM dd";
-            this.dateTimePicker2.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(86, 25);
-            this.dateTimePicker2.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(156, 25);
-            this.dateTimePicker2.TabIndex = 1;
-            this.dateTimePicker2.TabStop = false;
-            this.dateTimePicker2.Value = new System.DateTime(2023, 8, 15, 15, 20, 21, 0);
+            this.dtp_start.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
+            this.dtp_start.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
+            this.dtp_start.CustomFormat = "yyyy, MMM dd";
+            this.dtp_start.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_start.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_start.Location = new System.Drawing.Point(86, 25);
+            this.dtp_start.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.dtp_start.Name = "dtp_start";
+            this.dtp_start.Size = new System.Drawing.Size(156, 25);
+            this.dtp_start.TabIndex = 1;
+            this.dtp_start.TabStop = false;
+            this.dtp_start.Value = new System.DateTime(2023, 8, 15, 15, 20, 21, 0);
             // 
             // txt_time
             // 
@@ -445,7 +447,7 @@ namespace rec_inven_samp
             this.txt_time.MaxLength = 50;
             this.txt_time.Name = "txt_time";
             this.txt_time.ReadOnly = true;
-            this.txt_time.Size = new System.Drawing.Size(275, 26);
+            this.txt_time.Size = new System.Drawing.Size(177, 26);
             this.txt_time.TabIndex = 6;
             // 
             // label12
@@ -459,19 +461,19 @@ namespace rec_inven_samp
             this.label12.TabIndex = 1;
             this.label12.Text = "Date:";
             // 
-            // groupBox3
+            // grp_encoder
             // 
-            this.groupBox3.Controls.Add(this.txt_name);
-            this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.cmb_office);
-            this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(12, 12);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(641, 72);
-            this.groupBox3.TabIndex = 7;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Encoder Details";
+            this.grp_encoder.Controls.Add(this.txt_name);
+            this.grp_encoder.Controls.Add(this.label5);
+            this.grp_encoder.Controls.Add(this.cmb_office);
+            this.grp_encoder.Controls.Add(this.label4);
+            this.grp_encoder.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grp_encoder.Location = new System.Drawing.Point(12, 12);
+            this.grp_encoder.Name = "grp_encoder";
+            this.grp_encoder.Size = new System.Drawing.Size(641, 72);
+            this.grp_encoder.TabIndex = 1;
+            this.grp_encoder.TabStop = false;
+            this.grp_encoder.Text = "Encoder Details";
             // 
             // button2
             // 
@@ -483,6 +485,17 @@ namespace rec_inven_samp
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Location = new System.Drawing.Point(334, 306);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(139, 21);
+            this.checkBox1.TabIndex = 10;
+            this.checkBox1.Text = "Not Applicable";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // add_test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -490,8 +503,8 @@ namespace rec_inven_samp
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1000, 590);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grp_encoder);
+            this.Controls.Add(this.grp_series);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.button1);
@@ -505,12 +518,12 @@ namespace rec_inven_samp
             this.Name = "add_test";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Inventory";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.grp_series.ResumeLayout(false);
+            this.grp_series.PerformLayout();
+            this.grp_period.ResumeLayout(false);
+            this.grp_period.PerformLayout();
+            this.grp_encoder.ResumeLayout(false);
+            this.grp_encoder.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -537,19 +550,20 @@ namespace rec_inven_samp
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txt_dupe;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox grp_series;
+        private System.Windows.Forms.DateTimePicker dtp_start;
+        private System.Windows.Forms.DateTimePicker dtp_end;
+        private System.Windows.Forms.GroupBox grp_period;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox grp_encoder;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cmb_util;
         private System.Windows.Forms.TextBox txt_time;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
