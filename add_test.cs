@@ -43,6 +43,7 @@ namespace rec_inven_samp
         private bool ch_txt = false; //--- not used yet
         private bool ch_grp_encoder = false;
         private bool ch_grp_series = false;
+        private bool ch_grp_period = false;
 
         public add_test()
         {
@@ -64,11 +65,11 @@ namespace rec_inven_samp
         {
             Timer timer1 = new System.Windows.Forms.Timer();
             timer1.Interval = 1000;
-            timer1.Tick += new EventHandler(_timer_tick);
+            timer1.Tick += new EventHandler(_dt_timer_tick);
             timer1.Enabled = true;
         }
 
-        private void _timer_tick(object sender, EventArgs e)
+        private void _dt_timer_tick(object sender, EventArgs e)
         {
             lbl_dt.Text = DateTime.Now.ToString("yyyy, MMMM dd \n hh:mm:ss tt");
         }
@@ -77,7 +78,7 @@ namespace rec_inven_samp
         {
             _check3();
 
-            if (ch_grp_encoder == true && ch_grp_series == true)
+            if (ch_grp_encoder == true && ch_grp_series == true && ch_grp_period == true)
             {
                 s_categ = cmb_categ.SelectedValue.ToString();
                 s_series = cmb_series.SelectedValue.ToString();
@@ -237,6 +238,29 @@ namespace rec_inven_samp
                 else
                 {
                     ch_grp_series = true;
+                }
+            }
+
+            if (ch_grp_encoder == true && ch_grp_series == true)
+            {
+                _check5();
+            }
+        }
+
+        private void _check5()
+        {//--- not checked yet
+            foreach (var c in grp_period.Controls.OfType<DateTimePicker>().OrderBy(b => b.TabIndex))
+            {
+                if (c.Checked)
+                {
+                    MessageBox.Show(c.Name + " is empty");
+                    c.Select();
+                    ch_grp_period = false;
+                    break;
+                }
+                else
+                {
+                    ch_grp_period = true;
                 }
             }
         }
