@@ -106,7 +106,7 @@ namespace rec_inven_samp
             // Show testDialog as a modal dialog and determine if DialogResult = OK.
             if (add_Test.ShowDialog(this) == DialogResult.OK)
             {
-                // check for empty fields
+                // check for empty fields --- should do it in origin form
 
                 foreach (var c in add_Test.Controls)
                 {

@@ -15,10 +15,6 @@ namespace rec_inven_samp
     {
         db_con con = new db_con();
 
-        public string test_text
-        {
-            get => textBox1.Text; set => textBox1.Text = value;
-        }
         public string categ_text
         {
             get => cmb_categ.Text; set => cmb_categ.Text = value;
@@ -39,8 +35,6 @@ namespace rec_inven_samp
         private string s_categ = null;
         private string s_series = null;
 
-        private bool ch_cmb = false;
-        private bool ch_txt = false; //--- not used yet
         private bool ch_grp_encoder = false;
         private bool ch_grp_series = false;
         private bool ch_grp_period = false;
@@ -55,7 +49,7 @@ namespace rec_inven_samp
             cmb_categ.SelectedIndex = -1;
             cmb_series.SelectedIndex = -1;
             cmb_office.SelectedIndex = -1;
-            cmb_util.SelectedIndex = -1;
+            cmb_util_val.SelectedIndex = -1;
 
             lbl_dt.Text = DateTime.Now.ToString("yyyy, MMMM dd \n hh:mm:ss tt") ;
             _dt_timer();
@@ -136,9 +130,9 @@ namespace rec_inven_samp
                     con.ds = new DataSet();
                     con.adapter.Fill(con.ds);
 
-                    cmb_util.DataSource = con.ds.Tables[0];
-                    cmb_util.ValueMember = "util_code";
-                    cmb_util.DisplayMember = "util_value";
+                    cmb_util_val.DataSource = con.ds.Tables[0];
+                    cmb_util_val.ValueMember = "util_code";
+                    cmb_util_val.DisplayMember = "util_value";
                 }
                 con.mycon.Close();
             }
@@ -154,9 +148,10 @@ namespace rec_inven_samp
             cmb_series.DataSource = null;
             cmb_series.Items.Clear();
 
-            txt_time.Text = null;
+            txt_time_val.Text = null;
             txt_rds_id.Text = null;
-            cmb_util.SelectedIndex = -1;
+            txt_add_info.Text = null;
+            cmb_util_val.SelectedIndex = -1;
 
             cmb_series_fill();
         }
@@ -165,9 +160,9 @@ namespace rec_inven_samp
         {
             try
             {
-                //--- time value
                 if (cmb_series.SelectedValue != null)
                 {
+                    //--- time value
                     string sql1 = "select time_value from rds_list where rds_id = '" + cmb_series.SelectedValue + "';";
 
                     con.mycon.Open();
@@ -179,17 +174,36 @@ namespace rec_inven_samp
                         {
                             case "t":
                             case "T":
-                                txt_time.Text = "TEMPORARY";
+                                txt_time_val.Text = "TEMPORARY";
                                 break;
 
                             case "p":
                             case "P":
-                                txt_time.Text = "PERMANENT";
+                                txt_time_val.Text = "PERMANENT";
                                 break;
                         }
 
                         txt_rds_id.Text = cmb_series.SelectedValue.ToString();
-                        cmb_util.SelectedIndex = -1;
+                        cmb_util_val.SelectedIndex = -1;
+                    }
+                    con.mycon.Close();
+
+                    //--- additional info
+                    string sql2 = "select add_info from rds_list where rds_id = '" + cmb_series.SelectedValue + "';";
+
+                    con.mycon.Open();
+                    using (con.cmd = new MySqlCommand(sql2, con.mycon))
+                    {
+                        string t = con.cmd.ExecuteScalar().ToString();
+
+                        if (t is null || t == "")
+                        {
+                            txt_add_info.Text = "-- NONE --";
+                        }
+                        else
+                        {
+                            txt_add_info.Text = t;
+                        }
                     }
                     con.mycon.Close();
                 }
