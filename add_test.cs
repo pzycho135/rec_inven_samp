@@ -53,6 +53,7 @@ namespace rec_inven_samp
 
             lbl_dt.Text = DateTime.Now.ToString("yyyy, MMMM dd \n hh:mm:ss tt") ;
             _dt_timer();
+
         }
 
         private void _dt_timer()
@@ -70,6 +71,7 @@ namespace rec_inven_samp
 
         private void button2_Click(object sender, EventArgs e)
         {
+            //MessageBox.Show(txt_rds_id.Name + " " + txt_rds_id.ReadOnly.ToString());
             _check3();
 
             if (ch_grp_encoder == true && ch_grp_series == true && ch_grp_period == true)
@@ -148,10 +150,20 @@ namespace rec_inven_samp
             cmb_series.DataSource = null;
             cmb_series.Items.Clear();
 
-            txt_time_val.Text = null;
             txt_rds_id.Text = null;
             txt_add_info.Text = null;
+            txt_time_val.Text = null;
+
+            txt_location.Text = null;
+            txt_vol.Text = null;
+            txt_use_freq.Text = null;
+            txt_dup.Text = null;
+
             cmb_util_val.SelectedIndex = -1;
+
+            dtp_start.Checked = false;
+            dtp_end.Checked = false;
+            checkBox1.Checked = false;
 
             cmb_series_fill();
         }
@@ -175,16 +187,33 @@ namespace rec_inven_samp
                             case "t":
                             case "T":
                                 txt_time_val.Text = "TEMPORARY";
+                                checkBox1.Checked = false;
                                 break;
 
                             case "p":
                             case "P":
                                 txt_time_val.Text = "PERMANENT";
+                                checkBox1.Checked = false;
+                                break;
+
+                            case "":
+                                txt_time_val.Text = null;
+                                checkBox1.Checked = true;
                                 break;
                         }
 
+                        //--- need to place outside
                         txt_rds_id.Text = cmb_series.SelectedValue.ToString();
+
+                        txt_location.Text = null;
+                        txt_vol.Text = null;
+                        txt_use_freq.Text = null;
+                        txt_dup.Text = null;
+
                         cmb_util_val.SelectedIndex = -1;
+
+                        dtp_start.Checked = false;
+                        dtp_end.Checked = false;
                     }
                     con.mycon.Close();
 
@@ -242,16 +271,19 @@ namespace rec_inven_samp
         {
             foreach (Control c in grp_series.Controls.Cast<Control>().OrderBy(x => x.TabIndex))
             {
-                if (string.IsNullOrWhiteSpace(c.Text))
-                {
-                    MessageBox.Show(c.Name + " is empty");
-                    c.Select();
-                    ch_grp_series = false;
-                    break;
-                }
-                else
-                {
-                    ch_grp_series = true;
+                if(c.Name != "txt_rds_id" && c.Name != "txt_add_info" && c.Name != "txt_time_val")
+                {//--- not done???
+                    if (string.IsNullOrWhiteSpace(c.Text))
+                    {
+                        MessageBox.Show(c.Name + " is empty");
+                        c.Select();
+                        ch_grp_series = false;
+                        break;
+                    }
+                    else
+                    {
+                        ch_grp_series = true;
+                    }
                 }
             }
 

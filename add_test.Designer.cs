@@ -45,9 +45,9 @@ namespace rec_inven_samp
             this.label8 = new System.Windows.Forms.Label();
             this.txt_vol = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txt_use = new System.Windows.Forms.TextBox();
+            this.txt_use_freq = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txt_dupe = new System.Windows.Forms.TextBox();
+            this.txt_dup = new System.Windows.Forms.TextBox();
             this.grp_series = new System.Windows.Forms.GroupBox();
             this.txt_add_info = new System.Windows.Forms.TextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -255,15 +255,15 @@ namespace rec_inven_samp
             this.label9.TabIndex = 1;
             this.label9.Text = "Use Frequency:";
             // 
-            // txt_use
+            // txt_use_freq
             // 
-            this.txt_use.BackColor = System.Drawing.Color.White;
-            this.txt_use.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
-            this.txt_use.Location = new System.Drawing.Point(661, 293);
-            this.txt_use.MaxLength = 10;
-            this.txt_use.Name = "txt_use";
-            this.txt_use.Size = new System.Drawing.Size(276, 26);
-            this.txt_use.TabIndex = 8;
+            this.txt_use_freq.BackColor = System.Drawing.Color.White;
+            this.txt_use_freq.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
+            this.txt_use_freq.Location = new System.Drawing.Point(661, 293);
+            this.txt_use_freq.MaxLength = 10;
+            this.txt_use_freq.Name = "txt_use_freq";
+            this.txt_use_freq.Size = new System.Drawing.Size(276, 26);
+            this.txt_use_freq.TabIndex = 8;
             // 
             // label10
             // 
@@ -276,15 +276,15 @@ namespace rec_inven_samp
             this.label10.TabIndex = 1;
             this.label10.Text = "Duplication:";
             // 
-            // txt_dupe
+            // txt_dup
             // 
-            this.txt_dupe.BackColor = System.Drawing.Color.White;
-            this.txt_dupe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
-            this.txt_dupe.Location = new System.Drawing.Point(661, 333);
-            this.txt_dupe.MaxLength = 100;
-            this.txt_dupe.Name = "txt_dupe";
-            this.txt_dupe.Size = new System.Drawing.Size(276, 26);
-            this.txt_dupe.TabIndex = 9;
+            this.txt_dup.BackColor = System.Drawing.Color.White;
+            this.txt_dup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
+            this.txt_dup.Location = new System.Drawing.Point(661, 333);
+            this.txt_dup.MaxLength = 100;
+            this.txt_dup.Name = "txt_dup";
+            this.txt_dup.Size = new System.Drawing.Size(276, 26);
+            this.txt_dup.TabIndex = 9;
             // 
             // grp_series
             // 
@@ -297,11 +297,11 @@ namespace rec_inven_samp
             this.grp_series.Controls.Add(this.txt_rds_id);
             this.grp_series.Controls.Add(this.label1);
             this.grp_series.Controls.Add(this.label2);
-            this.grp_series.Controls.Add(this.txt_dupe);
+            this.grp_series.Controls.Add(this.txt_dup);
             this.grp_series.Controls.Add(this.label15);
             this.grp_series.Controls.Add(this.label8);
             this.grp_series.Controls.Add(this.label3);
-            this.grp_series.Controls.Add(this.txt_use);
+            this.grp_series.Controls.Add(this.txt_use_freq);
             this.grp_series.Controls.Add(this.cmb_categ);
             this.grp_series.Controls.Add(this.txt_time_val);
             this.grp_series.Controls.Add(this.txt_vol);
@@ -332,11 +332,13 @@ namespace rec_inven_samp
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
+            this.checkBox1.Enabled = false;
             this.checkBox1.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox1.Location = new System.Drawing.Point(334, 361);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(139, 21);
             this.checkBox1.TabIndex = 10;
+            this.checkBox1.TabStop = false;
             this.checkBox1.Text = "Not Applicable";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
@@ -558,9 +560,9 @@ namespace rec_inven_samp
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txt_vol;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txt_use;
+        private System.Windows.Forms.TextBox txt_use_freq;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txt_dupe;
+        private System.Windows.Forms.TextBox txt_dup;
         private System.Windows.Forms.GroupBox grp_series;
         private System.Windows.Forms.DateTimePicker dtp_start;
         private System.Windows.Forms.DateTimePicker dtp_end;
