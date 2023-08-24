@@ -29,7 +29,7 @@ namespace rec_inven_samp
             comboBox1.SelectedIndex = 0;
             comboBox2.SelectedIndex = 0;
 
-            refresher();
+            _refresher();
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -96,7 +96,7 @@ namespace rec_inven_samp
             }
         }
 
-        public void refresher()
+        public void _refresher()
         {
             fill_grid();
             counter();
@@ -135,7 +135,7 @@ namespace rec_inven_samp
                     con.ds = new DataSet();
                     con.adapter.Fill(con.ds);
                     //cmd.ExecuteNonQuery();
-
+                    
                     gridControl1.DataSource = con.ds.Tables[0];
                 }
                 //con.mycon.Close();

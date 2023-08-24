@@ -96,7 +96,7 @@ namespace rec_inven_samp
 
             panel3.Controls.Clear();
             panel3.Controls.Add(dash_control);
-            dash_control.refresher();
+            dash_control._refresher();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -113,6 +113,7 @@ namespace rec_inven_samp
 
             panel3.Controls.Clear();
             panel3.Controls.Add(inven_control);
+            inven_control._refresher();
         }
 
         private void button4_Click(object sender, EventArgs e)

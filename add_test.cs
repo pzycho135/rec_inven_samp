@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -19,21 +20,10 @@ namespace rec_inven_samp
         {
             get => cmb_categ.Text; set => cmb_categ.Text = value;
         }
-        public string categ_value
-        {
-            get => s_categ; set => s_categ = value;
-        }
         public string series_text
         {
             get => cmb_series.Text; set => cmb_series.Text = value;
         }
-        public string series_value
-        {
-            get => s_series; set => s_series = value;
-        }
-
-        private string s_categ = null;
-        private string s_series = null;
 
         private bool ch_grp_encoder = false;
         private bool ch_grp_series = false;
@@ -43,17 +33,14 @@ namespace rec_inven_samp
         {
             InitializeComponent();
 
-            //this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
+            lbl_dt.Text = DateTime.Now.ToString("yyyy, MMMM dd" + "\n" + "hh:mm:ss tt");
+            _dt_timer();
 
             fill_cmb();
             cmb_categ.SelectedIndex = -1;
             cmb_series.SelectedIndex = -1;
             cmb_office.SelectedIndex = -1;
             cmb_util_val.SelectedIndex = -1;
-
-            lbl_dt.Text = DateTime.Now.ToString("yyyy, MMMM dd \n hh:mm:ss tt") ;
-            _dt_timer();
-
         }
 
         private void _dt_timer()
@@ -66,23 +53,122 @@ namespace rec_inven_samp
 
         private void _dt_timer_tick(object sender, EventArgs e)
         {
-            lbl_dt.Text = DateTime.Now.ToString("yyyy, MMMM dd \n hh:mm:ss tt");
+            lbl_dt.Text = DateTime.Now.ToString("yyyy, MMMM dd" + "\n" + "hh:mm:ss tt");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show(txt_rds_id.Name + " " + txt_rds_id.ReadOnly.ToString());
-            _check3();
+            _check1();
 
             if (ch_grp_encoder == true && ch_grp_series == true && ch_grp_period == true)
             {
-                s_categ = cmb_categ.SelectedValue.ToString();
-                s_series = cmb_series.SelectedValue.ToString();
+                save_entry();
+            }
+        }
 
-                MessageBox.Show(categ_text + " - " + categ_value + "\n" +
-                               series_text + " - " + series_value);
+        private void save_entry()
+        {
+            //--- encoder details
+            string s_encoder = txt_name.Text;
+            string s_office = cmb_office.SelectedValue.ToString();
 
-                button1.Enabled = true;
+            string s_date = Convert.ToDateTime(lbl_dt.Text).ToString();
+
+            //--- records series details
+            string s_rds_id = txt_rds_id.Text;
+
+            string s_location = txt_location.Text;
+            string s_volume = txt_vol.Text;
+            string s_utility = cmb_util_val.Text;
+            string s_use_frequency = txt_use_freq.Text;
+            string s_duplication = txt_dup.Text;
+
+            string s_start_period = dtp_start.Value.ToShortDateString();
+            string s_end_period = dtp_end.Value.ToShortDateString();
+
+            //--- not needed ???
+            string s_category = cmb_categ.Text;
+            string s_series = cmb_series.Text;
+            string s_add_info = txt_add_info.Text;
+            string s_time_value = txt_time_val.Text;
+
+            try
+            {
+                string sql1 = "insert into test_nap1_div(rds_id, office_code, record_loc, vol_cubic_meter," +
+                                " utility_value, use_frequency, duplication, period_start, period_end," +
+                                " submit_name, submit_date) values ('" + s_rds_id + "', '" + s_office + "', '" + s_location + "', '" + s_volume + "'," +
+                                " '" + s_utility + "', '" + s_use_frequency + "', '" + s_duplication + "', str_to_date('" + s_start_period + "', '%d/%m/%Y')," +
+                                " str_to_date('" + s_end_period + "', '%d/%m/%Y'), '" + s_encoder + "', str_to_date('" + s_date + "', '%d/%m/%Y %I:%i:%s %p'))";
+
+                con.mycon.Open();
+                using (con.cmd = new MySqlCommand(sql1, con.mycon))
+                {
+                    int a = con.cmd.ExecuteNonQuery();
+
+                    if (a == 0)
+                    {
+                        //--- update failed
+                        MessageBox.Show("please check query");
+                    }
+                    else
+                    {
+                        //--- update success
+                        MessageBox.Show("SUCCESS!");
+
+                        _clear();
+                    }
+                }
+                con.mycon.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void _clear()
+        {
+            foreach (Control c1 in grp_encoder.Controls)
+            {
+                if (c1 is TextBox)
+                {
+                    TextBox txtbox = (TextBox)c1;
+                    txtbox.Text = null;
+                }
+                else if (c1 is ComboBox)
+                {
+                    ComboBox cmbox = (ComboBox)c1;
+                    cmbox.SelectedIndex = -1;
+                }
+            }
+
+            foreach (Control c2 in grp_series.Controls)
+            {
+                if (c2 is TextBox)
+                {
+                    TextBox txtbox = (TextBox)c2;
+                    txtbox.Text = null;
+                }
+                else if (c2 is ComboBox)
+                {
+                    ComboBox cmbox = (ComboBox)c2;
+                    cmbox.SelectedIndex = -1;
+                }
+                else if (c2 is CheckBox)
+                {
+                    CheckBox chkbox = (CheckBox)c2;
+                    chkbox.Checked = false;
+                }
+            }
+
+            foreach (Control c3 in grp_period.Controls)
+            {
+                if (c3 is DateTimePicker)
+                {
+                    DateTimePicker dtp = (DateTimePicker)c3;
+                    dtp.Value = DateTime.Now;
+                    dtp.Checked = false;
+                }
             }
         }
 
@@ -163,89 +249,101 @@ namespace rec_inven_samp
 
             dtp_start.Checked = false;
             dtp_end.Checked = false;
-            checkBox1.Checked = false;
+            chb_no_time_val.Checked = false;
 
             cmb_series_fill();
         }
 
-        private void cmb_series_SelectionChangeCommitted(object sender, EventArgs e)
-        {
+        private void _time_value()
+        {//--- time value
             try
             {
-                if (cmb_series.SelectedValue != null)
+                string sql1 = "select time_value from rds_list where rds_id = '" + cmb_series.SelectedValue + "';";
+
+                con.mycon.Open();
+                using (con.cmd = new MySqlCommand(sql1, con.mycon))
                 {
-                    //--- time value
-                    string sql1 = "select time_value from rds_list where rds_id = '" + cmb_series.SelectedValue + "';";
+                    string t = con.cmd.ExecuteScalar().ToString();
 
-                    con.mycon.Open();
-                    using (con.cmd = new MySqlCommand(sql1, con.mycon))
+                    switch (t)
                     {
-                        string t = con.cmd.ExecuteScalar().ToString();
+                        case "t":
+                        case "T":
+                            txt_time_val.Text = "TEMPORARY";
+                            chb_no_time_val.Checked = false;
+                            break;
 
-                        switch (t)
-                        {
-                            case "t":
-                            case "T":
-                                txt_time_val.Text = "TEMPORARY";
-                                checkBox1.Checked = false;
-                                break;
+                        case "p":
+                        case "P":
+                            txt_time_val.Text = "PERMANENT";
+                            chb_no_time_val.Checked = false;
+                            break;
 
-                            case "p":
-                            case "P":
-                                txt_time_val.Text = "PERMANENT";
-                                checkBox1.Checked = false;
-                                break;
-
-                            case "":
-                                txt_time_val.Text = null;
-                                checkBox1.Checked = true;
-                                break;
-                        }
-
-                        //--- need to place outside
-                        txt_rds_id.Text = cmb_series.SelectedValue.ToString();
-
-                        txt_location.Text = null;
-                        txt_vol.Text = null;
-                        txt_use_freq.Text = null;
-                        txt_dup.Text = null;
-
-                        cmb_util_val.SelectedIndex = -1;
-
-                        dtp_start.Checked = false;
-                        dtp_end.Checked = false;
+                        case "":
+                            txt_time_val.Text = null;
+                            chb_no_time_val.Checked = true;
+                            break;
                     }
-                    con.mycon.Close();
-
-                    //--- additional info
-                    string sql2 = "select add_info from rds_list where rds_id = '" + cmb_series.SelectedValue + "';";
-
-                    con.mycon.Open();
-                    using (con.cmd = new MySqlCommand(sql2, con.mycon))
-                    {
-                        string t = con.cmd.ExecuteScalar().ToString();
-
-                        if (t is null || t == "")
-                        {
-                            txt_add_info.Text = "-- NONE --";
-                        }
-                        else
-                        {
-                            txt_add_info.Text = t;
-                        }
-                    }
-                    con.mycon.Close();
                 }
+                con.mycon.Close();
             }
-
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
 
-        private void _check3()
+        private void _add_info()
+        {//--- additional info
+            try
+            {
+                string sql2 = "select add_info from rds_list where rds_id = '" + cmb_series.SelectedValue + "';";
+
+                con.mycon.Open();
+                using (con.cmd = new MySqlCommand(sql2, con.mycon))
+                {
+                    string t = con.cmd.ExecuteScalar().ToString();
+
+                    if (t is null || t == "")
+                    {
+                        txt_add_info.Text = "-- NONE --";
+                    }
+                    else
+                    {
+                        txt_add_info.Text = t;
+                    }
+                }
+                con.mycon.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cmb_series_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            if (cmb_series.SelectedValue != null)
+            {
+                _time_value();
+                _add_info();
+
+                txt_rds_id.Text = cmb_series.SelectedValue.ToString();
+
+                txt_location.Text = null;
+                txt_vol.Text = null;
+                txt_use_freq.Text = null;
+                txt_dup.Text = null;
+
+                cmb_util_val.SelectedIndex = -1;
+
+                dtp_start.Checked = false;
+                dtp_end.Checked = false;
+            }
+        }
+
+        private void _check1()
+        {//--- for encoder details
             foreach (Control c in grp_encoder.Controls.Cast<Control>().OrderBy(x => x.TabIndex))
             {
                 if (string.IsNullOrWhiteSpace(c.Text))
@@ -263,16 +361,16 @@ namespace rec_inven_samp
 
             if (ch_grp_encoder == true)
             {
-                _check4();
+                _check2();
             }
         }
 
-        private void _check4()
-        {
+        private void _check2()
+        {//--- for records series details
             foreach (Control c in grp_series.Controls.Cast<Control>().OrderBy(x => x.TabIndex))
             {
-                if(c.Name != "txt_rds_id" && c.Name != "txt_add_info" && c.Name != "txt_time_val")
-                {//--- not done???
+                if(c.Name != "txt_rds_id" && c.Name != "txt_add_info" && c.Name != "txt_time_val" && c.Name != "chb_no_time_val")
+                {
                     if (string.IsNullOrWhiteSpace(c.Text))
                     {
                         MessageBox.Show(c.Name + " is empty");
@@ -289,12 +387,12 @@ namespace rec_inven_samp
 
             if (ch_grp_encoder == true && ch_grp_series == true)
             {
-                _check5();
+                _check3();
             }
         }
 
-        private void _check5()
-        {
+        private void _check3()
+        {//--- for start date & end date of records series
             foreach (var c in grp_period.Controls.OfType<DateTimePicker>().OrderBy(x => x.TabIndex))
             {
                 if (c.Checked == false)
@@ -309,11 +407,6 @@ namespace rec_inven_samp
                     ch_grp_period = true;
                 }
             }
-        }
-
-        private void _checker()
-        {
-
         }
 
         private void cmb_series_fill()
@@ -345,11 +438,6 @@ namespace rec_inven_samp
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

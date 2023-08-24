@@ -29,20 +29,40 @@ namespace rec_inven_samp
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            DevExpress.DataAccess.Sql.SelectQuery selectQuery1 = new DevExpress.DataAccess.Sql.SelectQuery();
+            DevExpress.DataAccess.Sql.AllColumns allColumns1 = new DevExpress.DataAccess.Sql.AllColumns();
+            DevExpress.DataAccess.Sql.Table table1 = new DevExpress.DataAccess.Sql.Table();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrl_inventory));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.button_edit_save = new System.Windows.Forms.Button();
             this.button_edit_exit = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button_add = new System.Windows.Forms.Button();
             this.button_delete = new System.Windows.Forms.Button();
             this.button_edit = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
+            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
+            this.colrds_id = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coloffice_code = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colrecord_loc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colvol_cubic_meter = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colutility_value = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coluse_frequency = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colduplication = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colperiod_start = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colperiod_end = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colsubmit_name = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colsubmit_date = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -103,32 +123,6 @@ namespace rec_inven_samp
             this.button_edit_exit.Text = "Exit";
             this.button_edit_exit.UseVisualStyleBackColor = false;
             this.button_edit_exit.Click += new System.EventHandler(this.button_edit_exit_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
-            this.dataGridView1.Location = new System.Drawing.Point(91, 39);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(997, 481);
-            this.dataGridView1.TabIndex = 2;
-            this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             // 
             // button_add
             // 
@@ -220,19 +214,274 @@ namespace rec_inven_samp
             this.comboBox2.Size = new System.Drawing.Size(192, 28);
             this.comboBox2.TabIndex = 12;
             // 
+            // gridControl1
+            // 
+            this.gridControl1.DataMember = "test_nap1_div";
+            this.gridControl1.DataSource = this.sqlDataSource1;
+            this.gridControl1.Location = new System.Drawing.Point(91, 38);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemMemoEdit1});
+            this.gridControl1.Size = new System.Drawing.Size(997, 482);
+            this.gridControl1.TabIndex = 13;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(226)))), ((int)(((byte)(182)))));
+            this.gridView1.Appearance.EvenRow.Options.UseBackColor = true;
+            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9F, System.Drawing.FontStyle.Bold);
+            this.gridView1.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
+            this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView1.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.gridView1.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridView1.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F);
+            this.gridView1.Appearance.Row.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
+            this.gridView1.Appearance.Row.Options.UseFont = true;
+            this.gridView1.Appearance.Row.Options.UseForeColor = true;
+            this.gridView1.Appearance.Row.Options.UseTextOptions = true;
+            this.gridView1.Appearance.Row.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridView1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colrds_id,
+            this.coloffice_code,
+            this.colrecord_loc,
+            this.colvol_cubic_meter,
+            this.colutility_value,
+            this.coluse_frequency,
+            this.colduplication,
+            this.colperiod_start,
+            this.colperiod_end,
+            this.colsubmit_name,
+            this.colsubmit_date});
+            this.gridView1.CustomizationFormBounds = new System.Drawing.Rectangle(1109, 371, 252, 306);
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.IndicatorWidth = 30;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsCustomization.AllowFilter = false;
+            this.gridView1.OptionsFind.AlwaysVisible = true;
+            this.gridView1.OptionsFind.ShowCloseButton = false;
+            this.gridView1.OptionsFind.ShowFindButton = false;
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView1.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.gridView1.OptionsView.EnableAppearanceEvenRow = true;
+            this.gridView1.OptionsView.RowAutoHeight = true;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView1_CustomDrawRowIndicator);
+            this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
+            this.gridView1.RowCountChanged += new System.EventHandler(this.gridView1_RowCountChanged);
+            // 
+            // repositoryItemMemoEdit1
+            // 
+            this.repositoryItemMemoEdit1.Name = "repositoryItemMemoEdit1";
+            // 
+            // sqlDataSource1
+            // 
+            this.sqlDataSource1.ConnectionName = "localhost_records_inventory_Connection 1";
+            this.sqlDataSource1.Name = "sqlDataSource1";
+            table1.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"303\" />";
+            table1.Name = "test_nap1_div";
+            allColumns1.Table = table1;
+            selectQuery1.Columns.Add(allColumns1);
+            selectQuery1.Name = "test_nap1_div";
+            selectQuery1.Tables.Add(table1);
+            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
+            selectQuery1});
+            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
+            // 
+            // colrds_id
+            // 
+            this.colrds_id.ColumnEdit = this.repositoryItemMemoEdit1;
+            this.colrds_id.FieldName = "rds_id";
+            this.colrds_id.Name = "colrds_id";
+            this.colrds_id.OptionsColumn.AllowEdit = false;
+            this.colrds_id.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
+            this.colrds_id.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.colrds_id.OptionsColumn.AllowMove = false;
+            this.colrds_id.OptionsColumn.AllowShowHide = false;
+            this.colrds_id.OptionsColumn.AllowSize = false;
+            this.colrds_id.OptionsColumn.ReadOnly = true;
+            this.colrds_id.Visible = true;
+            this.colrds_id.VisibleIndex = 0;
+            this.colrds_id.Width = 87;
+            // 
+            // coloffice_code
+            // 
+            this.coloffice_code.ColumnEdit = this.repositoryItemMemoEdit1;
+            this.coloffice_code.FieldName = "office_code";
+            this.coloffice_code.Name = "coloffice_code";
+            this.coloffice_code.OptionsColumn.AllowEdit = false;
+            this.coloffice_code.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
+            this.coloffice_code.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.coloffice_code.OptionsColumn.AllowMove = false;
+            this.coloffice_code.OptionsColumn.AllowShowHide = false;
+            this.coloffice_code.OptionsColumn.AllowSize = false;
+            this.coloffice_code.OptionsColumn.ReadOnly = true;
+            this.coloffice_code.Visible = true;
+            this.coloffice_code.VisibleIndex = 1;
+            this.coloffice_code.Width = 107;
+            // 
+            // colrecord_loc
+            // 
+            this.colrecord_loc.ColumnEdit = this.repositoryItemMemoEdit1;
+            this.colrecord_loc.FieldName = "record_loc";
+            this.colrecord_loc.Name = "colrecord_loc";
+            this.colrecord_loc.OptionsColumn.AllowEdit = false;
+            this.colrecord_loc.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
+            this.colrecord_loc.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.colrecord_loc.OptionsColumn.AllowMove = false;
+            this.colrecord_loc.OptionsColumn.AllowShowHide = false;
+            this.colrecord_loc.OptionsColumn.AllowSize = false;
+            this.colrecord_loc.OptionsColumn.ReadOnly = true;
+            this.colrecord_loc.Visible = true;
+            this.colrecord_loc.VisibleIndex = 2;
+            this.colrecord_loc.Width = 126;
+            // 
+            // colvol_cubic_meter
+            // 
+            this.colvol_cubic_meter.ColumnEdit = this.repositoryItemMemoEdit1;
+            this.colvol_cubic_meter.FieldName = "vol_cubic_meter";
+            this.colvol_cubic_meter.Name = "colvol_cubic_meter";
+            this.colvol_cubic_meter.OptionsColumn.AllowEdit = false;
+            this.colvol_cubic_meter.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
+            this.colvol_cubic_meter.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.colvol_cubic_meter.OptionsColumn.AllowMove = false;
+            this.colvol_cubic_meter.OptionsColumn.AllowShowHide = false;
+            this.colvol_cubic_meter.OptionsColumn.AllowSize = false;
+            this.colvol_cubic_meter.OptionsColumn.ReadOnly = true;
+            this.colvol_cubic_meter.Visible = true;
+            this.colvol_cubic_meter.VisibleIndex = 3;
+            this.colvol_cubic_meter.Width = 140;
+            // 
+            // colutility_value
+            // 
+            this.colutility_value.ColumnEdit = this.repositoryItemMemoEdit1;
+            this.colutility_value.FieldName = "utility_value";
+            this.colutility_value.Name = "colutility_value";
+            this.colutility_value.OptionsColumn.AllowEdit = false;
+            this.colutility_value.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
+            this.colutility_value.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.colutility_value.OptionsColumn.AllowMove = false;
+            this.colutility_value.OptionsColumn.AllowShowHide = false;
+            this.colutility_value.OptionsColumn.AllowSize = false;
+            this.colutility_value.OptionsColumn.ReadOnly = true;
+            this.colutility_value.Visible = true;
+            this.colutility_value.VisibleIndex = 4;
+            this.colutility_value.Width = 126;
+            // 
+            // coluse_frequency
+            // 
+            this.coluse_frequency.ColumnEdit = this.repositoryItemMemoEdit1;
+            this.coluse_frequency.FieldName = "use_frequency";
+            this.coluse_frequency.Name = "coluse_frequency";
+            this.coluse_frequency.OptionsColumn.AllowEdit = false;
+            this.coluse_frequency.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
+            this.coluse_frequency.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.coluse_frequency.OptionsColumn.AllowMove = false;
+            this.coluse_frequency.OptionsColumn.AllowShowHide = false;
+            this.coluse_frequency.OptionsColumn.AllowSize = false;
+            this.coluse_frequency.OptionsColumn.ReadOnly = true;
+            this.coluse_frequency.Visible = true;
+            this.coluse_frequency.VisibleIndex = 5;
+            this.coluse_frequency.Width = 126;
+            // 
+            // colduplication
+            // 
+            this.colduplication.ColumnEdit = this.repositoryItemMemoEdit1;
+            this.colduplication.FieldName = "duplication";
+            this.colduplication.Name = "colduplication";
+            this.colduplication.OptionsColumn.AllowEdit = false;
+            this.colduplication.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
+            this.colduplication.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.colduplication.OptionsColumn.AllowMove = false;
+            this.colduplication.OptionsColumn.AllowShowHide = false;
+            this.colduplication.OptionsColumn.AllowSize = false;
+            this.colduplication.OptionsColumn.ReadOnly = true;
+            this.colduplication.Visible = true;
+            this.colduplication.VisibleIndex = 6;
+            this.colduplication.Width = 116;
+            // 
+            // colperiod_start
+            // 
+            this.colperiod_start.ColumnEdit = this.repositoryItemMemoEdit1;
+            this.colperiod_start.FieldName = "period_start";
+            this.colperiod_start.Name = "colperiod_start";
+            this.colperiod_start.OptionsColumn.AllowEdit = false;
+            this.colperiod_start.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
+            this.colperiod_start.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.colperiod_start.OptionsColumn.AllowMove = false;
+            this.colperiod_start.OptionsColumn.AllowShowHide = false;
+            this.colperiod_start.OptionsColumn.AllowSize = false;
+            this.colperiod_start.OptionsColumn.ReadOnly = true;
+            this.colperiod_start.Visible = true;
+            this.colperiod_start.VisibleIndex = 7;
+            this.colperiod_start.Width = 109;
+            // 
+            // colperiod_end
+            // 
+            this.colperiod_end.ColumnEdit = this.repositoryItemMemoEdit1;
+            this.colperiod_end.FieldName = "period_end";
+            this.colperiod_end.Name = "colperiod_end";
+            this.colperiod_end.OptionsColumn.AllowEdit = false;
+            this.colperiod_end.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
+            this.colperiod_end.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.colperiod_end.OptionsColumn.AllowMove = false;
+            this.colperiod_end.OptionsColumn.AllowShowHide = false;
+            this.colperiod_end.OptionsColumn.AllowSize = false;
+            this.colperiod_end.OptionsColumn.ReadOnly = true;
+            this.colperiod_end.Visible = true;
+            this.colperiod_end.VisibleIndex = 8;
+            this.colperiod_end.Width = 101;
+            // 
+            // colsubmit_name
+            // 
+            this.colsubmit_name.ColumnEdit = this.repositoryItemMemoEdit1;
+            this.colsubmit_name.FieldName = "submit_name";
+            this.colsubmit_name.Name = "colsubmit_name";
+            this.colsubmit_name.OptionsColumn.AllowEdit = false;
+            this.colsubmit_name.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
+            this.colsubmit_name.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.colsubmit_name.OptionsColumn.AllowMove = false;
+            this.colsubmit_name.OptionsColumn.AllowShowHide = false;
+            this.colsubmit_name.OptionsColumn.AllowSize = false;
+            this.colsubmit_name.OptionsColumn.ReadOnly = true;
+            this.colsubmit_name.Visible = true;
+            this.colsubmit_name.VisibleIndex = 9;
+            this.colsubmit_name.Width = 118;
+            // 
+            // colsubmit_date
+            // 
+            this.colsubmit_date.ColumnEdit = this.repositoryItemMemoEdit1;
+            this.colsubmit_date.FieldName = "submit_date";
+            this.colsubmit_date.Name = "colsubmit_date";
+            this.colsubmit_date.OptionsColumn.AllowEdit = false;
+            this.colsubmit_date.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
+            this.colsubmit_date.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.colsubmit_date.OptionsColumn.AllowMove = false;
+            this.colsubmit_date.OptionsColumn.AllowShowHide = false;
+            this.colsubmit_date.OptionsColumn.AllowSize = false;
+            this.colsubmit_date.OptionsColumn.ReadOnly = true;
+            this.colsubmit_date.Visible = true;
+            this.colsubmit_date.VisibleIndex = 10;
+            this.colsubmit_date.Width = 128;
+            // 
             // ctrl_inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button_edit);
             this.Controls.Add(this.button_delete);
             this.Controls.Add(this.button_add);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
@@ -241,7 +490,9 @@ namespace rec_inven_samp
             this.Size = new System.Drawing.Size(1092, 569);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,7 +503,6 @@ namespace rec_inven_samp
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button_edit_exit;
         private System.Windows.Forms.Button button_edit_save;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button_add;
         private System.Windows.Forms.Button button_delete;
         private System.Windows.Forms.Button button_edit;
@@ -260,5 +510,20 @@ namespace rec_inven_samp
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label1;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
+        private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
+        private DevExpress.XtraGrid.Columns.GridColumn colrds_id;
+        private DevExpress.XtraGrid.Columns.GridColumn coloffice_code;
+        private DevExpress.XtraGrid.Columns.GridColumn colrecord_loc;
+        private DevExpress.XtraGrid.Columns.GridColumn colvol_cubic_meter;
+        private DevExpress.XtraGrid.Columns.GridColumn colutility_value;
+        private DevExpress.XtraGrid.Columns.GridColumn coluse_frequency;
+        private DevExpress.XtraGrid.Columns.GridColumn colduplication;
+        private DevExpress.XtraGrid.Columns.GridColumn colperiod_start;
+        private DevExpress.XtraGrid.Columns.GridColumn colperiod_end;
+        private DevExpress.XtraGrid.Columns.GridColumn colsubmit_name;
+        private DevExpress.XtraGrid.Columns.GridColumn colsubmit_date;
     }
 }

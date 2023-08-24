@@ -50,7 +50,7 @@ namespace rec_inven_samp
             this.txt_dup = new System.Windows.Forms.TextBox();
             this.grp_series = new System.Windows.Forms.GroupBox();
             this.txt_add_info = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chb_no_time_val = new System.Windows.Forms.CheckBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.cmb_util_val = new System.Windows.Forms.ComboBox();
@@ -92,7 +92,6 @@ namespace rec_inven_samp
             this.button1.TabIndex = 2;
             this.button1.Text = "save";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // cmb_categ
             // 
@@ -289,7 +288,7 @@ namespace rec_inven_samp
             // grp_series
             // 
             this.grp_series.Controls.Add(this.txt_add_info);
-            this.grp_series.Controls.Add(this.checkBox1);
+            this.grp_series.Controls.Add(this.chb_no_time_val);
             this.grp_series.Controls.Add(this.label14);
             this.grp_series.Controls.Add(this.label13);
             this.grp_series.Controls.Add(this.cmb_util_val);
@@ -329,18 +328,18 @@ namespace rec_inven_samp
             this.txt_add_info.Size = new System.Drawing.Size(466, 81);
             this.txt_add_info.TabIndex = 11;
             // 
-            // checkBox1
+            // chb_no_time_val
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Enabled = false;
-            this.checkBox1.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(334, 361);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(139, 21);
-            this.checkBox1.TabIndex = 10;
-            this.checkBox1.TabStop = false;
-            this.checkBox1.Text = "Not Applicable";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chb_no_time_val.AutoSize = true;
+            this.chb_no_time_val.Enabled = false;
+            this.chb_no_time_val.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chb_no_time_val.Location = new System.Drawing.Point(334, 361);
+            this.chb_no_time_val.Name = "chb_no_time_val";
+            this.chb_no_time_val.Size = new System.Drawing.Size(139, 21);
+            this.chb_no_time_val.TabIndex = 10;
+            this.chb_no_time_val.TabStop = false;
+            this.chb_no_time_val.Text = "Not Applicable";
+            this.chb_no_time_val.UseVisualStyleBackColor = true;
             // 
             // label14
             // 
@@ -576,7 +575,7 @@ namespace rec_inven_samp
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cmb_util_val;
         private System.Windows.Forms.TextBox txt_time_val;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chb_no_time_val;
         private System.Windows.Forms.Label lbl_dt;
         private System.Windows.Forms.TextBox txt_add_info;
         private System.Windows.Forms.Label label15;
