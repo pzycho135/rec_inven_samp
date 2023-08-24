@@ -279,7 +279,7 @@ namespace rec_inven_samp
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
-            var str = Convert.ToString(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "item_name"));
+            var str = Convert.ToString(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "rds_id"));
             MessageBox.Show(str);
         }
     }
