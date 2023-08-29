@@ -65,6 +65,7 @@ namespace rec_inven_samp
             this.grp_encoder = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.lbl_dt = new System.Windows.Forms.Label();
+            this.cmb_office_categ = new System.Windows.Forms.ComboBox();
             this.grp_series.SuspendLayout();
             this.grp_period.SuspendLayout();
             this.grp_encoder.SuspendLayout();
@@ -104,7 +105,7 @@ namespace rec_inven_samp
             this.cmb_categ.IntegralHeight = false;
             this.cmb_categ.Location = new System.Drawing.Point(142, 66);
             this.cmb_categ.Name = "cmb_categ";
-            this.cmb_categ.Size = new System.Drawing.Size(753, 29);
+            this.cmb_categ.Size = new System.Drawing.Size(854, 29);
             this.cmb_categ.TabIndex = 2;
             this.cmb_categ.SelectionChangeCommitted += new System.EventHandler(this.cmb_categ_SelectionChangeCommitted);
             // 
@@ -131,7 +132,7 @@ namespace rec_inven_samp
             this.cmb_series.ItemHeight = 21;
             this.cmb_series.Location = new System.Drawing.Point(142, 101);
             this.cmb_series.Name = "cmb_series";
-            this.cmb_series.Size = new System.Drawing.Size(753, 29);
+            this.cmb_series.Size = new System.Drawing.Size(854, 29);
             this.cmb_series.TabIndex = 3;
             this.cmb_series.SelectionChangeCommitted += new System.EventHandler(this.cmb_series_SelectionChangeCommitted);
             // 
@@ -162,7 +163,7 @@ namespace rec_inven_samp
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(409, 31);
+            this.label4.Location = new System.Drawing.Point(399, 31);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 17);
@@ -175,10 +176,10 @@ namespace rec_inven_samp
             this.cmb_office.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_office.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
             this.cmb_office.FormattingEnabled = true;
-            this.cmb_office.Location = new System.Drawing.Point(480, 22);
+            this.cmb_office.Location = new System.Drawing.Point(636, 25);
             this.cmb_office.Name = "cmb_office";
-            this.cmb_office.Size = new System.Drawing.Size(113, 29);
-            this.cmb_office.TabIndex = 2;
+            this.cmb_office.Size = new System.Drawing.Size(160, 29);
+            this.cmb_office.TabIndex = 3;
             // 
             // label5
             // 
@@ -219,7 +220,7 @@ namespace rec_inven_samp
             this.txt_location.Location = new System.Drawing.Point(141, 269);
             this.txt_location.MaxLength = 100;
             this.txt_location.Name = "txt_location";
-            this.txt_location.Size = new System.Drawing.Size(332, 26);
+            this.txt_location.Size = new System.Drawing.Size(410, 26);
             this.txt_location.TabIndex = 4;
             // 
             // label8
@@ -240,14 +241,14 @@ namespace rec_inven_samp
             this.txt_vol.Location = new System.Drawing.Point(198, 314);
             this.txt_vol.MaxLength = 100;
             this.txt_vol.Name = "txt_vol";
-            this.txt_vol.Size = new System.Drawing.Size(275, 26);
+            this.txt_vol.Size = new System.Drawing.Size(353, 26);
             this.txt_vol.TabIndex = 5;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(534, 299);
+            this.label9.Location = new System.Drawing.Point(593, 300);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(120, 17);
@@ -258,7 +259,7 @@ namespace rec_inven_samp
             // 
             this.txt_use_freq.BackColor = System.Drawing.Color.White;
             this.txt_use_freq.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
-            this.txt_use_freq.Location = new System.Drawing.Point(661, 293);
+            this.txt_use_freq.Location = new System.Drawing.Point(720, 294);
             this.txt_use_freq.MaxLength = 10;
             this.txt_use_freq.Name = "txt_use_freq";
             this.txt_use_freq.Size = new System.Drawing.Size(276, 26);
@@ -268,7 +269,7 @@ namespace rec_inven_samp
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(534, 339);
+            this.label10.Location = new System.Drawing.Point(593, 340);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(104, 17);
@@ -279,7 +280,7 @@ namespace rec_inven_samp
             // 
             this.txt_dup.BackColor = System.Drawing.Color.White;
             this.txt_dup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
-            this.txt_dup.Location = new System.Drawing.Point(661, 333);
+            this.txt_dup.Location = new System.Drawing.Point(720, 334);
             this.txt_dup.MaxLength = 100;
             this.txt_dup.Name = "txt_dup";
             this.txt_dup.Size = new System.Drawing.Size(276, 26);
@@ -312,7 +313,7 @@ namespace rec_inven_samp
             this.grp_series.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grp_series.Location = new System.Drawing.Point(12, 104);
             this.grp_series.Name = "grp_series";
-            this.grp_series.Size = new System.Drawing.Size(976, 431);
+            this.grp_series.Size = new System.Drawing.Size(1036, 431);
             this.grp_series.TabIndex = 2;
             this.grp_series.TabStop = false;
             this.grp_series.Text = "Records Series Details";
@@ -325,7 +326,7 @@ namespace rec_inven_samp
             this.txt_add_info.Name = "txt_add_info";
             this.txt_add_info.ReadOnly = true;
             this.txt_add_info.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txt_add_info.Size = new System.Drawing.Size(466, 81);
+            this.txt_add_info.Size = new System.Drawing.Size(513, 81);
             this.txt_add_info.TabIndex = 11;
             // 
             // chb_no_time_val
@@ -333,7 +334,7 @@ namespace rec_inven_samp
             this.chb_no_time_val.AutoSize = true;
             this.chb_no_time_val.Enabled = false;
             this.chb_no_time_val.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chb_no_time_val.Location = new System.Drawing.Point(334, 361);
+            this.chb_no_time_val.Location = new System.Drawing.Point(370, 361);
             this.chb_no_time_val.Name = "chb_no_time_val";
             this.chb_no_time_val.Size = new System.Drawing.Size(139, 21);
             this.chb_no_time_val.TabIndex = 10;
@@ -371,7 +372,7 @@ namespace rec_inven_samp
             this.cmb_util_val.FormattingEnabled = true;
             this.cmb_util_val.Location = new System.Drawing.Point(141, 396);
             this.cmb_util_val.Name = "cmb_util_val";
-            this.cmb_util_val.Size = new System.Drawing.Size(177, 29);
+            this.cmb_util_val.Size = new System.Drawing.Size(223, 29);
             this.cmb_util_val.TabIndex = 7;
             // 
             // grp_period
@@ -380,7 +381,7 @@ namespace rec_inven_samp
             this.grp_period.Controls.Add(this.label6);
             this.grp_period.Controls.Add(this.dtp_end);
             this.grp_period.Controls.Add(this.dtp_start);
-            this.grp_period.Location = new System.Drawing.Point(575, 150);
+            this.grp_period.Location = new System.Drawing.Point(676, 150);
             this.grp_period.Name = "grp_period";
             this.grp_period.Size = new System.Drawing.Size(320, 105);
             this.grp_period.TabIndex = 7;
@@ -462,14 +463,14 @@ namespace rec_inven_samp
             this.txt_time_val.MaxLength = 50;
             this.txt_time_val.Name = "txt_time_val";
             this.txt_time_val.ReadOnly = true;
-            this.txt_time_val.Size = new System.Drawing.Size(177, 26);
+            this.txt_time_val.Size = new System.Drawing.Size(223, 26);
             this.txt_time_val.TabIndex = 6;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(751, 40);
+            this.label12.Location = new System.Drawing.Point(844, 43);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(48, 17);
@@ -480,12 +481,13 @@ namespace rec_inven_samp
             // 
             this.grp_encoder.Controls.Add(this.txt_name);
             this.grp_encoder.Controls.Add(this.label5);
+            this.grp_encoder.Controls.Add(this.cmb_office_categ);
             this.grp_encoder.Controls.Add(this.cmb_office);
             this.grp_encoder.Controls.Add(this.label4);
             this.grp_encoder.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grp_encoder.Location = new System.Drawing.Point(12, 12);
             this.grp_encoder.Name = "grp_encoder";
-            this.grp_encoder.Size = new System.Drawing.Size(641, 72);
+            this.grp_encoder.Size = new System.Drawing.Size(825, 72);
             this.grp_encoder.TabIndex = 1;
             this.grp_encoder.TabStop = false;
             this.grp_encoder.Text = "Encoder Details";
@@ -503,19 +505,35 @@ namespace rec_inven_samp
             // lbl_dt
             // 
             this.lbl_dt.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_dt.Location = new System.Drawing.Point(806, 17);
+            this.lbl_dt.Location = new System.Drawing.Point(899, 20);
             this.lbl_dt.Name = "lbl_dt";
-            this.lbl_dt.Size = new System.Drawing.Size(182, 61);
+            this.lbl_dt.Size = new System.Drawing.Size(149, 61);
             this.lbl_dt.TabIndex = 11;
             this.lbl_dt.Text = "2023, August 15 12:00:00 tt";
             this.lbl_dt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cmb_office_categ
+            // 
+            this.cmb_office_categ.BackColor = System.Drawing.Color.White;
+            this.cmb_office_categ.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_office_categ.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
+            this.cmb_office_categ.FormattingEnabled = true;
+            this.cmb_office_categ.Items.AddRange(new object[] {
+            "DIVISION",
+            "DISTRICT",
+            "SCHOOL"});
+            this.cmb_office_categ.Location = new System.Drawing.Point(470, 25);
+            this.cmb_office_categ.Name = "cmb_office_categ";
+            this.cmb_office_categ.Size = new System.Drawing.Size(160, 29);
+            this.cmb_office_categ.TabIndex = 2;
+            this.cmb_office_categ.SelectionChangeCommitted += new System.EventHandler(this.cmb_office_categ_SelectionChangeCommitted);
             // 
             // add_test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1000, 590);
+            this.ClientSize = new System.Drawing.Size(1060, 590);
             this.Controls.Add(this.lbl_dt);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.grp_encoder);
@@ -579,5 +597,6 @@ namespace rec_inven_samp
         private System.Windows.Forms.Label lbl_dt;
         private System.Windows.Forms.TextBox txt_add_info;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ComboBox cmb_office_categ;
     }
 }

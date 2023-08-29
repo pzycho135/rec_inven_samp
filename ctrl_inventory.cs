@@ -111,7 +111,10 @@ namespace rec_inven_samp
             // Show testDialog as a modal dialog and determine if DialogResult = OK.
             if (add_Test.ShowDialog(this) == DialogResult.OK)
             {
-                //--- do something
+                MessageBox.Show("done");
+                _refresher();
+
+                gridView1.MoveLast();
             }
             else
             {
@@ -185,62 +188,6 @@ namespace rec_inven_samp
                     break;
             }
 
-        }
-
-        //--- test for adding entry
-        private void add_test()
-        {/*
-            open_form:
-            add_test add_Test = new add_test();
-            // Show testDialog as a modal dialog and determine if DialogResult = OK.
-            if (add_Test.ShowDialog(this) == DialogResult.OK)
-            {
-                // Read the contents of testDialog's TextBox.
-
-                if (string.IsNullOrWhiteSpace(add_Test.textBox1.Text))
-                {
-                    MessageBox.Show("Textbox is empty!");
-                    goto open_form;
-                }
-                else
-                {
-                    try
-                    {
-                        string sql1 = "insert into test_table (test_tablecol) values ('" + add_Test.textBox1.Text + "');";
-                        con.mycon.Open();
-                        using (con.cmd = new MySqlCommand(sql1, con.mycon))
-                        {
-                            con.cmd.ExecuteNonQuery();
-                        }
-                        con.mycon.Close();
-
-                        //--- sidenote for selecting last insert https://thispointer.com/4-ways-to-get-last-inserted-id-of-a-mysql-table/
-                        string sql2 = "update test_table" +
-                                      " set test_id = concat(coalesce(test_table.test_tablecol, ''), '-', coalesce(test_table.idtest_table, ''))" +
-                                      " where test_table.idtest_table = (select last_insert_id());";
-
-                        con.mycon.Open();
-                        using (con.cmd = new MySqlCommand(sql2, con.mycon))
-                        {
-                            con.cmd.ExecuteNonQuery();
-                        }
-                        con.mycon.Close();
-
-                        MessageBox.Show(add_Test.textBox1.Text);
-                        dgv_refresh();
-                        add_Test.Dispose();
-                    }
-
-                    catch (MySqlException ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                }
-            }
-            else
-            {
-                //this.txtResult.Text = "Cancelled";
-            }*/
         }
 
         private void gridView1_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)

@@ -12,7 +12,7 @@ namespace rec_inven_samp
     {
         public static string con = "server=localhost;uid=root;" +
                                       "pwd=root;database=records_inventory;" +
-                                        "allow zero datetime=true";
+                                        "allow zero datetime=true;Allow User Variables=true";
 
         public MySqlConnection mycon = new MySqlConnection(con);
         public MySqlCommand cmd;

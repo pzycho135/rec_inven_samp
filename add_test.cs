@@ -29,6 +29,10 @@ namespace rec_inven_samp
         private bool ch_grp_series = false;
         private bool ch_grp_period = false;
 
+        private string office_fill = null;
+        private string office_vm = null;
+        private string office_dm = null;
+
         public add_test()
         {
             InitializeComponent();
@@ -39,6 +43,7 @@ namespace rec_inven_samp
             fill_cmb();
             cmb_categ.SelectedIndex = -1;
             cmb_series.SelectedIndex = -1;
+            cmb_office_categ.SelectedIndex = -1;
             cmb_office.SelectedIndex = -1;
             cmb_util_val.SelectedIndex = -1;
         }
@@ -63,6 +68,7 @@ namespace rec_inven_samp
             if (ch_grp_encoder == true && ch_grp_series == true && ch_grp_period == true)
             {
                 save_entry();
+                this.DialogResult = DialogResult.OK;
             }
         }
 
@@ -176,22 +182,6 @@ namespace rec_inven_samp
         {
             try
             {
-                //--- office
-                string sql1 = "select * from list_office;";
-
-                con.mycon.Open();
-                using (con.cmd = new MySqlCommand(sql1, con.mycon))
-                {
-                    con.adapter = new MySqlDataAdapter(con.cmd);
-                    con.ds = new DataSet();
-                    con.adapter.Fill(con.ds);
-
-                    cmb_office.DataSource = con.ds.Tables[0];
-                    cmb_office.ValueMember = "office_code";
-                    cmb_office.DisplayMember = "office_short";
-                }
-                con.mycon.Close();
-
                 //--- category
                 string sql2 = "select * from rds_category order by category asc;";
 
@@ -432,6 +422,66 @@ namespace rec_inven_samp
                     con.mycon.Close();
                     cmb_series.SelectedIndex = -1;
                 }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cmb_office_categ_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            cmb_office.DataSource = null;
+            cmb_office.Items.Clear();
+
+            switch (cmb_office_categ.Text)
+            {
+                //--- office
+                case "DIVISION":
+                    office_fill = "list_office";
+                    office_vm = "office_code";
+                    office_dm = "office_short";
+                    _fill_office();
+                    break;
+
+                case "DISTRICT":
+                    office_fill = "list_district";
+                    office_vm = "district_code";
+                    office_dm = "district_short";
+                    _fill_office();
+                    break;
+
+                case "SCHOOL":
+                    office_fill = "list_school";
+                    office_vm = "school_id_unique";
+                    office_dm = "school_name";
+                    _fill_office();
+                    break;
+            }
+        }
+
+        private string sq = null;
+
+        private void _fill_office()
+        {
+            try
+            {
+                string sql1 = "select * from " + office_fill + ";";
+                sq = sql1;
+
+                con.mycon.Open();
+                using (con.cmd = new MySqlCommand(sql1, con.mycon))
+                {
+                    con.adapter = new MySqlDataAdapter(con.cmd);
+                    con.ds = new DataSet();
+                    con.adapter.Fill(con.ds);
+
+                    cmb_office.DataSource = con.ds.Tables[0];
+                    cmb_office.ValueMember = office_vm;
+                    cmb_office.DisplayMember = office_dm;
+                }
+                con.mycon.Close();
             }
 
             catch (Exception ex)
