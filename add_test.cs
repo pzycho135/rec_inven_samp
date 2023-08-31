@@ -495,7 +495,7 @@ namespace rec_inven_samp
             if (cmb_office.Text != null)
             {
                 toolTip1.SetToolTip(cmb_office, cmb_office.Text);
-                //---
+                //--- ---
             }
         }
     }
