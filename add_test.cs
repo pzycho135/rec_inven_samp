@@ -82,8 +82,6 @@ namespace rec_inven_samp
             string s_encoder = txt_name.Text;
             string s_office = cmb_office.SelectedValue.ToString();
 
-            //string s_date = Convert.ToDateTime(lbl_dt.Text).ToString();
-
             //--- records series details
             string s_rds_id = txt_rds_id.Text;
 
@@ -93,10 +91,7 @@ namespace rec_inven_samp
             string s_use_frequency = txt_use_freq.Text;
             string s_duplication = txt_dup.Text;
 
-            //string s_start_period = dtp_start.Value.ToShortDateString();
-            //string s_end_period = dtp_end.Value.ToShortDateString();
-
-
+            //--- dates
             string s_date = Convert.ToDateTime(lbl_dt.Text).ToString(datetime_format);
             string s_start_period = dtp_start.Value.ToString(date_format);
             string s_end_period = dtp_end.Value.ToString(date_format);
@@ -108,7 +103,7 @@ namespace rec_inven_samp
             string s_time_value = txt_time_val.Text;
 
             try
-            {//--- observe date format
+            {
                 string sql1 = "insert into test_nap1_div(rds_id, office_code, record_loc, vol_cubic_meter," +
                                 " utility_value, use_frequency, duplication, period_start, period_end," +
                                 " submit_name, submit_date) values ('" + s_rds_id + "', '" + s_office + "', '" + s_location + "', '" + s_volume + "'," +
@@ -470,14 +465,11 @@ namespace rec_inven_samp
             }
         }
 
-        private string sq = null;
-
         private void _fill_office()
         {
             try
             {
                 string sql1 = "select * from " + office_fill + ";";
-                sq = sql1;
 
                 con.mycon.Open();
                 using (con.cmd = new MySqlCommand(sql1, con.mycon))
@@ -504,10 +496,10 @@ namespace rec_inven_samp
             if (cmb_office.Text != null)
             {
                 toolTip1.SetToolTip(cmb_office, cmb_office.Text);
-                //--- ---
             }
         }
 
+        //--- test button
         private void button1_Click(object sender, EventArgs e)
         {
             string s_date = Convert.ToDateTime(lbl_dt.Text).ToString(datetime_format);

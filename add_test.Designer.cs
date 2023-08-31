@@ -92,7 +92,7 @@ namespace rec_inven_samp
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(149, 35);
             this.button1.TabIndex = 2;
-            this.button1.Text = "save";
+            this.button1.Text = "test";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -517,7 +517,7 @@ namespace rec_inven_samp
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(107, 35);
             this.button2.TabIndex = 8;
-            this.button2.Text = "button2";
+            this.button2.Text = "save";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
