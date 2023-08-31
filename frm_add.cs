@@ -100,7 +100,7 @@ namespace rec_inven_samp
 
             try
             {
-                string sql1 = "insert into test_nap1(rds_id, office_code, record_loc, vol_cubic_meter," +
+                string sql1 = "insert into test_nap1_div(rds_id, office_code, record_loc, vol_cubic_meter," +
                                 " utility_value, use_frequency, duplication, period_start, period_end," +
                                 " submit_name, submit_date) values ('" + s_rds_id + "', '" + s_office + "', '" + s_location + "', '" + s_volume + "'," +
                                 " '" + s_utility + "', '" + s_use_frequency + "', '" + s_duplication + "', str_to_date('" + s_start_period + "', '%d/%m/%Y')," +
@@ -126,7 +126,7 @@ namespace rec_inven_samp
                 }
                 con.mycon.Close();
             }
-            catch (MySqlException ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -461,11 +461,14 @@ namespace rec_inven_samp
             }
         }
 
+        private string sq = null;
+
         private void _fill_office()
         {
             try
             {
                 string sql1 = "select * from " + office_fill + ";";
+                sq = sql1;
 
                 con.mycon.Open();
                 using (con.cmd = new MySqlCommand(sql1, con.mycon))
