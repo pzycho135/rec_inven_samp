@@ -29,6 +29,7 @@ namespace rec_inven_samp
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.cmb_categ = new System.Windows.Forms.ComboBox();
@@ -63,9 +64,10 @@ namespace rec_inven_samp
             this.txt_time_val = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.grp_encoder = new System.Windows.Forms.GroupBox();
+            this.cmb_office_categ = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.lbl_dt = new System.Windows.Forms.Label();
-            this.cmb_office_categ = new System.Windows.Forms.ComboBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.grp_series.SuspendLayout();
             this.grp_period.SuspendLayout();
             this.grp_encoder.SuspendLayout();
@@ -180,6 +182,7 @@ namespace rec_inven_samp
             this.cmb_office.Name = "cmb_office";
             this.cmb_office.Size = new System.Drawing.Size(160, 29);
             this.cmb_office.TabIndex = 3;
+            this.cmb_office.MouseHover += new System.EventHandler(this.cmb_office_MouseHover);
             // 
             // label5
             // 
@@ -492,6 +495,22 @@ namespace rec_inven_samp
             this.grp_encoder.TabStop = false;
             this.grp_encoder.Text = "Encoder Details";
             // 
+            // cmb_office_categ
+            // 
+            this.cmb_office_categ.BackColor = System.Drawing.Color.White;
+            this.cmb_office_categ.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_office_categ.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
+            this.cmb_office_categ.FormattingEnabled = true;
+            this.cmb_office_categ.Items.AddRange(new object[] {
+            "DIVISION",
+            "DISTRICT",
+            "SCHOOL"});
+            this.cmb_office_categ.Location = new System.Drawing.Point(470, 25);
+            this.cmb_office_categ.Name = "cmb_office_categ";
+            this.cmb_office_categ.Size = new System.Drawing.Size(160, 29);
+            this.cmb_office_categ.TabIndex = 2;
+            this.cmb_office_categ.SelectionChangeCommitted += new System.EventHandler(this.cmb_office_categ_SelectionChangeCommitted);
+            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(477, 543);
@@ -511,22 +530,6 @@ namespace rec_inven_samp
             this.lbl_dt.TabIndex = 11;
             this.lbl_dt.Text = "2023, August 15 12:00:00 tt";
             this.lbl_dt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // cmb_office_categ
-            // 
-            this.cmb_office_categ.BackColor = System.Drawing.Color.White;
-            this.cmb_office_categ.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_office_categ.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
-            this.cmb_office_categ.FormattingEnabled = true;
-            this.cmb_office_categ.Items.AddRange(new object[] {
-            "DIVISION",
-            "DISTRICT",
-            "SCHOOL"});
-            this.cmb_office_categ.Location = new System.Drawing.Point(470, 25);
-            this.cmb_office_categ.Name = "cmb_office_categ";
-            this.cmb_office_categ.Size = new System.Drawing.Size(160, 29);
-            this.cmb_office_categ.TabIndex = 2;
-            this.cmb_office_categ.SelectionChangeCommitted += new System.EventHandler(this.cmb_office_categ_SelectionChangeCommitted);
             // 
             // add_test
             // 
@@ -598,5 +601,6 @@ namespace rec_inven_samp
         private System.Windows.Forms.TextBox txt_add_info;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox cmb_office_categ;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

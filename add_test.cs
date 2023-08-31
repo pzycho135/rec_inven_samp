@@ -489,5 +489,13 @@ namespace rec_inven_samp
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void cmb_office_MouseHover(object sender, EventArgs e)
+        {
+            if (cmb_office.Text != null)
+            {
+                toolTip1.SetToolTip(cmb_office, cmb_office.Text);
+            }
+        }
     }
 }
