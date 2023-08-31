@@ -86,7 +86,6 @@ namespace rec_inven_samp
             // 
             // button1
             // 
-            this.button1.Enabled = false;
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
             this.button1.Location = new System.Drawing.Point(839, 542);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
@@ -95,6 +94,7 @@ namespace rec_inven_samp
             this.button1.TabIndex = 2;
             this.button1.Text = "save";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // cmb_categ
             // 

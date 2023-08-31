@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -78,7 +79,7 @@ namespace rec_inven_samp
             string s_encoder = txt_name.Text;
             string s_office = cmb_office.SelectedValue.ToString();
 
-            string s_date = Convert.ToDateTime(lbl_dt.Text).ToString();
+            //string s_date = Convert.ToDateTime(lbl_dt.Text).ToString();
 
             //--- records series details
             string s_rds_id = txt_rds_id.Text;
@@ -89,8 +90,13 @@ namespace rec_inven_samp
             string s_use_frequency = txt_use_freq.Text;
             string s_duplication = txt_dup.Text;
 
-            string s_start_period = dtp_start.Value.ToShortDateString();
-            string s_end_period = dtp_end.Value.ToShortDateString();
+            //string s_start_period = dtp_start.Value.ToShortDateString();
+            //string s_end_period = dtp_end.Value.ToShortDateString();
+
+
+            string s_date = Convert.ToDateTime(lbl_dt.Text).ToString("dd/MM/yyyy hh:mm:ss tt");
+            string s_start_period = dtp_start.Value.ToString("dd/MM/yyyy");
+            string s_end_period = dtp_end.Value.ToString("dd/MM/yyyy");
 
             //--- not needed ???
             string s_category = cmb_categ.Text;
@@ -99,7 +105,7 @@ namespace rec_inven_samp
             string s_time_value = txt_time_val.Text;
 
             try
-            {
+            {//--- observe date format
                 string sql1 = "insert into test_nap1_div(rds_id, office_code, record_loc, vol_cubic_meter," +
                                 " utility_value, use_frequency, duplication, period_start, period_end," +
                                 " submit_name, submit_date) values ('" + s_rds_id + "', '" + s_office + "', '" + s_location + "', '" + s_volume + "'," +
@@ -497,6 +503,15 @@ namespace rec_inven_samp
                 toolTip1.SetToolTip(cmb_office, cmb_office.Text);
                 //--- ---
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string s_date = Convert.ToDateTime(lbl_dt.Text).ToString("dd/MM/yyyy hh:mm:ss tt");
+            string s_start_period = dtp_start.Value.ToString("dd/MM/yyyy");
+            string s_end_period = dtp_end.Value.ToString("dd/MM/yyyy");
+
+            MessageBox.Show(s_date + "\n" + s_start_period + "\n" + s_end_period);
         }
     }
 }
