@@ -124,11 +124,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="add_test.cs">
+    <Compile Include="frm_add.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="add_test.Designer.cs">
-      <DependentUpon>add_test.cs</DependentUpon>
+    <Compile Include="frm_add.Designer.cs">
+      <DependentUpon>frm_add.cs</DependentUpon>
     </Compile>
     <Compile Include="db_con.cs" />
     <Compile Include="ctrl_disposal.cs">
@@ -175,8 +175,8 @@
     <Compile Include="ctrl_report.Designer.cs">
       <DependentUpon>ctrl_report.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="add_test.resx">
-      <DependentUpon>add_test.cs</DependentUpon>
+    <EmbeddedResource Include="frm_add.resx">
+      <DependentUpon>frm_add.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ctrl_disposal.resx">
       <DependentUpon>ctrl_disposal.cs</DependentUpon>
