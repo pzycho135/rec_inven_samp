@@ -1,7 +1,7 @@
 ﻿
 namespace rec_inven_samp
 {
-    partial class add_test
+    partial class frm_add
     {
         /// <summary>
         /// Required designer variable.
