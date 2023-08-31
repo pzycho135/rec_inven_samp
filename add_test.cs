@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace rec_inven_samp
 {
-    public partial class frm_add : Form
+    public partial class add_test : Form
     {
         db_con con = new db_con();
 
@@ -33,7 +33,7 @@ namespace rec_inven_samp
         private string office_vm = null;
         private string office_dm = null;
 
-        public frm_add()
+        public add_test()
         {
             InitializeComponent();
 
