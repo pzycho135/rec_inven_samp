@@ -107,7 +107,7 @@ namespace rec_inven_samp
         private void add_entry()
         {
             open_form:
-            frm_add add_Test = new frm_add();
+            add_test add_Test = new add_test();
             // Show testDialog as a modal dialog and determine if DialogResult = OK.
             if (add_Test.ShowDialog(this) == DialogResult.OK)
             {
