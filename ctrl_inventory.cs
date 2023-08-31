@@ -111,7 +111,7 @@ namespace rec_inven_samp
             // Show testDialog as a modal dialog and determine if DialogResult = OK.
             if (add_Test.ShowDialog(this) == DialogResult.OK)
             {
-                MessageBox.Show("done");
+                MessageBox.Show("done"); //--- must check if success insert
                 _refresher();
 
                 gridView1.MoveLast();
