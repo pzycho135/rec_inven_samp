@@ -34,6 +34,9 @@ namespace rec_inven_samp
         private string office_vm = null;
         private string office_dm = null;
 
+        private string datetime_format = "dd/MM/yyyy hh:mm:ss tt";
+        private string date_format = "dd/MM/yyyy";
+
         public add_test()
         {
             InitializeComponent();
@@ -94,9 +97,9 @@ namespace rec_inven_samp
             //string s_end_period = dtp_end.Value.ToShortDateString();
 
 
-            string s_date = Convert.ToDateTime(lbl_dt.Text).ToString("dd/MM/yyyy hh:mm:ss tt");
-            string s_start_period = dtp_start.Value.ToString("dd/MM/yyyy");
-            string s_end_period = dtp_end.Value.ToString("dd/MM/yyyy");
+            string s_date = Convert.ToDateTime(lbl_dt.Text).ToString(datetime_format);
+            string s_start_period = dtp_start.Value.ToString(date_format);
+            string s_end_period = dtp_end.Value.ToString(date_format);
 
             //--- not needed ???
             string s_category = cmb_categ.Text;
@@ -507,9 +510,9 @@ namespace rec_inven_samp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string s_date = Convert.ToDateTime(lbl_dt.Text).ToString("dd/MM/yyyy hh:mm:ss tt");
-            string s_start_period = dtp_start.Value.ToString("dd/MM/yyyy");
-            string s_end_period = dtp_end.Value.ToString("dd/MM/yyyy");
+            string s_date = Convert.ToDateTime(lbl_dt.Text).ToString(datetime_format);
+            string s_start_period = dtp_start.Value.ToString(date_format);
+            string s_end_period = dtp_end.Value.ToString(date_format);
 
             MessageBox.Show(s_date + "\n" + s_start_period + "\n" + s_end_period);
         }
