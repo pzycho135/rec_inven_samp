@@ -104,7 +104,7 @@ namespace rec_inven_samp
 
             try
             {
-                string sql1 = "insert into test_nap1_div(rds_id, office_code, record_loc, vol_cubic_meter," +
+                string sql1 = "insert into test_nap1(rds_id, office_code, record_loc, vol_cubic_meter," +
                                 " utility_value, use_frequency, duplication, period_start, period_end," +
                                 " submit_name, submit_date) values ('" + s_rds_id + "', '" + s_office + "', '" + s_location + "', '" + s_volume + "'," +
                                 " '" + s_utility + "', '" + s_use_frequency + "', '" + s_duplication + "', str_to_date('" + s_start_period + "', '%d/%m/%Y')," +

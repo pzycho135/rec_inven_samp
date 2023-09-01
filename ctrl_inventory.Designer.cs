@@ -30,9 +30,7 @@ namespace rec_inven_samp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.SelectQuery selectQuery2 = new DevExpress.DataAccess.Sql.SelectQuery();
-            DevExpress.DataAccess.Sql.AllColumns allColumns2 = new DevExpress.DataAccess.Sql.AllColumns();
-            DevExpress.DataAccess.Sql.Table table2 = new DevExpress.DataAccess.Sql.Table();
+            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery1 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrl_inventory));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,11 +42,11 @@ namespace rec_inven_samp
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colrds_id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
-            this.coloffice_code = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.sqlDataSource2 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
+            this.coloffice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colrds_id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colrecord_loc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colvol_cubic_meter = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colutility_value = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -204,8 +202,8 @@ namespace rec_inven_samp
             // 
             // gridControl1
             // 
-            this.gridControl1.DataMember = "test_nap1_div";
-            this.gridControl1.DataSource = this.sqlDataSource1;
+            this.gridControl1.DataMember = "Query";
+            this.gridControl1.DataSource = this.sqlDataSource2;
             this.gridControl1.Location = new System.Drawing.Point(3, 43);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
@@ -215,20 +213,6 @@ namespace rec_inven_samp
             this.gridControl1.TabIndex = 13;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            // 
-            // sqlDataSource1
-            // 
-            this.sqlDataSource1.ConnectionName = "localhost_records_inventory_Connection 1";
-            this.sqlDataSource1.Name = "sqlDataSource1";
-            table2.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"303\" />";
-            table2.Name = "test_nap1_div";
-            allColumns2.Table = table2;
-            selectQuery2.Columns.Add(allColumns2);
-            selectQuery2.Name = "test_nap1_div";
-            selectQuery2.Tables.Add(table2);
-            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            selectQuery2});
-            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // gridView1
             // 
@@ -248,8 +232,8 @@ namespace rec_inven_samp
             this.gridView1.Appearance.Row.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.gridView1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.coloffice,
             this.colrds_id,
-            this.coloffice_code,
             this.colrecord_loc,
             this.colvol_cubic_meter,
             this.colutility_value,
@@ -278,224 +262,118 @@ namespace rec_inven_samp
             this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             this.gridView1.RowCountChanged += new System.EventHandler(this.gridView1_RowCountChanged);
             // 
-            // colrds_id
-            // 
-            this.colrds_id.AppearanceCell.Options.UseTextOptions = true;
-            this.colrds_id.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colrds_id.Caption = "RDS/GRDS ID";
-            this.colrds_id.ColumnEdit = this.repositoryItemMemoEdit1;
-            this.colrds_id.FieldName = "rds_id";
-            this.colrds_id.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            this.colrds_id.Name = "colrds_id";
-            this.colrds_id.OptionsColumn.AllowEdit = false;
-            this.colrds_id.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.colrds_id.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.colrds_id.OptionsColumn.AllowMove = false;
-            this.colrds_id.OptionsColumn.AllowShowHide = false;
-            this.colrds_id.OptionsColumn.AllowSize = false;
-            this.colrds_id.OptionsColumn.FixedWidth = true;
-            this.colrds_id.OptionsColumn.ReadOnly = true;
-            this.colrds_id.Visible = true;
-            this.colrds_id.VisibleIndex = 0;
-            this.colrds_id.Width = 97;
-            // 
             // repositoryItemMemoEdit1
             // 
             this.repositoryItemMemoEdit1.Name = "repositoryItemMemoEdit1";
             // 
-            // coloffice_code
+            // sqlDataSource2
             // 
-            this.coloffice_code.Caption = "Office";
-            this.coloffice_code.ColumnEdit = this.repositoryItemMemoEdit1;
-            this.coloffice_code.FieldName = "office_code";
-            this.coloffice_code.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            this.coloffice_code.Name = "coloffice_code";
-            this.coloffice_code.OptionsColumn.AllowEdit = false;
-            this.coloffice_code.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.coloffice_code.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.coloffice_code.OptionsColumn.AllowMove = false;
-            this.coloffice_code.OptionsColumn.AllowShowHide = false;
-            this.coloffice_code.OptionsColumn.AllowSize = false;
-            this.coloffice_code.OptionsColumn.FixedWidth = true;
-            this.coloffice_code.OptionsColumn.ReadOnly = true;
-            this.coloffice_code.Visible = true;
-            this.coloffice_code.VisibleIndex = 1;
-            this.coloffice_code.Width = 95;
+            this.sqlDataSource2.ConnectionName = "localhost_records_inventory_Connection 1";
+            this.sqlDataSource2.Name = "sqlDataSource2";
+            customSqlQuery1.Name = "Query";
+            customSqlQuery1.Sql = resources.GetString("customSqlQuery1.Sql");
+            this.sqlDataSource2.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
+            customSqlQuery1});
+            this.sqlDataSource2.ResultSchemaSerializable = resources.GetString("sqlDataSource2.ResultSchemaSerializable");
+            // 
+            // coloffice
+            // 
+            this.coloffice.ColumnEdit = this.repositoryItemMemoEdit1;
+            this.coloffice.FieldName = "office";
+            this.coloffice.Name = "coloffice";
+            this.coloffice.Visible = true;
+            this.coloffice.VisibleIndex = 0;
+            this.coloffice.Width = 208;
+            // 
+            // colrds_id
+            // 
+            this.colrds_id.ColumnEdit = this.repositoryItemMemoEdit1;
+            this.colrds_id.FieldName = "rds_id";
+            this.colrds_id.Name = "colrds_id";
+            this.colrds_id.Visible = true;
+            this.colrds_id.VisibleIndex = 1;
+            this.colrds_id.Width = 94;
             // 
             // colrecord_loc
             // 
-            this.colrecord_loc.Caption = "Location of Records";
             this.colrecord_loc.ColumnEdit = this.repositoryItemMemoEdit1;
             this.colrecord_loc.FieldName = "record_loc";
-            this.colrecord_loc.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.colrecord_loc.Name = "colrecord_loc";
-            this.colrecord_loc.OptionsColumn.AllowEdit = false;
-            this.colrecord_loc.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.colrecord_loc.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.colrecord_loc.OptionsColumn.AllowMove = false;
-            this.colrecord_loc.OptionsColumn.AllowShowHide = false;
-            this.colrecord_loc.OptionsColumn.AllowSize = false;
-            this.colrecord_loc.OptionsColumn.FixedWidth = true;
-            this.colrecord_loc.OptionsColumn.ReadOnly = true;
             this.colrecord_loc.Visible = true;
             this.colrecord_loc.VisibleIndex = 2;
-            this.colrecord_loc.Width = 179;
+            this.colrecord_loc.Width = 136;
             // 
             // colvol_cubic_meter
             // 
-            this.colvol_cubic_meter.Caption = "Vol. per Cubic Meter";
             this.colvol_cubic_meter.ColumnEdit = this.repositoryItemMemoEdit1;
             this.colvol_cubic_meter.FieldName = "vol_cubic_meter";
             this.colvol_cubic_meter.Name = "colvol_cubic_meter";
-            this.colvol_cubic_meter.OptionsColumn.AllowEdit = false;
-            this.colvol_cubic_meter.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.colvol_cubic_meter.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.colvol_cubic_meter.OptionsColumn.AllowMove = false;
-            this.colvol_cubic_meter.OptionsColumn.AllowShowHide = false;
-            this.colvol_cubic_meter.OptionsColumn.AllowSize = false;
-            this.colvol_cubic_meter.OptionsColumn.FixedWidth = true;
-            this.colvol_cubic_meter.OptionsColumn.ReadOnly = true;
             this.colvol_cubic_meter.Visible = true;
             this.colvol_cubic_meter.VisibleIndex = 3;
-            this.colvol_cubic_meter.Width = 118;
+            this.colvol_cubic_meter.Width = 119;
             // 
             // colutility_value
             // 
-            this.colutility_value.AppearanceCell.Options.UseTextOptions = true;
-            this.colutility_value.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colutility_value.Caption = "Utility Value";
             this.colutility_value.ColumnEdit = this.repositoryItemMemoEdit1;
             this.colutility_value.FieldName = "utility_value";
             this.colutility_value.Name = "colutility_value";
-            this.colutility_value.OptionsColumn.AllowEdit = false;
-            this.colutility_value.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.colutility_value.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.colutility_value.OptionsColumn.AllowMove = false;
-            this.colutility_value.OptionsColumn.AllowShowHide = false;
-            this.colutility_value.OptionsColumn.AllowSize = false;
-            this.colutility_value.OptionsColumn.FixedWidth = true;
-            this.colutility_value.OptionsColumn.ReadOnly = true;
             this.colutility_value.Visible = true;
             this.colutility_value.VisibleIndex = 4;
-            this.colutility_value.Width = 149;
+            this.colutility_value.Width = 126;
             // 
             // coluse_frequency
             // 
-            this.coluse_frequency.AppearanceCell.Options.UseTextOptions = true;
-            this.coluse_frequency.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.coluse_frequency.Caption = "Use Frequency";
             this.coluse_frequency.ColumnEdit = this.repositoryItemMemoEdit1;
             this.coluse_frequency.FieldName = "use_frequency";
             this.coluse_frequency.Name = "coluse_frequency";
-            this.coluse_frequency.OptionsColumn.AllowEdit = false;
-            this.coluse_frequency.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.coluse_frequency.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.coluse_frequency.OptionsColumn.AllowMove = false;
-            this.coluse_frequency.OptionsColumn.AllowShowHide = false;
-            this.coluse_frequency.OptionsColumn.AllowSize = false;
-            this.coluse_frequency.OptionsColumn.FixedWidth = true;
-            this.coluse_frequency.OptionsColumn.ReadOnly = true;
             this.coluse_frequency.Visible = true;
             this.coluse_frequency.VisibleIndex = 5;
-            this.coluse_frequency.Width = 98;
+            this.coluse_frequency.Width = 112;
             // 
             // colduplication
             // 
-            this.colduplication.AppearanceCell.Options.UseTextOptions = true;
-            this.colduplication.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colduplication.Caption = "Duplication";
             this.colduplication.ColumnEdit = this.repositoryItemMemoEdit1;
             this.colduplication.FieldName = "duplication";
             this.colduplication.Name = "colduplication";
-            this.colduplication.OptionsColumn.AllowEdit = false;
-            this.colduplication.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.colduplication.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.colduplication.OptionsColumn.AllowMove = false;
-            this.colduplication.OptionsColumn.AllowShowHide = false;
-            this.colduplication.OptionsColumn.AllowSize = false;
-            this.colduplication.OptionsColumn.FixedWidth = true;
-            this.colduplication.OptionsColumn.ReadOnly = true;
             this.colduplication.Visible = true;
             this.colduplication.VisibleIndex = 6;
-            this.colduplication.Width = 117;
+            this.colduplication.Width = 113;
             // 
             // colperiod_start
             // 
-            this.colperiod_start.AppearanceCell.Options.UseTextOptions = true;
-            this.colperiod_start.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colperiod_start.Caption = "Period Covered - Start";
             this.colperiod_start.ColumnEdit = this.repositoryItemMemoEdit1;
             this.colperiod_start.FieldName = "period_start";
             this.colperiod_start.Name = "colperiod_start";
-            this.colperiod_start.OptionsColumn.AllowEdit = false;
-            this.colperiod_start.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.colperiod_start.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.colperiod_start.OptionsColumn.AllowMove = false;
-            this.colperiod_start.OptionsColumn.AllowShowHide = false;
-            this.colperiod_start.OptionsColumn.AllowSize = false;
-            this.colperiod_start.OptionsColumn.FixedWidth = true;
-            this.colperiod_start.OptionsColumn.ReadOnly = true;
             this.colperiod_start.Visible = true;
             this.colperiod_start.VisibleIndex = 7;
-            this.colperiod_start.Width = 130;
+            this.colperiod_start.Width = 119;
             // 
             // colperiod_end
             // 
-            this.colperiod_end.AppearanceCell.Options.UseTextOptions = true;
-            this.colperiod_end.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colperiod_end.Caption = "Period Covered - End";
             this.colperiod_end.ColumnEdit = this.repositoryItemMemoEdit1;
             this.colperiod_end.FieldName = "period_end";
             this.colperiod_end.Name = "colperiod_end";
-            this.colperiod_end.OptionsColumn.AllowEdit = false;
-            this.colperiod_end.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.colperiod_end.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.colperiod_end.OptionsColumn.AllowMove = false;
-            this.colperiod_end.OptionsColumn.AllowShowHide = false;
-            this.colperiod_end.OptionsColumn.AllowSize = false;
-            this.colperiod_end.OptionsColumn.FixedWidth = true;
-            this.colperiod_end.OptionsColumn.ReadOnly = true;
             this.colperiod_end.Visible = true;
             this.colperiod_end.VisibleIndex = 8;
-            this.colperiod_end.Width = 125;
+            this.colperiod_end.Width = 110;
             // 
             // colsubmit_name
             // 
-            this.colsubmit_name.Caption = "Encoder";
             this.colsubmit_name.ColumnEdit = this.repositoryItemMemoEdit1;
             this.colsubmit_name.FieldName = "submit_name";
             this.colsubmit_name.Name = "colsubmit_name";
-            this.colsubmit_name.OptionsColumn.AllowEdit = false;
-            this.colsubmit_name.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.colsubmit_name.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.colsubmit_name.OptionsColumn.AllowMove = false;
-            this.colsubmit_name.OptionsColumn.AllowShowHide = false;
-            this.colsubmit_name.OptionsColumn.AllowSize = false;
-            this.colsubmit_name.OptionsColumn.FixedWidth = true;
-            this.colsubmit_name.OptionsColumn.ReadOnly = true;
             this.colsubmit_name.Visible = true;
             this.colsubmit_name.VisibleIndex = 9;
-            this.colsubmit_name.Width = 154;
+            this.colsubmit_name.Width = 124;
             // 
             // colsubmit_date
             // 
-            this.colsubmit_date.AppearanceCell.Options.UseTextOptions = true;
-            this.colsubmit_date.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colsubmit_date.Caption = "Date Submitted";
             this.colsubmit_date.ColumnEdit = this.repositoryItemMemoEdit1;
             this.colsubmit_date.FieldName = "submit_date";
             this.colsubmit_date.Name = "colsubmit_date";
-            this.colsubmit_date.OptionsColumn.AllowEdit = false;
-            this.colsubmit_date.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.colsubmit_date.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.colsubmit_date.OptionsColumn.AllowMove = false;
-            this.colsubmit_date.OptionsColumn.AllowShowHide = false;
-            this.colsubmit_date.OptionsColumn.AllowSize = false;
-            this.colsubmit_date.OptionsColumn.FixedWidth = true;
-            this.colsubmit_date.OptionsColumn.ReadOnly = true;
             this.colsubmit_date.Visible = true;
             this.colsubmit_date.VisibleIndex = 10;
-            this.colsubmit_date.Width = 110;
+            this.colsubmit_date.Width = 117;
             // 
             // ctrl_inventory
             // 
@@ -538,9 +416,9 @@ namespace rec_inven_samp
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
-        private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
+        private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource2;
+        private DevExpress.XtraGrid.Columns.GridColumn coloffice;
         private DevExpress.XtraGrid.Columns.GridColumn colrds_id;
-        private DevExpress.XtraGrid.Columns.GridColumn coloffice_code;
         private DevExpress.XtraGrid.Columns.GridColumn colrecord_loc;
         private DevExpress.XtraGrid.Columns.GridColumn colvol_cubic_meter;
         private DevExpress.XtraGrid.Columns.GridColumn colutility_value;
