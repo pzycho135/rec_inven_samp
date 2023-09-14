@@ -117,9 +117,9 @@ namespace rec_inven_samp
         private void add_entry()
         {
             open_form:
-            add_test add_Test = new add_test();
+            frm_add_nap1 add_nap1 = new frm_add_nap1();
             // Show testDialog as a modal dialog and determine if DialogResult = OK.
-            if (add_Test.ShowDialog(this) == DialogResult.OK)
+            if (add_nap1.ShowDialog(this) == DialogResult.OK)
             {
                 MessageBox.Show("done"); //--- must check if success insert
                 _refresher();

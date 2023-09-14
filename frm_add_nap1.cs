@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace rec_inven_samp
 {
-    public partial class add_test : Form
+    public partial class frm_add_nap1 : Form
     {
         db_con con = new db_con();
 
@@ -37,7 +37,7 @@ namespace rec_inven_samp
         private string datetime_format = "dd/MM/yyyy hh:mm:ss tt";
         private string date_format = "dd/MM/yyyy";
 
-        public add_test()
+        public frm_add_nap1()
         {
             InitializeComponent();
 
@@ -445,14 +445,14 @@ namespace rec_inven_samp
                 case "DIVISION":
                     office_fill = "list_office";
                     office_vm = "office_code";
-                    office_dm = "office_short";
+                    office_dm = "office_name";
                     _fill_office();
                     break;
 
                 case "DISTRICT":
                     office_fill = "list_district";
                     office_vm = "district_code";
-                    office_dm = "district_short";
+                    office_dm = "district_name";
                     _fill_office();
                     break;
 

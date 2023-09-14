@@ -1,7 +1,7 @@
 ﻿
 namespace rec_inven_samp
 {
-    partial class add_test
+    partial class frm_add_nap1
     {
         /// <summary>
         /// Required designer variable.
@@ -87,7 +87,7 @@ namespace rec_inven_samp
             // button1
             // 
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
-            this.button1.Location = new System.Drawing.Point(839, 542);
+            this.button1.Location = new System.Drawing.Point(743, 598);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(149, 35);
@@ -165,7 +165,7 @@ namespace rec_inven_samp
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(399, 31);
+            this.label4.Location = new System.Drawing.Point(14, 77);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 17);
@@ -178,9 +178,9 @@ namespace rec_inven_samp
             this.cmb_office.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_office.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
             this.cmb_office.FormattingEnabled = true;
-            this.cmb_office.Location = new System.Drawing.Point(636, 25);
+            this.cmb_office.Location = new System.Drawing.Point(198, 71);
             this.cmb_office.Name = "cmb_office";
-            this.cmb_office.Size = new System.Drawing.Size(160, 29);
+            this.cmb_office.Size = new System.Drawing.Size(515, 29);
             this.cmb_office.TabIndex = 3;
             this.cmb_office.MouseHover += new System.EventHandler(this.cmb_office_MouseHover);
             // 
@@ -199,10 +199,10 @@ namespace rec_inven_samp
             // 
             this.txt_name.BackColor = System.Drawing.Color.White;
             this.txt_name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
-            this.txt_name.Location = new System.Drawing.Point(71, 25);
+            this.txt_name.Location = new System.Drawing.Point(85, 25);
             this.txt_name.MaxLength = 50;
             this.txt_name.Name = "txt_name";
-            this.txt_name.Size = new System.Drawing.Size(321, 26);
+            this.txt_name.Size = new System.Drawing.Size(404, 26);
             this.txt_name.TabIndex = 1;
             // 
             // label7
@@ -314,9 +314,9 @@ namespace rec_inven_samp
             this.grp_series.Controls.Add(this.label7);
             this.grp_series.Controls.Add(this.label9);
             this.grp_series.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grp_series.Location = new System.Drawing.Point(12, 104);
+            this.grp_series.Location = new System.Drawing.Point(12, 139);
             this.grp_series.Name = "grp_series";
-            this.grp_series.Size = new System.Drawing.Size(1036, 431);
+            this.grp_series.Size = new System.Drawing.Size(1019, 431);
             this.grp_series.TabIndex = 2;
             this.grp_series.TabStop = false;
             this.grp_series.Text = "Records Series Details";
@@ -329,7 +329,7 @@ namespace rec_inven_samp
             this.txt_add_info.Name = "txt_add_info";
             this.txt_add_info.ReadOnly = true;
             this.txt_add_info.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txt_add_info.Size = new System.Drawing.Size(513, 81);
+            this.txt_add_info.Size = new System.Drawing.Size(537, 81);
             this.txt_add_info.TabIndex = 11;
             // 
             // chb_no_time_val
@@ -425,7 +425,7 @@ namespace rec_inven_samp
             this.dtp_end.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dtp_end.Name = "dtp_end";
             this.dtp_end.ShowCheckBox = true;
-            this.dtp_end.Size = new System.Drawing.Size(184, 25);
+            this.dtp_end.Size = new System.Drawing.Size(200, 25);
             this.dtp_end.TabIndex = 2;
             this.dtp_end.TabStop = false;
             this.dtp_end.Value = new System.DateTime(2023, 8, 15, 15, 20, 21, 0);
@@ -442,7 +442,7 @@ namespace rec_inven_samp
             this.dtp_start.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dtp_start.Name = "dtp_start";
             this.dtp_start.ShowCheckBox = true;
-            this.dtp_start.Size = new System.Drawing.Size(184, 25);
+            this.dtp_start.Size = new System.Drawing.Size(200, 25);
             this.dtp_start.TabIndex = 1;
             this.dtp_start.TabStop = false;
             this.dtp_start.Value = new System.DateTime(2023, 8, 15, 15, 20, 21, 0);
@@ -473,7 +473,7 @@ namespace rec_inven_samp
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(844, 43);
+            this.label12.Location = new System.Drawing.Point(760, 43);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(48, 17);
@@ -490,7 +490,7 @@ namespace rec_inven_samp
             this.grp_encoder.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grp_encoder.Location = new System.Drawing.Point(12, 12);
             this.grp_encoder.Name = "grp_encoder";
-            this.grp_encoder.Size = new System.Drawing.Size(825, 72);
+            this.grp_encoder.Size = new System.Drawing.Size(731, 112);
             this.grp_encoder.TabIndex = 1;
             this.grp_encoder.TabStop = false;
             this.grp_encoder.Text = "Encoder Details";
@@ -505,15 +505,15 @@ namespace rec_inven_samp
             "DIVISION",
             "DISTRICT",
             "SCHOOL"});
-            this.cmb_office_categ.Location = new System.Drawing.Point(470, 25);
+            this.cmb_office_categ.Location = new System.Drawing.Point(85, 71);
             this.cmb_office_categ.Name = "cmb_office_categ";
-            this.cmb_office_categ.Size = new System.Drawing.Size(160, 29);
+            this.cmb_office_categ.Size = new System.Drawing.Size(106, 29);
             this.cmb_office_categ.TabIndex = 2;
             this.cmb_office_categ.SelectionChangeCommitted += new System.EventHandler(this.cmb_office_categ_SelectionChangeCommitted);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(477, 543);
+            this.button2.Location = new System.Drawing.Point(924, 598);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(107, 35);
             this.button2.TabIndex = 8;
@@ -524,19 +524,19 @@ namespace rec_inven_samp
             // lbl_dt
             // 
             this.lbl_dt.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_dt.Location = new System.Drawing.Point(899, 20);
+            this.lbl_dt.Location = new System.Drawing.Point(815, 20);
             this.lbl_dt.Name = "lbl_dt";
-            this.lbl_dt.Size = new System.Drawing.Size(149, 61);
+            this.lbl_dt.Size = new System.Drawing.Size(201, 61);
             this.lbl_dt.TabIndex = 11;
-            this.lbl_dt.Text = "2023, August 15 12:00:00 tt";
+            this.lbl_dt.Text = "2023, September 29 12:00:00 tt";
             this.lbl_dt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // add_test
+            // frm_add_nap1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1060, 590);
+            this.ClientSize = new System.Drawing.Size(1052, 645);
             this.Controls.Add(this.lbl_dt);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.grp_encoder);
@@ -549,7 +549,7 @@ namespace rec_inven_samp
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "add_test";
+            this.Name = "frm_add_nap1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Inventory";
             this.grp_series.ResumeLayout(false);
