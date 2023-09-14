@@ -91,9 +91,9 @@ namespace rec_inven_samp
                                         " join list_district on test_nap1.office_code = list_district.district_code";
 
                 string sql_school = "select list_school.school_name as office, test_nap1.* from test_nap1" +
-                                    " join list_school on test_nap1.office_code = list_school.school_id_unique;";
+                                    " join list_school on test_nap1.office_code = list_school.school_id_unique";
 
-                string sql1 = sql_office + " union all " + sql_district + " union all " + sql_school;
+                string sql1 = sql_office + " union all " + sql_district + " union all " + sql_school + " order by idtest_nap1";
 
                 //con.mycon.Open();
                 using (con.cmd = new MySqlCommand(sql1, con.mycon))

@@ -31,14 +31,7 @@ namespace rec_inven_samp
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            DevExpress.DataAccess.Sql.SelectQuery selectQuery3 = new DevExpress.DataAccess.Sql.SelectQuery();
-            DevExpress.DataAccess.Sql.Column column7 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression7 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Table table3 = new DevExpress.DataAccess.Sql.Table();
-            DevExpress.DataAccess.Sql.Column column8 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression8 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Column column9 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression9 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery4 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrl_dashboard));
             this.label7 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -82,7 +75,7 @@ namespace rec_inven_samp
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.coloffice_code = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsubmit_date = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colrds_id = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colsubmit_name = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -370,7 +363,7 @@ namespace rec_inven_samp
             // 
             // gridControl1
             // 
-            this.gridControl1.DataMember = "test_nap1";
+            this.gridControl1.DataMember = "Query";
             this.gridControl1.DataSource = this.sqlDataSource1;
             this.gridControl1.Location = new System.Drawing.Point(7, 48);
             this.gridControl1.MainView = this.gridView1;
@@ -385,7 +378,7 @@ namespace rec_inven_samp
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.coloffice_code,
             this.colsubmit_date,
-            this.colrds_id});
+            this.colsubmit_name});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsCustomization.AllowFilter = false;
@@ -606,24 +599,10 @@ namespace rec_inven_samp
             // 
             this.sqlDataSource1.ConnectionName = "localhost_records_inventory_Connection 1";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            columnExpression7.ColumnName = "office_code";
-            table3.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"303\" />";
-            table3.Name = "test_nap1";
-            columnExpression7.Table = table3;
-            column7.Expression = columnExpression7;
-            columnExpression8.ColumnName = "submit_date";
-            columnExpression8.Table = table3;
-            column8.Expression = columnExpression8;
-            columnExpression9.ColumnName = "rds_id";
-            columnExpression9.Table = table3;
-            column9.Expression = columnExpression9;
-            selectQuery3.Columns.Add(column7);
-            selectQuery3.Columns.Add(column8);
-            selectQuery3.Columns.Add(column9);
-            selectQuery3.Name = "test_nap1";
-            selectQuery3.Tables.Add(table3);
+            customSqlQuery4.Name = "Query";
+            customSqlQuery4.Sql = resources.GetString("customSqlQuery4.Sql");
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            selectQuery3});
+            customSqlQuery4});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // coloffice_code
@@ -640,12 +619,12 @@ namespace rec_inven_samp
             this.colsubmit_date.Visible = true;
             this.colsubmit_date.VisibleIndex = 1;
             // 
-            // colrds_id
+            // colsubmit_name
             // 
-            this.colrds_id.FieldName = "rds_id";
-            this.colrds_id.Name = "colrds_id";
-            this.colrds_id.Visible = true;
-            this.colrds_id.VisibleIndex = 2;
+            this.colsubmit_name.FieldName = "submit_name";
+            this.colsubmit_name.Name = "colsubmit_name";
+            this.colsubmit_name.Visible = true;
+            this.colsubmit_name.VisibleIndex = 2;
             // 
             // ctrl_dashboard
             // 
@@ -733,6 +712,6 @@ namespace rec_inven_samp
         private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
         private DevExpress.XtraGrid.Columns.GridColumn coloffice_code;
         private DevExpress.XtraGrid.Columns.GridColumn colsubmit_date;
-        private DevExpress.XtraGrid.Columns.GridColumn colrds_id;
+        private DevExpress.XtraGrid.Columns.GridColumn colsubmit_name;
     }
 }
