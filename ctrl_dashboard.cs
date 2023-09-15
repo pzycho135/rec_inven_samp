@@ -105,7 +105,7 @@ namespace rec_inven_samp
         {
             try
             {
-                string sql1 = "select count(*) from test_nap1;"; //--- total submission
+                string sql1 = "select count(*) from " + con.nap1_table; //--- total submission
                 con.mycon.Open();
                 using (con.cmd = new MySqlCommand(sql1, con.mycon))
                 {
@@ -126,9 +126,9 @@ namespace rec_inven_samp
         {
             try
             {
-                string sql1 = "select test.office_code, test.submit_date, test.submit_name" +
-                               " from test_nap1 test" +
-                               " inner join (select office_code, max(submit_date) as date_submit from test_nap1 group by office_code) gtest" +
+                string sql1 = "select test.office_code, test.submit_date" +
+                               " from " + con.nap1_table + " test" +
+                               " inner join (select office_code, max(submit_date) as date_submit from " + con.nap1_table + " group by office_code) gtest" +
                                " on test.office_code = gtest.office_code" +
                                " and test.submit_date = gtest.date_submit"; //--- gridview
 

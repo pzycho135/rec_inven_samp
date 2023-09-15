@@ -84,14 +84,14 @@ namespace rec_inven_samp
         {
             try
             {
-                string sql_office = "select list_office.office_name as office, test_nap1.* from test_nap1" +
-                                    " join list_office on test_nap1.office_code = list_office.office_code";
+                string sql_office = "select list_office.office_name as office, " + con.nap1_table + ".* from " + con.nap1_table +
+                                    " join list_office on " + con.nap1_table + ".office_code = list_office.office_code";
 
-                string sql_district = "select list_district.district_name as office, test_nap1.* from test_nap1" +
-                                        " join list_district on test_nap1.office_code = list_district.district_code";
+                string sql_district = "select list_district.district_name as office, " + con.nap1_table + ".* from " + con.nap1_table +
+                                        " join list_district on " + con.nap1_table + ".office_code = list_district.district_code";
 
-                string sql_school = "select list_school.school_name as office, test_nap1.* from test_nap1" +
-                                    " join list_school on test_nap1.office_code = list_school.school_id_unique";
+                string sql_school = "select list_school.school_name as office, " + con.nap1_table + ".* from " + con.nap1_table +
+                                    " join list_school on " + con.nap1_table + ".office_code = list_school.school_id_unique";
 
                 string sql1 = sql_office + " union all " + sql_district + " union all " + sql_school + " order by idtest_nap1";
 

@@ -18,5 +18,12 @@ namespace rec_inven_samp
         public MySqlCommand cmd;
         public MySqlDataAdapter adapter;
         public DataSet ds;
+
+
+        //--- tables
+        public string rds_table = "rds_list";
+        public string rds_categ_table = "rds_category";
+        public string rds_util_table = "rds_util_value";
+        public string nap1_table = "test_nap1";
     }
 }

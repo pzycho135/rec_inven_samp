@@ -104,7 +104,7 @@ namespace rec_inven_samp
 
             try
             {
-                string sql1 = "insert into test_nap1(rds_id, office_code, record_loc, vol_cubic_meter," +
+                string sql1 = "insert into " + con.nap1_table + "(rds_id, office_code, record_loc, vol_cubic_meter," +
                                 " utility_value, use_frequency, duplication, period_start, period_end," +
                                 " submit_name, submit_date) values ('" + s_rds_id + "', '" + s_office + "', '" + s_location + "', '" + s_volume + "'," +
                                 " '" + s_utility + "', '" + s_use_frequency + "', '" + s_duplication + "', str_to_date('" + s_start_period + "', '%d/%m/%Y')," +
@@ -187,7 +187,7 @@ namespace rec_inven_samp
             try
             {
                 //--- category
-                string sql2 = "select * from rds_category order by category asc;";
+                string sql2 = "select * from " + con.rds_categ_table + " order by category asc;";
 
                 con.mycon.Open();
                 using (con.cmd = new MySqlCommand(sql2, con.mycon))
@@ -203,7 +203,7 @@ namespace rec_inven_samp
                 con.mycon.Close();
 
                 //--- utility value
-                string sql3 = "select * from rds_util_value;";
+                string sql3 = "select * from " + con.rds_util_table;
 
                 con.mycon.Open();
                 using (con.cmd = new MySqlCommand(sql3, con.mycon))
@@ -252,7 +252,7 @@ namespace rec_inven_samp
         {//--- time value
             try
             {
-                string sql1 = "select time_value from rds_list where rds_id = '" + cmb_series.SelectedValue + "';";
+                string sql1 = "select time_value from " + con.rds_table + " where rds_id = '" + cmb_series.SelectedValue + "';";
 
                 con.mycon.Open();
                 using (con.cmd = new MySqlCommand(sql1, con.mycon))
@@ -291,7 +291,7 @@ namespace rec_inven_samp
         {//--- additional info
             try
             {
-                string sql2 = "select add_info from rds_list where rds_id = '" + cmb_series.SelectedValue + "';";
+                string sql2 = "select add_info from " + con.rds_table + " where rds_id = '" + cmb_series.SelectedValue + "';";
 
                 con.mycon.Open();
                 using (con.cmd = new MySqlCommand(sql2, con.mycon))
@@ -410,7 +410,7 @@ namespace rec_inven_samp
                 //--- records series
                 if (cmb_categ.SelectedValue != null)
                 {
-                    string sql3 = "select rds_id, item_name from rds_list where category_id = '" + cmb_categ.SelectedValue + "' order by item_name asc;";
+                    string sql3 = "select rds_id, item_name from " + con.rds_table + " where category_id = '" + cmb_categ.SelectedValue + "' order by item_name asc;";
 
                     con.mycon.Open();
                     using (con.cmd = new MySqlCommand(sql3, con.mycon))
