@@ -120,15 +120,33 @@
   <metadata name="sqlDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="customSqlQuery1.Sql" xml:space="preserve">
-    <value>select test.office_code, test.submit_date
-from test_nap1 test
-inner join (select office_code, max(submit_date) as date_submit from test_nap1 group by office_code) gtest
+  <data name="customSqlQuery2.Sql" xml:space="preserve">
+    <value>select list_office.office_name as office, test.submit_date, test.idtest_nap1 from test_nap1 as test
+join list_office on test.office_code = list_office.office_code
+join (select office_code, max(submit_date) as date_submit from test_nap1 group by office_code) gtest
 on test.office_code = gtest.office_code
-and test.submit_date = gtest.date_submit</value>
+and test.submit_date = gtest.date_submit
+
+union all
+
+select list_district.district_name as office, test.submit_date, test.idtest_nap1 from test_nap1 as test
+join list_district on test.office_code = list_district.district_code
+join (select office_code, max(submit_date) as date_submit from test_nap1 group by office_code) gtest
+on test.office_code = gtest.office_code
+and test.submit_date = gtest.date_submit
+
+union all
+
+select list_school.school_name as office, test.submit_date, test.idtest_nap1 from test_nap1 as test
+join list_school on test.office_code = list_school.school_id_unique
+join (select office_code, max(submit_date) as date_submit from test_nap1 group by office_code) gtest
+on test.office_code = gtest.office_code
+and test.submit_date = gtest.date_submit
+
+order by idtest_nap1</value>
   </data>
   <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
-    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlF1ZXJ5Ij48RmllbGQgTmFtZT0ib2ZmaWNlX2NvZGUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0ic3VibWl0X2RhdGUiIFR5cGU9IkRhdGVUaW1lIiAvPjwvVmlldz48L0RhdGFTZXQ+</value>
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlF1ZXJ5Ij48RmllbGQgTmFtZT0ib2ZmaWNlIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9InN1Ym1pdF9kYXRlIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iaWR0ZXN0X25hcDEiIFR5cGU9IlVJbnQzMiIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>41</value>

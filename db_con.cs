@@ -25,5 +25,9 @@ namespace rec_inven_samp
         public string rds_categ_table = "rds_category";
         public string rds_util_table = "rds_util_value";
         public string nap1_table = "test_nap1";
+        public string div = "list_office";
+        public string district = "list_district";
+        public string school = "list_school";
+
     }
 }

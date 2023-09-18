@@ -219,11 +219,11 @@ namespace rec_inven_samp
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(788, 476);
+            this.label2.Location = new System.Drawing.Point(458, 425);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(224, 17);
+            this.label2.Size = new System.Drawing.Size(552, 17);
             this.label2.TabIndex = 21;
-            this.label2.Text = "countdown date for disposal";
+            this.label2.Text = "countdown date for disposal based on submission unless very old docs";
             // 
             // ctrl_disposal
             // 
