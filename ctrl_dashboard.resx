@@ -120,7 +120,7 @@
   <metadata name="sqlDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="customSqlQuery2.Sql" xml:space="preserve">
+  <data name="customSqlQuery4.Sql" xml:space="preserve">
     <value>select list_office.office_name as office, test.submit_date, test.idtest_nap1 from test_nap1 as test
 join list_office on test.office_code = list_office.office_code
 join (select office_code, max(submit_date) as date_submit from test_nap1 group by office_code) gtest

@@ -160,6 +160,7 @@ namespace rec_inven_samp
                     //cmd.ExecuteNonQuery();
                     
                     gridControl1.DataSource = con.ds.Tables[0];
+                    gridControl2.DataSource = con.ds.Tables[0]; //--- depends on (field name -> table column name) for grid columns
                 }
                 //con.mycon.Close();
             }
