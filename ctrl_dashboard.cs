@@ -28,7 +28,48 @@ namespace rec_inven_samp
             comboBox1.SelectedIndex = 0;
             comboBox2.SelectedIndex = 0;
 
+            button1.BackColor = Color.FromArgb(219, 240, 227);
+
             _refresher();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            _btn_change(sender);
+
+            gridControl1.DataSource = null;
+            fill_submission();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            _btn_change(sender);
+
+            gridControl1.DataSource = null;
+            fill_no_submission();
+        }
+
+        private void _btn_change(object sender)
+        {
+            Control bu = ((Control)sender);
+            switch (bu.Name)
+            {
+                case "button1":
+                    foreach (Button xbu in panel1.Controls)
+                    {
+                        xbu.BackColor = Color.Transparent;
+                    }
+                    bu.BackColor = Color.FromArgb(219, 240, 227);
+                    break;
+
+                case "button2":
+                    foreach (Button xbu in panel1.Controls )
+                    {
+                        xbu.BackColor = Color.Transparent;
+                    }
+                    bu.BackColor = Color.FromArgb(255, 230, 230);
+                    break;
+            }
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -97,7 +138,15 @@ namespace rec_inven_samp
 
         public void _refresher()
         {
-            fill_grid();
+            if (button1.BackColor != Color.Transparent)
+            {
+                fill_submission();
+            }
+            else
+            {
+                fill_no_submission();
+            }
+
             counter();
         }
 
@@ -137,7 +186,7 @@ namespace rec_inven_samp
                 con.mycon.Close();
 
                 int total_cnt = div_cnt + dis_cnt + schl_cnt;
-                label4.Text = total_cnt.ToString("000000"); //--- number of zeroes is number of digits to show using left align
+                label4.Text = total_cnt.ToString("000000"); //--- number of zeroes is number of digits to show in left align format
             }
 
             catch (Exception ex)
@@ -146,7 +195,7 @@ namespace rec_inven_samp
             }
         }
 
-        private void fill_grid()
+        private void fill_submission()
         {
             try
             {
@@ -179,9 +228,45 @@ namespace rec_inven_samp
                     con.ds = new DataSet();
                     con.adapter.Fill(con.ds);
                     //cmd.ExecuteNonQuery();
-                    
-                    gridControl1.DataSource = con.ds.Tables[0];
-                    gridControl2.DataSource = con.ds.Tables[0]; //--- depends on (field name -> table column name) for grid columns
+
+                    gridColumn6.FieldName = "office";
+                    gridColumn5.FieldName = "submit_date";
+                    gridColumn5.Visible = true;
+                    gridControl1.DataSource = con.ds.Tables[0]; //--- depends on (field name -> table column name) for grid columns
+                }
+                //con.mycon.Close();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void fill_no_submission()
+        {
+            try
+            {
+                //--- gridview
+                string sql_office = "select list_office.office_name as office from list_office where office_code not in (select office_code from test_nap1)";
+
+                string sql_district = "select list_district.district_name as office from list_district where district_code not in (select office_code from test_nap1)";
+
+                string sql_school = "select list_school.school_name as office from list_school where school_id_unique not in (select office_code from test_nap1)";
+
+                string sql1 = sql_office + " union all " + sql_district + " union all " + sql_school;
+
+
+                //con.mycon.Open();
+                using (con.cmd = new MySqlCommand(sql1, con.mycon))
+                {
+                    con.adapter = new MySqlDataAdapter(con.cmd);
+                    con.ds = new DataSet();
+                    con.adapter.Fill(con.ds);
+                    //cmd.ExecuteNonQuery();
+
+                    gridColumn5.Visible = false;
+                    gridControl1.DataSource = con.ds.Tables[0]; //--- depends on (field name -> table column name) for grid columns
                 }
                 //con.mycon.Close();
             }

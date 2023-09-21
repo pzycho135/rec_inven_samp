@@ -76,7 +76,7 @@ namespace rec_inven_samp
             label1.Text = button1.Text;
         }
 
-        public void _btn_change(object sender)
+        private void _btn_change(object sender)
         {
             foreach (Button bu in panel2.Controls)
             {
