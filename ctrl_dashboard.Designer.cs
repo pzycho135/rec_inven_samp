@@ -29,7 +29,7 @@ namespace rec_inven_samp
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label7 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -57,6 +57,9 @@ namespace rec_inven_samp
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label15 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
@@ -74,9 +77,8 @@ namespace rec_inven_samp
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -91,13 +93,13 @@ namespace rec_inven_samp
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
@@ -228,6 +230,8 @@ namespace rec_inven_samp
             // 
             // splitContainer2.Panel1
             // 
+            this.splitContainer2.Panel1.Controls.Add(this.label29);
+            this.splitContainer2.Panel1.Controls.Add(this.label30);
             this.splitContainer2.Panel1.Controls.Add(this.label20);
             this.splitContainer2.Panel1.Controls.Add(this.label21);
             this.splitContainer2.Panel1.Controls.Add(this.label18);
@@ -253,7 +257,7 @@ namespace rec_inven_samp
             // 
             this.label20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(155)))), ((int)(((byte)(177)))));
             this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(155)))), ((int)(((byte)(177)))));
-            this.label20.Location = new System.Drawing.Point(28, 137);
+            this.label20.Location = new System.Drawing.Point(28, 155);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(175, 1);
             this.label20.TabIndex = 15;
@@ -262,7 +266,7 @@ namespace rec_inven_samp
             // 
             this.label21.AutoSize = true;
             this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(155)))), ((int)(((byte)(177)))));
-            this.label21.Location = new System.Drawing.Point(28, 151);
+            this.label21.Location = new System.Drawing.Point(28, 169);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(56, 17);
             this.label21.TabIndex = 14;
@@ -275,20 +279,20 @@ namespace rec_inven_samp
             this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(155)))), ((int)(((byte)(177)))));
             this.label18.Location = new System.Drawing.Point(28, 100);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(72, 17);
+            this.label18.Size = new System.Drawing.Size(80, 17);
             this.label18.TabIndex = 14;
-            this.label18.Text = "Offices:";
+            this.label18.Text = "District:";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(155)))), ((int)(((byte)(177)))));
-            this.label17.Location = new System.Drawing.Point(28, 79);
+            this.label17.Location = new System.Drawing.Point(28, 121);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(72, 17);
+            this.label17.Size = new System.Drawing.Size(64, 17);
             this.label17.TabIndex = 14;
-            this.label17.Text = "Schools:";
+            this.label17.Text = "School:";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel2
@@ -347,7 +351,7 @@ namespace rec_inven_samp
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(155)))), ((int)(((byte)(177)))));
-            this.label22.Location = new System.Drawing.Point(106, 76);
+            this.label22.Location = new System.Drawing.Point(106, 118);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(64, 21);
             this.label22.TabIndex = 12;
@@ -359,7 +363,7 @@ namespace rec_inven_samp
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(155)))), ((int)(((byte)(177)))));
-            this.label4.Location = new System.Drawing.Point(106, 148);
+            this.label4.Location = new System.Drawing.Point(106, 166);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 21);
             this.label4.TabIndex = 12;
@@ -433,6 +437,32 @@ namespace rec_inven_samp
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView1_CustomDrawRowIndicator);
             this.gridView1.RowCountChanged += new System.EventHandler(this.gridView1_RowCountChanged);
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "gridColumn4";
+            this.gridColumn4.ColumnEdit = this.repositoryItemMemoEdit1;
+            this.gridColumn4.FieldName = "office";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.OptionsColumn.FixedWidth = true;
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 0;
+            this.gridColumn4.Width = 225;
+            // 
+            // repositoryItemMemoEdit1
+            // 
+            this.repositoryItemMemoEdit1.Name = "repositoryItemMemoEdit1";
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "gridColumn5";
+            this.gridColumn5.ColumnEdit = this.repositoryItemMemoEdit1;
+            this.gridColumn5.FieldName = "submit_date";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.OptionsColumn.FixedWidth = true;
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 1;
+            this.gridColumn5.Width = 115;
             // 
             // label15
             // 
@@ -605,14 +635,14 @@ namespace rec_inven_samp
             this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
             this.dataGridView2.Location = new System.Drawing.Point(7, 49);
@@ -643,31 +673,28 @@ namespace rec_inven_samp
             this.label14.Text = "Schools / Offices Requested:";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // gridColumn4
+            // label29
             // 
-            this.gridColumn4.Caption = "gridColumn4";
-            this.gridColumn4.ColumnEdit = this.repositoryItemMemoEdit1;
-            this.gridColumn4.FieldName = "office";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.OptionsColumn.FixedWidth = true;
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 0;
-            this.gridColumn4.Width = 225;
+            this.label29.AutoSize = true;
+            this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(155)))), ((int)(((byte)(177)))));
+            this.label29.Location = new System.Drawing.Point(28, 79);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(64, 17);
+            this.label29.TabIndex = 17;
+            this.label29.Text = "Office:";
+            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // gridColumn5
+            // label30
             // 
-            this.gridColumn5.Caption = "gridColumn5";
-            this.gridColumn5.ColumnEdit = this.repositoryItemMemoEdit1;
-            this.gridColumn5.FieldName = "submit_date";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.OptionsColumn.FixedWidth = true;
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 1;
-            this.gridColumn5.Width = 115;
-            // 
-            // repositoryItemMemoEdit1
-            // 
-            this.repositoryItemMemoEdit1.Name = "repositoryItemMemoEdit1";
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(155)))), ((int)(((byte)(177)))));
+            this.label30.Location = new System.Drawing.Point(106, 76);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(64, 21);
+            this.label30.TabIndex = 16;
+            this.label30.Text = "000000";
+            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ctrl_dashboard
             // 
@@ -700,6 +727,7 @@ namespace rec_inven_samp
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
             this.splitContainer3.Panel1.ResumeLayout(false);
             this.splitContainer3.Panel1.PerformLayout();
             this.splitContainer3.Panel2.ResumeLayout(false);
@@ -708,7 +736,6 @@ namespace rec_inven_samp
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -763,5 +790,7 @@ namespace rec_inven_samp
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label30;
     }
 }

@@ -105,15 +105,39 @@ namespace rec_inven_samp
         {
             try
             {
-                string sql1 = "select count(*) from " + con.nap1_table; //--- total submission
+                int div_cnt = 0;
+                int dis_cnt = 0;
+                int schl_cnt = 0;
+
+                string sql1 = "select count(*) from test_nap1 as test join list_office on test.office_code = list_office.office_code";
+                string sql2 = "select count(*) from test_nap1 as test join list_district on test.office_code = list_district.district_code";
+                string sql3 = "select count(*) from test_nap1 as test join list_school on test.office_code = list_school.school_id_unique";
+
                 con.mycon.Open();
                 using (con.cmd = new MySqlCommand(sql1, con.mycon))
                 {
                     int cnt = Convert.ToInt32(con.cmd.ExecuteScalar());
+                    div_cnt = cnt;
+                    label30.Text = div_cnt.ToString("000000");
+                }
 
-                    label4.Text = cnt.ToString("000000"); //--- number of zeroes is number of digits to show using left align
+                using (con.cmd = new MySqlCommand(sql2, con.mycon))
+                {
+                    int cnt = Convert.ToInt32(con.cmd.ExecuteScalar());
+                    dis_cnt = cnt;
+                    label19.Text = dis_cnt.ToString("000000");
+                }
+
+                using (con.cmd = new MySqlCommand(sql3, con.mycon))
+                {
+                    int cnt = Convert.ToInt32(con.cmd.ExecuteScalar());
+                    schl_cnt = cnt;
+                    label22.Text = schl_cnt.ToString("000000");
                 }
                 con.mycon.Close();
+
+                int total_cnt = div_cnt + dis_cnt + schl_cnt;
+                label4.Text = total_cnt.ToString("000000"); //--- number of zeroes is number of digits to show using left align
             }
 
             catch (Exception ex)
@@ -145,7 +169,7 @@ namespace rec_inven_samp
                                     " on test.office_code = gtest.office_code" +
                                     " and test.submit_date = gtest.date_submit";
 
-                string sql1 = sql_office + " union all " + sql_district + " union all " + sql_school + " order by idtest_nap1";
+                string sql1 = sql_office + " union all " + sql_district + " union all " + sql_school + " order by idtest_nap1 desc";
 
 
                 //con.mycon.Open();
