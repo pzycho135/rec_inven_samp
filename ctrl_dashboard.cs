@@ -200,7 +200,7 @@ namespace rec_inven_samp
             try
             {
                 //--- gridview
-                string sql_office = "select " + con.div + ".office_name as office, test.submit_date, test.idtest_nap1 from " + con.nap1_table + " as test" +
+                string sql_div = "select " + con.div + ".office_name as office, test.submit_date, test.idtest_nap1 from " + con.nap1_table + " as test" +
                                     " join " + con.div + " on test.office_code = " + con.div + ".office_code" +
                                     " join(select office_code, max(submit_date) as date_submit from " + con.nap1_table + " group by office_code) gtest" +
                                     " on test.office_code = gtest.office_code" +
@@ -218,7 +218,7 @@ namespace rec_inven_samp
                                     " on test.office_code = gtest.office_code" +
                                     " and test.submit_date = gtest.date_submit";
 
-                string sql1 = sql_office + " union all " + sql_district + " union all " + sql_school + " order by idtest_nap1 desc";
+                string sql1 = sql_div + " union all " + sql_district + " union all " + sql_school + " order by idtest_nap1 desc";
 
 
                 //con.mycon.Open();
@@ -248,13 +248,13 @@ namespace rec_inven_samp
             try
             {
                 //--- gridview
-                string sql_office = "select list_office.office_name as office from list_office where office_code not in (select office_code from test_nap1)";
+                string sql_div = "select list_office.office_name as office from list_office where office_code not in (select office_code from test_nap1)";
 
                 string sql_district = "select list_district.district_name as office from list_district where district_code not in (select office_code from test_nap1)";
 
                 string sql_school = "select list_school.school_name as office from list_school where school_id_unique not in (select office_code from test_nap1)";
 
-                string sql1 = sql_office + " union all " + sql_district + " union all " + sql_school;
+                string sql1 = sql_div + " union all " + sql_district + " union all " + sql_school;
 
 
                 //con.mycon.Open();

@@ -578,9 +578,9 @@ namespace rec_inven_samp
             this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(155)))), ((int)(((byte)(177)))));
             this.label29.Location = new System.Drawing.Point(28, 79);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(64, 17);
+            this.label29.Size = new System.Drawing.Size(80, 17);
             this.label29.TabIndex = 17;
-            this.label29.Text = "Office:";
+            this.label29.Text = "Division:";
             this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label30
