@@ -77,61 +77,14 @@ namespace rec_inven_samp
             switch (comboBox2.SelectedIndex)
             {
                 case 0:
-                    label7.Text = "Total";
                     break;
                 case 1:
-                    label7.Text = "Office of the Schools Division Superintendent";
                     break;
                 case 2:
-                    label7.Text = "School Governance and Operations Division";
                     break;
                 case 3:
-                    label7.Text = "Curriculum Implementation Division";
                     break;
                 case 4:
-                    label7.Text = "Central Butuan District I";
-                    break;
-                case 5:
-                    label7.Text = "Central Butuan District II";
-                    break;
-                case 6:
-                    label7.Text = "East Butuan District I";
-                    break;
-                case 7:
-                    label7.Text = "East Butuan District II";
-                    break;
-                case 8:
-                    label7.Text = "East Butuan District III";
-                    break;
-                case 9:
-                    label7.Text = "North Butuan District";
-                    break;
-                case 10:
-                    label7.Text = "Northwest Butuan District";
-                    break;
-                case 11:
-                    label7.Text = "South Butuan District I";
-                    break;
-                case 12:
-                    label7.Text = "South Butuan District II";
-                    break;
-                case 13:
-                    label7.Text = "Southeast Butuan District I";
-                    break;
-                case 14:
-                    label7.Text = "Southeast Butuan District II";
-                    break;
-                case 15:
-                    label7.Text = "Southwest Butuan District";
-                    break;
-                case 16:
-                    label7.Text = "West Butuan District I";
-                    break;
-                case 17:
-                    label7.Text = "West Butuan District II";
-                    break;
-                case 18:
-                    label7.Text = "West Butuan District III";
                     break;
             }
         }
@@ -152,6 +105,7 @@ namespace rec_inven_samp
 
         private void counter()
         {
+            //--- set as per year submission
             try
             {
                 int div_cnt = 0;
@@ -229,8 +183,6 @@ namespace rec_inven_samp
                     con.adapter.Fill(con.ds);
                     //cmd.ExecuteNonQuery();
 
-                    gridColumn6.FieldName = "office";
-                    gridColumn5.FieldName = "submit_date";
                     gridColumn5.Visible = true;
                     gridControl1.DataSource = con.ds.Tables[0]; //--- depends on (field name -> table column name) for grid columns
                 }
@@ -248,11 +200,11 @@ namespace rec_inven_samp
             try
             {
                 //--- gridview
-                string sql_div = "select list_office.office_name as office from list_office where office_code not in (select office_code from test_nap1)";
+                string sql_div = "select " + con.div + ".office_name as office from " + con.div + " where office_code not in (select office_code from " + con.nap1_table + ")";
 
-                string sql_district = "select list_district.district_name as office from list_district where district_code not in (select office_code from test_nap1)";
+                string sql_district = "select " + con.district + ".district_name as office from " + con.district + " where district_code not in (select office_code from " + con.nap1_table + ")";
 
-                string sql_school = "select list_school.school_name as office from list_school where school_id_unique not in (select office_code from test_nap1)";
+                string sql_school = "select " + con.school + ".school_name as office from " + con.school + " where school_id_unique not in (select office_code from " + con.nap1_table + ")";
 
                 string sql1 = sql_div + " union all " + sql_district + " union all " + sql_school;
 
