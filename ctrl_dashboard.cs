@@ -18,6 +18,9 @@ namespace rec_inven_samp
     {
         db_con con = new db_con();
 
+        string _yr = null;
+        string _qtr = null;
+
         public ctrl_dashboard()
         {
             InitializeComponent();
@@ -25,9 +28,6 @@ namespace rec_inven_samp
 
         private void dashboard_control_Load(object sender, EventArgs e)
         {
-            comboBox1.SelectedIndex = 0;
-            comboBox2.SelectedIndex = 0;
-
             button1.BackColor = Color.FromArgb(219, 240, 227);
 
             _refresher();
@@ -72,24 +72,55 @@ namespace rec_inven_samp
             }
         }
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex == 0)
+            {
+                _yr = "";
+            }
+            else
+            {
+                _yr = " where year(submit_date) = " + comboBox1.Text + "";
+            }
+
+            counter();
+            _btn_sub_change();
+        }
+
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (comboBox2.SelectedIndex)
             {
                 case 0:
+                    _qtr = "";
                     break;
                 case 1:
+                    _qtr = " and quarter(submit_date) = 1";
                     break;
                 case 2:
+                    _qtr = " and quarter(submit_date) = 2";
                     break;
                 case 3:
+                    _qtr = " and quarter(submit_date) = 3";
                     break;
                 case 4:
+                    _qtr = " and quarter(submit_date) = 4";
                     break;
             }
+
+            counter();
+            _btn_sub_change();
         }
 
         public void _refresher()
+        {
+            _cmb_year();
+            counter();
+
+            _btn_sub_change();
+        }
+
+        private void _btn_sub_change()
         {
             if (button1.BackColor != Color.Transparent)
             {
@@ -99,22 +130,48 @@ namespace rec_inven_samp
             {
                 fill_no_submission();
             }
+        }
 
-            counter();
+        private void _cmb_year()
+        {
+            comboBox1.Items.Clear();
+            comboBox1.Items.Add("ALL");
+            comboBox1.SelectedIndex = 0;
+            comboBox2.SelectedIndex = 0;
+
+            try
+            {
+                string sql1 = "select distinct year(submit_date) as yr from  " + con.nap1_table + "";
+
+                con.mycon.Open();
+                using (con.cmd = new MySqlCommand(sql1, con.mycon))
+                {
+                    MySqlDataReader dr = con.cmd.ExecuteReader();
+                    
+                    while (dr.Read())
+                    {
+                        comboBox1.Items.Add(dr["yr"].ToString());
+                    }
+                }
+                con.mycon.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void counter()
         {
-            //--- set as per year submission
             try
             {
                 int div_cnt = 0;
                 int dis_cnt = 0;
                 int schl_cnt = 0;
 
-                string sql1 = "select count(*) from test_nap1 as test join list_office on test.office_code = list_office.office_code";
-                string sql2 = "select count(*) from test_nap1 as test join list_district on test.office_code = list_district.district_code";
-                string sql3 = "select count(*) from test_nap1 as test join list_school on test.office_code = list_school.school_id_unique";
+                string sql1 = "select count(*) from " + con.nap1_table + " as test join list_office on test.office_code = " + con.div + ".office_code" + _yr + _qtr;
+                string sql2 = "select count(*) from " + con.nap1_table + " as test join list_district on test.office_code = " + con.district + ".district_code" + _yr + _qtr;
+                string sql3 = "select count(*) from " + con.nap1_table + " as test join list_school on test.office_code = " + con.school + ".school_id_unique" + _yr + _qtr;
 
                 con.mycon.Open();
                 using (con.cmd = new MySqlCommand(sql1, con.mycon))
@@ -158,19 +215,19 @@ namespace rec_inven_samp
                                     " join " + con.div + " on test.office_code = " + con.div + ".office_code" +
                                     " join(select office_code, max(submit_date) as date_submit from " + con.nap1_table + " group by office_code) gtest" +
                                     " on test.office_code = gtest.office_code" +
-                                    " and test.submit_date = gtest.date_submit";
+                                    " and test.submit_date = gtest.date_submit" + _yr + _qtr;
 
                 string sql_district = "select " + con.district + ".district_name as office, test.submit_date, test.idtest_nap1 from " + con.nap1_table + " as test" +
                                       " join " + con.district + " on test.office_code = " + con.district + ".district_code" +
                                       " join(select office_code, max(submit_date) as date_submit from " + con.nap1_table + " group by office_code) gtest" +
                                       " on test.office_code = gtest.office_code" +
-                                      " and test.submit_date = gtest.date_submit";
+                                      " and test.submit_date = gtest.date_submit" + _yr + _qtr;
 
                 string sql_school = "select " + con.school + ".school_name as office, test.submit_date, test.idtest_nap1 from " + con.nap1_table + " as test" +
                                     " join " + con.school + " on test.office_code = " + con.school + ".school_id_unique" +
                                     " join(select office_code, max(submit_date) as date_submit from " + con.nap1_table + " group by office_code) gtest" +
                                     " on test.office_code = gtest.office_code" +
-                                    " and test.submit_date = gtest.date_submit";
+                                    " and test.submit_date = gtest.date_submit" + _yr + _qtr;
 
                 string sql1 = sql_div + " union all " + sql_district + " union all " + sql_school + " order by idtest_nap1 desc";
 
@@ -197,6 +254,7 @@ namespace rec_inven_samp
 
         private void fill_no_submission()
         {
+            //--- determine yr and quarter no submission
             try
             {
                 //--- gridview
@@ -261,6 +319,11 @@ namespace rec_inven_samp
             Graphics gr = Graphics.FromHwnd(gridView.GridControl.Handle);
             SizeF size = gr.MeasureString(gridView.RowCount.ToString(), gridView.PaintAppearance.Row.GetFont());
             gridView.IndicatorWidth = Convert.ToInt32(size.Width + 0.999f) + GridPainter.Indicator.ImageSize.Width + 5;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(_yr + "\n" + _qtr);
         }
     }
 }
