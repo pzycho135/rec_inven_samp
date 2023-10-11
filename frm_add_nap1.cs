@@ -296,6 +296,7 @@ namespace rec_inven_samp
                 var str = Convert.ToString(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, info.Column));
                 MessageBox.Show(string.Format("DoubleClick on row: {0}, column: {1}. \n {2}", info.RowHandle + 1, info.Column.GetCaption(), str));
 
+                //--- need to work this for edit and delete
             }
         }
 
@@ -336,13 +337,13 @@ namespace rec_inven_samp
         }
 
         private void gridView1_RowClick(object sender, RowClickEventArgs e)
-        {
+        {//--- maybe not needed
             button3.Enabled = true;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            //--- delete selected row
+            gridView1.FocusInvalidRow();
         }
     }
 }
