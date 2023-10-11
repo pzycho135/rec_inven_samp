@@ -117,22 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="sqlDataSource2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>153, 17</value>
-  </metadata>
-  <data name="customSqlQuery1.Sql" xml:space="preserve">
-    <value>select list_office.office_name as office, test_nap1.* from test_nap1
-join list_office on test_nap1.office_code = list_office.office_code
-union all
-select list_district.district_name as office, test_nap1.* from test_nap1
-join list_district on test_nap1.office_code = list_district.district_code
-union all
-select list_school.school_name as office, test_nap1.* from test_nap1
-join list_school on test_nap1.office_code = list_school.school_id_unique</value>
-  </data>
-  <data name="sqlDataSource2.ResultSchemaSerializable" xml:space="preserve">
-    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTIiPjxWaWV3IE5hbWU9IlF1ZXJ5Ij48RmllbGQgTmFtZT0ib2ZmaWNlIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9ImlkdGVzdF9uYXAxIiBUeXBlPSJVSW50MzIiIC8+PEZpZWxkIE5hbWU9InJkc19pZCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJvZmZpY2VfY29kZSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJyZWNvcmRfbG9jIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9InZvbF9jdWJpY19tZXRlciIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJ1dGlsaXR5X3ZhbHVlIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9InVzZV9mcmVxdWVuY3kiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iZHVwbGljYXRpb24iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0icGVyaW9kX3N0YXJ0IiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0icGVyaW9kX2VuZCIgVHlwZT0iRGF0ZVRpbWUiIC8+PEZpZWxkIE5hbWU9InN1Ym1pdF9uYW1lIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9InN1Ym1pdF9kYXRlIiBUeXBlPSJEYXRlVGltZSIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
-  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>47</value>
   </metadata>

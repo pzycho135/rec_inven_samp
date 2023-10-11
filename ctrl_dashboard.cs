@@ -80,9 +80,10 @@ namespace rec_inven_samp
             }
             else
             {
-                _yr = " where year(submit_date) = " + comboBox1.Text + "";
+                _yr = " where year(nap1_submit_date) = " + comboBox1.Text + "";
             }
 
+            comboBox2.SelectedIndex = 0;
             counter();
             _btn_sub_change();
         }
@@ -95,16 +96,44 @@ namespace rec_inven_samp
                     _qtr = "";
                     break;
                 case 1:
-                    _qtr = " and quarter(submit_date) = 1";
+                    if (comboBox1.SelectedIndex == 0)
+                    {
+                        _qtr = " where quarter(nap1_submit_date) = 1";
+                    }
+                    else
+                    {
+                        _qtr = " and quarter(nap1_submit_date) = 1";
+                    }
                     break;
                 case 2:
-                    _qtr = " and quarter(submit_date) = 2";
+                    if (comboBox1.SelectedIndex == 0)
+                    {
+                        _qtr = " where quarter(nap1_submit_date) = 2";
+                    }
+                    else
+                    {
+                        _qtr = " and quarter(nap1_submit_date) = 2";
+                    }
                     break;
                 case 3:
-                    _qtr = " and quarter(submit_date) = 3";
+                    if (comboBox1.SelectedIndex == 0)
+                    {
+                        _qtr = " where quarter(nap1_submit_date) = 3";
+                    }
+                    else
+                    {
+                        _qtr = " and quarter(nap1_submit_date) = 3";
+                    }
                     break;
                 case 4:
-                    _qtr = " and quarter(submit_date) = 4";
+                    if (comboBox1.SelectedIndex == 0)
+                    {
+                        _qtr = " where quarter(nap1_submit_date) = 4";
+                    }
+                    else
+                    {
+                        _qtr = " and quarter(nap1_submit_date) = 4";
+                    }
                     break;
             }
 
@@ -141,7 +170,7 @@ namespace rec_inven_samp
 
             try
             {
-                string sql1 = "select distinct year(submit_date) as yr from  " + con.nap1_table + "";
+                string sql1 = "select distinct year(nap1_submit_date) as yr from  " + con.nap1_identifier + "";
 
                 con.mycon.Open();
                 using (con.cmd = new MySqlCommand(sql1, con.mycon))
@@ -169,9 +198,9 @@ namespace rec_inven_samp
                 int dis_cnt = 0;
                 int schl_cnt = 0;
 
-                string sql1 = "select count(*) from " + con.nap1_table + " as test join list_office on test.office_code = " + con.div + ".office_code" + _yr + _qtr;
-                string sql2 = "select count(*) from " + con.nap1_table + " as test join list_district on test.office_code = " + con.district + ".district_code" + _yr + _qtr;
-                string sql3 = "select count(*) from " + con.nap1_table + " as test join list_school on test.office_code = " + con.school + ".school_id_unique" + _yr + _qtr;
+                string sql1 = "select count(*) from " + con.nap1_identifier + " as test join list_office on test.office_code = " + con.div + ".office_code" + _yr + _qtr;
+                string sql2 = "select count(*) from " + con.nap1_identifier + " as test join list_district on test.office_code = " + con.district + ".office_code" + _yr + _qtr;
+                string sql3 = "select count(*) from " + con.nap1_identifier + " as test join list_school on test.office_code = " + con.school + ".office_code" + _yr + _qtr;
 
                 con.mycon.Open();
                 using (con.cmd = new MySqlCommand(sql1, con.mycon))
@@ -211,25 +240,19 @@ namespace rec_inven_samp
             try
             {
                 //--- gridview
-                string sql_div = "select " + con.div + ".office_name as office, test.submit_date, test.idtest_nap1 from " + con.nap1_table + " as test" +
-                                    " join " + con.div + " on test.office_code = " + con.div + ".office_code" +
-                                    " join(select office_code, max(submit_date) as date_submit from " + con.nap1_table + " group by office_code) gtest" +
-                                    " on test.office_code = gtest.office_code" +
-                                    " and test.submit_date = gtest.date_submit" + _yr + _qtr;
+                string sql_div = "(select office_name as ofis, max(nap1_submit_date) as submit_date from" +
+                                 " (select * from nap1_identifier as t1 join list_office using" +
+                                 "(office_code)) as t" + _yr + _qtr + " group by office_name)";
 
-                string sql_district = "select " + con.district + ".district_name as office, test.submit_date, test.idtest_nap1 from " + con.nap1_table + " as test" +
-                                      " join " + con.district + " on test.office_code = " + con.district + ".district_code" +
-                                      " join(select office_code, max(submit_date) as date_submit from " + con.nap1_table + " group by office_code) gtest" +
-                                      " on test.office_code = gtest.office_code" +
-                                      " and test.submit_date = gtest.date_submit" + _yr + _qtr;
+                string sql_district = "(select district_name as ofis, max(nap1_submit_date) as submit_date from" +
+                                      " (select * from nap1_identifier as t1 join list_district using" +
+                                      "(office_code)) as t" + _yr + _qtr + " group by district_name)";
 
-                string sql_school = "select " + con.school + ".school_name as office, test.submit_date, test.idtest_nap1 from " + con.nap1_table + " as test" +
-                                    " join " + con.school + " on test.office_code = " + con.school + ".school_id_unique" +
-                                    " join(select office_code, max(submit_date) as date_submit from " + con.nap1_table + " group by office_code) gtest" +
-                                    " on test.office_code = gtest.office_code" +
-                                    " and test.submit_date = gtest.date_submit" + _yr + _qtr;
+                string sql_school = "(select school_name as ofis, max(nap1_submit_date) as submit_date from" +
+                                    " (select * from nap1_identifier as t1 join list_school using" +
+                                    "(office_code)) as t" + _yr + _qtr + " group by school_name)";
 
-                string sql1 = sql_div + " union all " + sql_district + " union all " + sql_school + " order by idtest_nap1 desc";
+                string sql1 = sql_div + " union all " + sql_district + " union all " + sql_school + " order by submit_date desc";
 
 
                 //con.mycon.Open();
@@ -258,11 +281,11 @@ namespace rec_inven_samp
             try
             {
                 //--- gridview
-                string sql_div = "select " + con.div + ".office_name as office from " + con.div + " where office_code not in (select office_code from " + con.nap1_table + ")";
+                string sql_div = "select " + con.div + ".office_name as ofis from " + con.div + " where office_code not in (select office_code from " + con.nap1_identifier + ")";
 
-                string sql_district = "select " + con.district + ".district_name as office from " + con.district + " where district_code not in (select office_code from " + con.nap1_table + ")";
+                string sql_district = "select " + con.district + ".district_name as ofis from " + con.district + " where office_code not in (select office_code from " + con.nap1_identifier + ")";
 
-                string sql_school = "select " + con.school + ".school_name as office from " + con.school + " where school_id_unique not in (select office_code from " + con.nap1_table + ")";
+                string sql_school = "select " + con.school + ".school_name as ofis from " + con.school + " where office_code not in (select office_code from " + con.nap1_identifier + ")";
 
                 string sql1 = sql_div + " union all " + sql_district + " union all " + sql_school;
 
@@ -321,9 +344,10 @@ namespace rec_inven_samp
             gridView.IndicatorWidth = Convert.ToInt32(size.Width + 0.999f) + GridPainter.Indicator.ImageSize.Width + 5;
         }
 
+        //--- test
         private void button3_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(_yr + "\n" + _qtr);
+
         }
     }
 }
