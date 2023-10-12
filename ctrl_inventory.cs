@@ -1,5 +1,7 @@
-﻿using DevExpress.XtraGrid.Views.Grid;
+﻿using DevExpress.Utils;
+using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.Grid.Drawing;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -16,6 +18,9 @@ namespace rec_inven_samp
     public partial class ctrl_inventory : UserControl
     {
         db_con con = new db_con();
+
+        public string ofis = null;
+        public string code = null;
 
         public ctrl_inventory()
         {
@@ -196,6 +201,33 @@ namespace rec_inven_samp
 
         }
 
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            DXMouseEventArgs ea = e as DXMouseEventArgs;
+            GridView view = sender as GridView;
+            GridHitInfo info = view.CalcHitInfo(ea.Location);
+            if (info.InRow || info.InRowCell)
+            {
+                /*
+                //string colCaption = info.Column == null ? "N/A" : info.Column.GetCaption();
+                var str = Convert.ToString(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, info.Column));
+                MessageBox.Show(string.Format("DoubleClick on row: {0}, column: {1}. \n {2}", info.RowHandle + 1, info.Column.GetCaption(), str));
+                */
+                //--- need to work this for viewing of all entries in selected nap1
+
+
+                ofis = gridView1.GetFocusedRowCellValue("ofis").ToString();
+                code = gridView1.GetFocusedRowCellValue("nap1_code").ToString();
+
+                frm_view_nap1 view_nap1 = new frm_view_nap1();
+                
+                view_nap1.ofis = ofis;
+                view_nap1.code = code;
+
+                view_nap1.ShowDialog();
+            }
+        }
+
         private void gridView1_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
         {
             //--- IN ORDER (not working if not in order)
@@ -228,12 +260,6 @@ namespace rec_inven_samp
             Graphics gr = Graphics.FromHwnd(gridView.GridControl.Handle);
             SizeF size = gr.MeasureString(gridView.RowCount.ToString(), gridView.PaintAppearance.Row.GetFont());
             gridView.IndicatorWidth = Convert.ToInt32(size.Width + 0.999f) + GridPainter.Indicator.ImageSize.Width + 5;
-        }
-
-        private void gridView1_DoubleClick(object sender, EventArgs e)
-        {
-            var str = Convert.ToString(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "rds_id"));
-            MessageBox.Show(str);
         }
     }
 }

@@ -39,6 +39,19 @@
             this.label12 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
+            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.button3 = new System.Windows.Forms.Button();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -50,19 +63,6 @@
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grp_encoder.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -178,11 +178,12 @@
             // button2
             // 
             this.button2.Enabled = false;
+            this.button2.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(894, 532);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(125, 33);
             this.button2.TabIndex = 0;
-            this.button2.Text = "save";
+            this.button2.Text = "SAVE";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -198,6 +199,212 @@
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Records Series Details";
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.Location = new System.Drawing.Point(0, 64);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemMemoEdit1});
+            this.gridControl1.Size = new System.Drawing.Size(1007, 326);
+            this.gridControl1.TabIndex = 14;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(226)))), ((int)(((byte)(182)))));
+            this.gridView1.Appearance.EvenRow.Options.UseBackColor = true;
+            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9F, System.Drawing.FontStyle.Bold);
+            this.gridView1.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
+            this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView1.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.gridView1.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridView1.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F);
+            this.gridView1.Appearance.Row.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
+            this.gridView1.Appearance.Row.Options.UseFont = true;
+            this.gridView1.Appearance.Row.Options.UseForeColor = true;
+            this.gridView1.Appearance.Row.Options.UseTextOptions = true;
+            this.gridView1.Appearance.Row.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridView1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn2,
+            this.gridColumn12,
+            this.gridColumn13,
+            this.gridColumn14,
+            this.gridColumn15,
+            this.gridColumn16,
+            this.gridColumn17,
+            this.gridColumn18,
+            this.gridColumn19,
+            this.gridColumn20});
+            this.gridView1.CustomizationFormBounds = new System.Drawing.Rectangle(1109, 371, 252, 306);
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.IndicatorWidth = 30;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.FocusLeaveOnTab = true;
+            this.gridView1.OptionsCustomization.AllowFilter = false;
+            this.gridView1.OptionsFind.AlwaysVisible = true;
+            this.gridView1.OptionsFind.ShowCloseButton = false;
+            this.gridView1.OptionsFind.ShowFindButton = false;
+            this.gridView1.OptionsNavigation.AutoFocusNewRow = true;
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView1.OptionsView.ColumnAutoWidth = false;
+            this.gridView1.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.gridView1.OptionsView.EnableAppearanceEvenRow = true;
+            this.gridView1.OptionsView.RowAutoHeight = true;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
+            this.gridView1.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView1_CustomDrawRowIndicator);
+            this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
+            this.gridView1.RowCountChanged += new System.EventHandler(this.gridView1_RowCountChanged);
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "RDS / GRDS ID";
+            this.gridColumn2.ColumnEdit = this.repositoryItemMemoEdit1;
+            this.gridColumn2.FieldName = "rds_id";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
+            this.gridColumn2.OptionsColumn.AllowSize = false;
+            this.gridColumn2.OptionsColumn.FixedWidth = true;
+            this.gridColumn2.OptionsColumn.ReadOnly = true;
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 0;
+            this.gridColumn2.Width = 98;
+            // 
+            // repositoryItemMemoEdit1
+            // 
+            this.repositoryItemMemoEdit1.Name = "repositoryItemMemoEdit1";
+            // 
+            // gridColumn12
+            // 
+            this.gridColumn12.Caption = "ITEM NAME";
+            this.gridColumn12.ColumnEdit = this.repositoryItemMemoEdit1;
+            this.gridColumn12.FieldName = "rec_series";
+            this.gridColumn12.Name = "gridColumn12";
+            this.gridColumn12.OptionsColumn.AllowEdit = false;
+            this.gridColumn12.OptionsColumn.AllowSize = false;
+            this.gridColumn12.OptionsColumn.FixedWidth = true;
+            this.gridColumn12.OptionsColumn.ReadOnly = true;
+            this.gridColumn12.Visible = true;
+            this.gridColumn12.VisibleIndex = 1;
+            this.gridColumn12.Width = 187;
+            // 
+            // gridColumn13
+            // 
+            this.gridColumn13.Caption = "LOCATION";
+            this.gridColumn13.ColumnEdit = this.repositoryItemMemoEdit1;
+            this.gridColumn13.FieldName = "location";
+            this.gridColumn13.Name = "gridColumn13";
+            this.gridColumn13.OptionsColumn.AllowEdit = false;
+            this.gridColumn13.OptionsColumn.AllowSize = false;
+            this.gridColumn13.OptionsColumn.FixedWidth = true;
+            this.gridColumn13.OptionsColumn.ReadOnly = true;
+            this.gridColumn13.Visible = true;
+            this.gridColumn13.VisibleIndex = 2;
+            this.gridColumn13.Width = 198;
+            // 
+            // gridColumn14
+            // 
+            this.gridColumn14.Caption = "VOLUME";
+            this.gridColumn14.ColumnEdit = this.repositoryItemMemoEdit1;
+            this.gridColumn14.FieldName = "volume";
+            this.gridColumn14.Name = "gridColumn14";
+            this.gridColumn14.OptionsColumn.AllowEdit = false;
+            this.gridColumn14.OptionsColumn.AllowSize = false;
+            this.gridColumn14.OptionsColumn.FixedWidth = true;
+            this.gridColumn14.OptionsColumn.ReadOnly = true;
+            this.gridColumn14.Visible = true;
+            this.gridColumn14.VisibleIndex = 3;
+            this.gridColumn14.Width = 91;
+            // 
+            // gridColumn15
+            // 
+            this.gridColumn15.Caption = "TIME VALUE";
+            this.gridColumn15.ColumnEdit = this.repositoryItemMemoEdit1;
+            this.gridColumn15.FieldName = "time_val";
+            this.gridColumn15.Name = "gridColumn15";
+            this.gridColumn15.OptionsColumn.AllowEdit = false;
+            this.gridColumn15.OptionsColumn.AllowSize = false;
+            this.gridColumn15.OptionsColumn.FixedWidth = true;
+            this.gridColumn15.OptionsColumn.ReadOnly = true;
+            this.gridColumn15.Visible = true;
+            this.gridColumn15.VisibleIndex = 4;
+            this.gridColumn15.Width = 103;
+            // 
+            // gridColumn16
+            // 
+            this.gridColumn16.Caption = "UTILITY VALUE";
+            this.gridColumn16.ColumnEdit = this.repositoryItemMemoEdit1;
+            this.gridColumn16.FieldName = "util_val";
+            this.gridColumn16.Name = "gridColumn16";
+            this.gridColumn16.OptionsColumn.AllowEdit = false;
+            this.gridColumn16.OptionsColumn.AllowSize = false;
+            this.gridColumn16.OptionsColumn.FixedWidth = true;
+            this.gridColumn16.OptionsColumn.ReadOnly = true;
+            this.gridColumn16.Visible = true;
+            this.gridColumn16.VisibleIndex = 5;
+            this.gridColumn16.Width = 136;
+            // 
+            // gridColumn17
+            // 
+            this.gridColumn17.Caption = "USE FREQUENCY";
+            this.gridColumn17.ColumnEdit = this.repositoryItemMemoEdit1;
+            this.gridColumn17.FieldName = "use_freq";
+            this.gridColumn17.Name = "gridColumn17";
+            this.gridColumn17.OptionsColumn.AllowEdit = false;
+            this.gridColumn17.OptionsColumn.AllowSize = false;
+            this.gridColumn17.OptionsColumn.FixedWidth = true;
+            this.gridColumn17.OptionsColumn.ReadOnly = true;
+            this.gridColumn17.Visible = true;
+            this.gridColumn17.VisibleIndex = 6;
+            this.gridColumn17.Width = 125;
+            // 
+            // gridColumn18
+            // 
+            this.gridColumn18.Caption = "DUPLICATION";
+            this.gridColumn18.ColumnEdit = this.repositoryItemMemoEdit1;
+            this.gridColumn18.FieldName = "duplication";
+            this.gridColumn18.Name = "gridColumn18";
+            this.gridColumn18.OptionsColumn.AllowEdit = false;
+            this.gridColumn18.OptionsColumn.AllowSize = false;
+            this.gridColumn18.OptionsColumn.FixedWidth = true;
+            this.gridColumn18.OptionsColumn.ReadOnly = true;
+            this.gridColumn18.Visible = true;
+            this.gridColumn18.VisibleIndex = 7;
+            this.gridColumn18.Width = 115;
+            // 
+            // gridColumn19
+            // 
+            this.gridColumn19.Caption = "PERIOD COVERED - FROM";
+            this.gridColumn19.ColumnEdit = this.repositoryItemMemoEdit1;
+            this.gridColumn19.FieldName = "period_start";
+            this.gridColumn19.Name = "gridColumn19";
+            this.gridColumn19.OptionsColumn.AllowEdit = false;
+            this.gridColumn19.OptionsColumn.AllowSize = false;
+            this.gridColumn19.OptionsColumn.FixedWidth = true;
+            this.gridColumn19.OptionsColumn.ReadOnly = true;
+            this.gridColumn19.Visible = true;
+            this.gridColumn19.VisibleIndex = 8;
+            this.gridColumn19.Width = 126;
+            // 
+            // gridColumn20
+            // 
+            this.gridColumn20.Caption = "PERIOD COVERED - TO";
+            this.gridColumn20.ColumnEdit = this.repositoryItemMemoEdit1;
+            this.gridColumn20.FieldName = "period_end";
+            this.gridColumn20.Name = "gridColumn20";
+            this.gridColumn20.OptionsColumn.AllowEdit = false;
+            this.gridColumn20.OptionsColumn.AllowSize = false;
+            this.gridColumn20.OptionsColumn.FixedWidth = true;
+            this.gridColumn20.OptionsColumn.ReadOnly = true;
+            this.gridColumn20.Visible = true;
+            this.gridColumn20.VisibleIndex = 9;
+            this.gridColumn20.Width = 125;
             // 
             // button3
             // 
@@ -336,212 +543,6 @@
             this.gridColumn11.OptionsColumn.FixedWidth = true;
             this.gridColumn11.OptionsColumn.ReadOnly = true;
             this.gridColumn11.Width = 98;
-            // 
-            // gridControl1
-            // 
-            this.gridControl1.Location = new System.Drawing.Point(0, 64);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemMemoEdit1});
-            this.gridControl1.Size = new System.Drawing.Size(1007, 326);
-            this.gridControl1.TabIndex = 14;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(226)))), ((int)(((byte)(182)))));
-            this.gridView1.Appearance.EvenRow.Options.UseBackColor = true;
-            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9F, System.Drawing.FontStyle.Bold);
-            this.gridView1.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
-            this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gridView1.Appearance.HeaderPanel.Options.UseForeColor = true;
-            this.gridView1.Appearance.HeaderPanel.Options.UseTextOptions = true;
-            this.gridView1.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F);
-            this.gridView1.Appearance.Row.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
-            this.gridView1.Appearance.Row.Options.UseFont = true;
-            this.gridView1.Appearance.Row.Options.UseForeColor = true;
-            this.gridView1.Appearance.Row.Options.UseTextOptions = true;
-            this.gridView1.Appearance.Row.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridView1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn2,
-            this.gridColumn12,
-            this.gridColumn13,
-            this.gridColumn14,
-            this.gridColumn15,
-            this.gridColumn16,
-            this.gridColumn17,
-            this.gridColumn18,
-            this.gridColumn19,
-            this.gridColumn20});
-            this.gridView1.CustomizationFormBounds = new System.Drawing.Rectangle(1109, 371, 252, 306);
-            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.IndicatorWidth = 30;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsBehavior.FocusLeaveOnTab = true;
-            this.gridView1.OptionsCustomization.AllowFilter = false;
-            this.gridView1.OptionsFind.AlwaysVisible = true;
-            this.gridView1.OptionsFind.ShowCloseButton = false;
-            this.gridView1.OptionsFind.ShowFindButton = false;
-            this.gridView1.OptionsNavigation.AutoFocusNewRow = true;
-            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView1.OptionsView.ColumnAutoWidth = false;
-            this.gridView1.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
-            this.gridView1.OptionsView.EnableAppearanceEvenRow = true;
-            this.gridView1.OptionsView.RowAutoHeight = true;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
-            this.gridView1.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView1_CustomDrawRowIndicator);
-            this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
-            this.gridView1.RowCountChanged += new System.EventHandler(this.gridView1_RowCountChanged);
-            // 
-            // repositoryItemMemoEdit1
-            // 
-            this.repositoryItemMemoEdit1.Name = "repositoryItemMemoEdit1";
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "RDS / GRDS ID";
-            this.gridColumn2.ColumnEdit = this.repositoryItemMemoEdit1;
-            this.gridColumn2.FieldName = "rds_id";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.OptionsColumn.AllowEdit = false;
-            this.gridColumn2.OptionsColumn.AllowSize = false;
-            this.gridColumn2.OptionsColumn.FixedWidth = true;
-            this.gridColumn2.OptionsColumn.ReadOnly = true;
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 0;
-            this.gridColumn2.Width = 98;
-            // 
-            // gridColumn12
-            // 
-            this.gridColumn12.Caption = "ITEM NAME";
-            this.gridColumn12.ColumnEdit = this.repositoryItemMemoEdit1;
-            this.gridColumn12.FieldName = "rec_series";
-            this.gridColumn12.Name = "gridColumn12";
-            this.gridColumn12.OptionsColumn.AllowEdit = false;
-            this.gridColumn12.OptionsColumn.AllowSize = false;
-            this.gridColumn12.OptionsColumn.FixedWidth = true;
-            this.gridColumn12.OptionsColumn.ReadOnly = true;
-            this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 1;
-            this.gridColumn12.Width = 187;
-            // 
-            // gridColumn13
-            // 
-            this.gridColumn13.Caption = "LOCATION";
-            this.gridColumn13.ColumnEdit = this.repositoryItemMemoEdit1;
-            this.gridColumn13.FieldName = "location";
-            this.gridColumn13.Name = "gridColumn13";
-            this.gridColumn13.OptionsColumn.AllowEdit = false;
-            this.gridColumn13.OptionsColumn.AllowSize = false;
-            this.gridColumn13.OptionsColumn.FixedWidth = true;
-            this.gridColumn13.OptionsColumn.ReadOnly = true;
-            this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 2;
-            this.gridColumn13.Width = 198;
-            // 
-            // gridColumn14
-            // 
-            this.gridColumn14.Caption = "VOLUME";
-            this.gridColumn14.ColumnEdit = this.repositoryItemMemoEdit1;
-            this.gridColumn14.FieldName = "volume";
-            this.gridColumn14.Name = "gridColumn14";
-            this.gridColumn14.OptionsColumn.AllowEdit = false;
-            this.gridColumn14.OptionsColumn.AllowSize = false;
-            this.gridColumn14.OptionsColumn.FixedWidth = true;
-            this.gridColumn14.OptionsColumn.ReadOnly = true;
-            this.gridColumn14.Visible = true;
-            this.gridColumn14.VisibleIndex = 3;
-            this.gridColumn14.Width = 91;
-            // 
-            // gridColumn15
-            // 
-            this.gridColumn15.Caption = "TIME VALUE";
-            this.gridColumn15.ColumnEdit = this.repositoryItemMemoEdit1;
-            this.gridColumn15.FieldName = "time_val";
-            this.gridColumn15.Name = "gridColumn15";
-            this.gridColumn15.OptionsColumn.AllowEdit = false;
-            this.gridColumn15.OptionsColumn.AllowSize = false;
-            this.gridColumn15.OptionsColumn.FixedWidth = true;
-            this.gridColumn15.OptionsColumn.ReadOnly = true;
-            this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 4;
-            this.gridColumn15.Width = 103;
-            // 
-            // gridColumn16
-            // 
-            this.gridColumn16.Caption = "UTILITY VALUE";
-            this.gridColumn16.ColumnEdit = this.repositoryItemMemoEdit1;
-            this.gridColumn16.FieldName = "util_val";
-            this.gridColumn16.Name = "gridColumn16";
-            this.gridColumn16.OptionsColumn.AllowEdit = false;
-            this.gridColumn16.OptionsColumn.AllowSize = false;
-            this.gridColumn16.OptionsColumn.FixedWidth = true;
-            this.gridColumn16.OptionsColumn.ReadOnly = true;
-            this.gridColumn16.Visible = true;
-            this.gridColumn16.VisibleIndex = 5;
-            this.gridColumn16.Width = 136;
-            // 
-            // gridColumn17
-            // 
-            this.gridColumn17.Caption = "USE FREQUENCY";
-            this.gridColumn17.ColumnEdit = this.repositoryItemMemoEdit1;
-            this.gridColumn17.FieldName = "use_freq";
-            this.gridColumn17.Name = "gridColumn17";
-            this.gridColumn17.OptionsColumn.AllowEdit = false;
-            this.gridColumn17.OptionsColumn.AllowSize = false;
-            this.gridColumn17.OptionsColumn.FixedWidth = true;
-            this.gridColumn17.OptionsColumn.ReadOnly = true;
-            this.gridColumn17.Visible = true;
-            this.gridColumn17.VisibleIndex = 6;
-            this.gridColumn17.Width = 125;
-            // 
-            // gridColumn18
-            // 
-            this.gridColumn18.Caption = "DUPLICATION";
-            this.gridColumn18.ColumnEdit = this.repositoryItemMemoEdit1;
-            this.gridColumn18.FieldName = "duplication";
-            this.gridColumn18.Name = "gridColumn18";
-            this.gridColumn18.OptionsColumn.AllowEdit = false;
-            this.gridColumn18.OptionsColumn.AllowSize = false;
-            this.gridColumn18.OptionsColumn.FixedWidth = true;
-            this.gridColumn18.OptionsColumn.ReadOnly = true;
-            this.gridColumn18.Visible = true;
-            this.gridColumn18.VisibleIndex = 7;
-            this.gridColumn18.Width = 115;
-            // 
-            // gridColumn19
-            // 
-            this.gridColumn19.Caption = "PERIOD COVERED - FROM";
-            this.gridColumn19.ColumnEdit = this.repositoryItemMemoEdit1;
-            this.gridColumn19.FieldName = "period_start";
-            this.gridColumn19.Name = "gridColumn19";
-            this.gridColumn19.OptionsColumn.AllowEdit = false;
-            this.gridColumn19.OptionsColumn.AllowSize = false;
-            this.gridColumn19.OptionsColumn.FixedWidth = true;
-            this.gridColumn19.OptionsColumn.ReadOnly = true;
-            this.gridColumn19.Visible = true;
-            this.gridColumn19.VisibleIndex = 8;
-            this.gridColumn19.Width = 126;
-            // 
-            // gridColumn20
-            // 
-            this.gridColumn20.Caption = "PERIOD COVERED - TO";
-            this.gridColumn20.ColumnEdit = this.repositoryItemMemoEdit1;
-            this.gridColumn20.FieldName = "period_end";
-            this.gridColumn20.Name = "gridColumn20";
-            this.gridColumn20.OptionsColumn.AllowEdit = false;
-            this.gridColumn20.OptionsColumn.AllowSize = false;
-            this.gridColumn20.OptionsColumn.FixedWidth = true;
-            this.gridColumn20.OptionsColumn.ReadOnly = true;
-            this.gridColumn20.Visible = true;
-            this.gridColumn20.VisibleIndex = 9;
-            this.gridColumn20.Width = 125;
             // 
             // frm_add_nap1
             // 
