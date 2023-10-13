@@ -26,16 +26,6 @@ namespace rec_inven_samp
         {
             InitializeComponent();
 
-            comboBox1.SelectedIndex = 0;
-            comboBox2.SelectedIndex = 0;
-
-            label1.Hide();
-
-            button_edit_exit.Hide();
-            button_edit_exit.Enabled = false;
-            button_edit_save.Hide();
-            button_edit_save.Enabled = false;
-
             button_edit.Enabled = false; //--- comment to enable edit button
 
             _refresher();
@@ -49,31 +39,6 @@ namespace rec_inven_samp
         private void button_delete_Click(object sender, EventArgs e)
         {
             //delete_entry();
-        }
-
-        private void button_edit_Click(object sender, EventArgs e)
-        {
-            //enter_edit();
-        }
-
-        private void button_edit_exit_Click(object sender, EventArgs e)
-        {
-            //exit_edit();
-        }
-
-        private void button_edit_save_Click(object sender, EventArgs e)
-        {
-            DialogResult dr = MessageBox.Show("Confirm Changes?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-
-            switch (dr)
-            {
-                case DialogResult.OK:
-                    MessageBox.Show("Changes Saved!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    break;
-
-                case DialogResult.Cancel:
-                    break;
-            }
         }
 
         public void _refresher()
@@ -137,67 +102,6 @@ namespace rec_inven_samp
         {
             //string get_index = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             //MessageBox.Show("index is: " + get_index);
-
-        }
-
-        private void enter_edit()
-        {
-            button_edit_exit.Show();
-            button_edit_exit.Enabled = true;
-            button_edit_save.Show();
-            button_edit_save.Enabled = true;
-
-            label1.Show();
-
-            button_add.Enabled = false;
-            button_delete.Enabled = false;
-
-
-            Control ctrl = (Control)this.Parent; //--- panel containing usercontrol
-            frm_main main = (frm_main)ctrl.Parent; //--- form containing panel
-
-            foreach (Control bu in main.panel2.Controls)
-            {
-                if (bu is Button)
-                {
-                    bu.Enabled = false;
-                }
-            }
-        }
-
-        private void exit_edit()
-        {
-            DialogResult dr = MessageBox.Show("Exit Editing?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
-
-            switch (dr)
-            {
-                case DialogResult.Yes:
-                    button_edit_exit.Hide();
-                    button_edit_exit.Enabled = false;
-                    button_edit_save.Hide();
-                    button_edit_save.Enabled = false;
-
-                    label1.Hide();
-
-                    button_add.Enabled = true;
-                    button_delete.Enabled = true;
-
-
-                    Control ctrl = (Control)this.Parent; //--- panel containing usercontrol
-                    frm_main main = (frm_main)ctrl.Parent; //--- form containing panel
-
-                    foreach (Control bu in main.panel2.Controls)
-                    {
-                        if (bu is Button)
-                        {
-                            bu.Enabled = true;
-                        }
-                    }
-                    break;
-
-                case DialogResult.No:
-                    break;
-            }
 
         }
 

@@ -76,38 +76,26 @@ namespace rec_inven_samp
             cmb_util_val.SelectedIndex = -1;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            /*
-            _check1();
-
-            if (ch_grp_encoder == true && ch_grp_series == true && ch_grp_period == true)
-            {
-                save_entry();
-                this.DialogResult = DialogResult.OK;
-            }*/
+            save_entry();
         }
 
         private void save_entry()
         {
-            //--- records series details
-            string s_rds_id = txt_rds_id.Text;
+            _check2();
 
-            string s_location = txt_location.Text;
-            string s_volume = txt_vol.Text;
-            string s_utility = cmb_util_val.Text;
-            string s_use_frequency = txt_use_freq.Text;
-            string s_duplication = txt_dup.Text;
-
-            //--- datesstring s_date = Convert.ToDateTime(lbl_dt.Text).ToString(datetime_format);
             string s_start_period = dtp_start.Value.ToString(date_format);
             string s_end_period = dtp_end.Value.ToString(date_format);
 
-            //--- not needed ???
-            string s_category = cmb_categ.Text;
-            string s_series = cmb_series.Text;
-            string s_add_info = txt_add_info.Text;
-            string s_time_value = txt_time_val.Text;
+            period_start = s_start_period;
+            period_end = s_end_period;
+
+            if (ch_grp_encoder == true && ch_grp_series == true && ch_grp_period == true)
+            {
+                //save_entry();
+                this.DialogResult = DialogResult.OK;
+            }
         }
 
         private void _clear()
@@ -369,24 +357,6 @@ namespace rec_inven_samp
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
-        }
-
-        //--- test button
-        private void button1_Click(object sender, EventArgs e)
-        {
-            _check2();
-
-            string s_start_period = dtp_start.Value.ToString(date_format);
-            string s_end_period = dtp_end.Value.ToString(date_format);
-
-            period_start = s_start_period;
-            period_end = s_end_period;
-
-            if (ch_grp_encoder == true && ch_grp_series == true && ch_grp_period == true)
-            {
-                //save_entry();
-                this.DialogResult = DialogResult.OK;
             }
         }
     }

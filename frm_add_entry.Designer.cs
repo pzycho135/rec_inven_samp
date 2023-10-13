@@ -57,7 +57,6 @@ namespace rec_inven_samp
             this.dtp_start = new System.Windows.Forms.DateTimePicker();
             this.label15 = new System.Windows.Forms.Label();
             this.txt_time_val = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.grp_series.SuspendLayout();
             this.grp_period.SuspendLayout();
             this.SuspendLayout();
@@ -76,12 +75,12 @@ namespace rec_inven_samp
             // button1
             // 
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
-            this.button1.Location = new System.Drawing.Point(743, 471);
+            this.button1.Location = new System.Drawing.Point(890, 481);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(149, 35);
             this.button1.TabIndex = 2;
-            this.button1.Text = "test";
+            this.button1.Text = "SAVE";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -414,23 +413,12 @@ namespace rec_inven_samp
             this.txt_time_val.Size = new System.Drawing.Size(223, 26);
             this.txt_time_val.TabIndex = 6;
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(924, 471);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(107, 35);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "save";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // frm_add_entry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1052, 529);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.grp_series);
             this.Controls.Add(this.button1);
             this.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -472,7 +460,6 @@ namespace rec_inven_samp
         private System.Windows.Forms.GroupBox grp_period;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cmb_util_val;

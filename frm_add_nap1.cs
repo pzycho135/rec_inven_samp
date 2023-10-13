@@ -65,24 +65,29 @@ namespace rec_inven_samp
 
         private void button1_Click(object sender, EventArgs e)  
         {
+            _checker();
+
+            if (_check == true)
+            {
+                _add_form();
+            }
+        }
+
+        private void _checker()
+        {
             foreach (Control c in grp_encoder.Controls.Cast<Control>().OrderBy(x => x.TabIndex))
             {
                 if (string.IsNullOrWhiteSpace(c.Text))
                 {
                     MessageBox.Show(c.Name + " is empty");
-                    c.Select();
                     _check = false;
+                    c.Select();
                     break;
                 }
                 else
                 {
                     _check = true;
                 }
-            }
-
-            if (_check == true)
-            {
-                _add_form();
             }
         }
 
@@ -152,66 +157,71 @@ namespace rec_inven_samp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int _count = 0;
-            string office_code = cmb_office.SelectedValue.ToString();
-            string iden = office_code + "_" + (_iden_code(_count) + 1).ToString("0000");
+            _checker();
 
-            try
+            if (_check == true)
             {
-                //--- nap1
-                string name = txt_name.Text;
-                string office = cmb_office.SelectedValue.ToString();
-                string date = Convert.ToDateTime(lbl_dt.Text).ToString(datetime_format);
-                
-                string sql1 = "insert into nap1_identifier(office_code, nap1_submit_name, nap1_submit_date, nap1_code)" +
-                              " values ('" + office + "', '" + name + "', str_to_date('" + date + "', '%d/%m/%Y %I:%i:%s %p'), '" + iden + "')";
+                int _count = 0;
+                string office_code = cmb_office.SelectedValue.ToString();
+                string iden = office_code + "_" + (_iden_code(_count) + 1).ToString("0000");
 
-                con.mycon.Open();
-                using (con.cmd = new MySqlCommand(sql1, con.mycon))
+                try
                 {
-                    con.cmd.ExecuteNonQuery();
-                }
-                con.mycon.Close();
+                    //--- nap1
+                    string name = txt_name.Text;
+                    string office = cmb_office.SelectedValue.ToString();
+                    string date = Convert.ToDateTime(lbl_dt.Text).ToString(datetime_format);
 
-                //--- items on nap1
-                for (int i = 0; i < gridView1.RowCount; i++)
-                {
-                    string id = gridView1.GetRowCellValue(i, "rds_id").ToString();
-                    string rec = gridView1.GetRowCellValue(i, "rec_series").ToString();
-                    string loc = gridView1.GetRowCellValue(i, "location").ToString();
-                    string vol = gridView1.GetRowCellValue(i, "volume").ToString();
-
-                    //string tv = gridView1.GetRowCellValue(i, "time_val").ToString();
-
-                    string uv = gridView1.GetRowCellValue(i, "util_val").ToString();
-                    string use = gridView1.GetRowCellValue(i, "use_freq").ToString();
-                    string dup = gridView1.GetRowCellValue(i, "duplication").ToString();
-                    string start = gridView1.GetRowCellValue(i, "period_start").ToString();
-                    string end = gridView1.GetRowCellValue(i, "period_end").ToString();
-
-                    //--- changed table on db
-                    string sql2 = "insert into nap1_entries(rds_id, record_loc, vol_cubic_meter, utility_value," +
-                                  " use_frequency, duplication, period_start, period_end, nap1_code)" +
-                                  " values ('" + id + "', '" + loc + "', '" + vol + "', '" + uv + "', '" + use + "'," +
-                                  " '" + dup + "', str_to_date('" + start + "', '%d/%m/%Y'), str_to_date('" + end + "', '%d/%m/%Y')," +
-                                  " '" + iden + "')";
+                    string sql1 = "insert into nap1_identifier(office_code, nap1_submit_name, nap1_submit_date, nap1_code)" +
+                                  " values ('" + office + "', '" + name + "', str_to_date('" + date + "', '%d/%m/%Y %I:%i:%s %p'), '" + iden + "')";
 
                     con.mycon.Open();
-                    using (con.cmd = new MySqlCommand(sql2, con.mycon))
+                    using (con.cmd = new MySqlCommand(sql1, con.mycon))
                     {
                         con.cmd.ExecuteNonQuery();
                     }
                     con.mycon.Close();
 
-                    //MessageBox.Show("row # " + i.ToString() + "\n" + id);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+                    //--- items on nap1
+                    for (int i = 0; i < gridView1.RowCount; i++)
+                    {
+                        string id = gridView1.GetRowCellValue(i, "rds_id").ToString();
+                        string rec = gridView1.GetRowCellValue(i, "rec_series").ToString();
+                        string loc = gridView1.GetRowCellValue(i, "location").ToString();
+                        string vol = gridView1.GetRowCellValue(i, "volume").ToString();
 
-            this.DialogResult = DialogResult.OK;
+                        //string tv = gridView1.GetRowCellValue(i, "time_val").ToString();
+
+                        string uv = gridView1.GetRowCellValue(i, "util_val").ToString();
+                        string use = gridView1.GetRowCellValue(i, "use_freq").ToString();
+                        string dup = gridView1.GetRowCellValue(i, "duplication").ToString();
+                        string start = gridView1.GetRowCellValue(i, "period_start").ToString();
+                        string end = gridView1.GetRowCellValue(i, "period_end").ToString();
+
+                        //--- changed table on db
+                        string sql2 = "insert into nap1_entries(rds_id, record_loc, vol_cubic_meter, utility_value," +
+                                      " use_frequency, duplication, period_start, period_end, nap1_code)" +
+                                      " values ('" + id + "', '" + loc + "', '" + vol + "', '" + uv + "', '" + use + "'," +
+                                      " '" + dup + "', str_to_date('" + start + "', '%d/%m/%Y'), str_to_date('" + end + "', '%d/%m/%Y')," +
+                                      " '" + iden + "')";
+
+                        con.mycon.Open();
+                        using (con.cmd = new MySqlCommand(sql2, con.mycon))
+                        {
+                            con.cmd.ExecuteNonQuery();
+                        }
+                        con.mycon.Close();
+
+                        //MessageBox.Show("row # " + i.ToString() + "\n" + id);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+                this.DialogResult = DialogResult.OK;
+            }
         }
 
         private void cmb_office_categ_SelectionChangeCommitted(object sender, EventArgs e)
@@ -334,16 +344,33 @@ namespace rec_inven_samp
             gridView.IndicatorWidth = Convert.ToInt32(size.Width + 0.999f) + GridPainter.Indicator.ImageSize.Width + 5;
 
             button2.Enabled = true;
+            gridView1.FocusInvalidRow();
         }
 
         private void gridView1_RowClick(object sender, RowClickEventArgs e)
-        {//--- maybe not needed
+        {
             button3.Enabled = true;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            if (gridView1.SelectedRowsCount > 0)
+            {//--- maybe show what entry to delete
+                DialogResult d = MessageBox.Show("Do you wish to delete this entry?", "Confirm Delete", MessageBoxButtons.YesNo);
+
+                if (d == DialogResult.Yes)
+                {
+                    gridView1.DeleteSelectedRows();
+
+                    if (gridView1.RowCount == 0)
+                    {
+                        button2.Enabled = false;
+                    }
+                }
+            }
+
             gridView1.FocusInvalidRow();
+            button3.Enabled = false;
         }
     }
 }
