@@ -56,7 +56,6 @@
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.lbl_dt = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.grp_encoder = new System.Windows.Forms.GroupBox();
             this.txt_office = new System.Windows.Forms.TextBox();
@@ -452,16 +451,6 @@
             this.lbl_dt.Text = "2023, September 29 12:00:00 tt";
             this.lbl_dt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button2
-            // 
-            this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(894, 532);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(125, 33);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "save";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -506,7 +495,6 @@
             this.ClientSize = new System.Drawing.Size(1031, 577);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lbl_dt);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.grp_encoder);
             this.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -556,7 +544,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbl_dt;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.GroupBox grp_encoder;
         private System.Windows.Forms.TextBox txt_office;

@@ -130,6 +130,7 @@ namespace rec_inven_samp
 
             panel3.Controls.Clear();
             panel3.Controls.Add(rds_list_control);
+            rds_list_control._refresher();
         }
     }
 }

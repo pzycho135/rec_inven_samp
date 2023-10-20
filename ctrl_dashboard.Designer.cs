@@ -31,7 +31,6 @@ namespace rec_inven_samp
         {
             this.label7 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -72,6 +71,7 @@ namespace rec_inven_samp
             this.label13 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -105,7 +105,7 @@ namespace rec_inven_samp
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Cascadia Mono", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(262, 34);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(561, 32);
@@ -114,7 +114,6 @@ namespace rec_inven_samp
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.button3);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.comboBox2);
             this.panel4.Controls.Add(this.comboBox1);
@@ -126,16 +125,6 @@ namespace rec_inven_samp
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1092, 75);
             this.panel4.TabIndex = 9;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(896, 7);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // comboBox2
             // 
@@ -536,6 +525,7 @@ namespace rec_inven_samp
             // 
             // splitContainer3.Panel2
             // 
+            this.splitContainer3.Panel2.Controls.Add(this.label11);
             this.splitContainer3.Panel2.Controls.Add(this.gridControl2);
             this.splitContainer3.Panel2.Controls.Add(this.label16);
             this.splitContainer3.Panel2.Controls.Add(this.label14);
@@ -660,12 +650,22 @@ namespace rec_inven_samp
             this.label24.Text = "000000";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(172, 113);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(475, 63);
+            this.label11.TabIndex = 13;
+            this.label11.Text = "PLACEHOLDER ONLY";
+            // 
             // gridControl2
             // 
             this.gridControl2.Location = new System.Drawing.Point(7, 48);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(452, 195);
+            this.gridControl2.Size = new System.Drawing.Size(753, 195);
             this.gridControl2.TabIndex = 12;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -757,6 +757,7 @@ namespace rec_inven_samp
             this.splitContainer3.Panel1.ResumeLayout(false);
             this.splitContainer3.Panel1.PerformLayout();
             this.splitContainer3.Panel2.ResumeLayout(false);
+            this.splitContainer3.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
@@ -819,6 +820,6 @@ namespace rec_inven_samp
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label11;
     }
 }

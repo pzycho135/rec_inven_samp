@@ -29,7 +29,7 @@ namespace rec_inven_samp
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
+            this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.button_add = new System.Windows.Forms.Button();
             this.button_delete = new System.Windows.Forms.Button();
             this.button_edit = new System.Windows.Forms.Button();
@@ -39,10 +39,14 @@ namespace rec_inven_samp
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(repositoryItemMemoEdit2)).BeginInit();
             this.SuspendLayout();
+            // 
+            // repositoryItemMemoEdit1
+            // 
+            this.repositoryItemMemoEdit1.Name = "repositoryItemMemoEdit1";
             // 
             // button_add
             // 
@@ -52,12 +56,12 @@ namespace rec_inven_samp
             this.button_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_add.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_add.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(155)))), ((int)(((byte)(177)))));
-            this.button_add.Location = new System.Drawing.Point(835, 4);
+            this.button_add.Location = new System.Drawing.Point(901, 4);
             this.button_add.Margin = new System.Windows.Forms.Padding(4);
             this.button_add.Name = "button_add";
-            this.button_add.Size = new System.Drawing.Size(79, 32);
+            this.button_add.Size = new System.Drawing.Size(144, 32);
             this.button_add.TabIndex = 3;
-            this.button_add.Text = "Add";
+            this.button_add.Text = "Add NAP 1";
             this.button_add.UseVisualStyleBackColor = false;
             this.button_add.Click += new System.EventHandler(this.button_add_Click);
             // 
@@ -69,13 +73,14 @@ namespace rec_inven_samp
             this.button_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_delete.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_delete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(93)))), ((int)(((byte)(125)))));
-            this.button_delete.Location = new System.Drawing.Point(922, 4);
+            this.button_delete.Location = new System.Drawing.Point(773, 4);
             this.button_delete.Margin = new System.Windows.Forms.Padding(4);
             this.button_delete.Name = "button_delete";
             this.button_delete.Size = new System.Drawing.Size(79, 32);
             this.button_delete.TabIndex = 3;
             this.button_delete.Text = "Delete";
             this.button_delete.UseVisualStyleBackColor = false;
+            this.button_delete.Visible = false;
             this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
             // 
             // button_edit
@@ -86,13 +91,14 @@ namespace rec_inven_samp
             this.button_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_edit.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(139)))), ((int)(((byte)(115)))));
-            this.button_edit.Location = new System.Drawing.Point(1009, 4);
+            this.button_edit.Location = new System.Drawing.Point(686, 4);
             this.button_edit.Margin = new System.Windows.Forms.Padding(4);
             this.button_edit.Name = "button_edit";
             this.button_edit.Size = new System.Drawing.Size(79, 32);
             this.button_edit.TabIndex = 3;
             this.button_edit.Text = "Edit";
             this.button_edit.UseVisualStyleBackColor = false;
+            this.button_edit.Visible = false;
             // 
             // gridControl1
             // 
@@ -147,8 +153,7 @@ namespace rec_inven_samp
             // gridColumn1
             // 
             this.gridColumn1.Caption = "OFFICE / SCHOOL";
-            repositoryItemMemoEdit2.Name = "repositoryItemMemoEdit1";
-            this.gridColumn1.ColumnEdit = repositoryItemMemoEdit2;
+            this.gridColumn1.ColumnEdit = this.repositoryItemMemoEdit1;
             this.gridColumn1.FieldName = "ofis";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.AllowEdit = false;
@@ -162,7 +167,7 @@ namespace rec_inven_samp
             // gridColumn2
             // 
             this.gridColumn2.Caption = "DATE SUBMITTED";
-            this.gridColumn2.ColumnEdit = repositoryItemMemoEdit2;
+            this.gridColumn2.ColumnEdit = this.repositoryItemMemoEdit1;
             this.gridColumn2.FieldName = "nap1_submit_date";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowEdit = false;
@@ -176,7 +181,7 @@ namespace rec_inven_samp
             // gridColumn3
             // 
             this.gridColumn3.Caption = "SUBMITTEE";
-            this.gridColumn3.ColumnEdit = repositoryItemMemoEdit2;
+            this.gridColumn3.ColumnEdit = this.repositoryItemMemoEdit1;
             this.gridColumn3.FieldName = "nap1_submit_name";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
@@ -190,7 +195,7 @@ namespace rec_inven_samp
             // gridColumn4
             // 
             this.gridColumn4.Caption = "NAP 1 CODE";
-            this.gridColumn4.ColumnEdit = repositoryItemMemoEdit2;
+            this.gridColumn4.ColumnEdit = this.repositoryItemMemoEdit1;
             this.gridColumn4.FieldName = "nap1_code";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
@@ -216,9 +221,9 @@ namespace rec_inven_samp
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "ctrl_inventory";
             this.Size = new System.Drawing.Size(1092, 569);
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(repositoryItemMemoEdit2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -233,5 +238,6 @@ namespace rec_inven_samp
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
     }
 }

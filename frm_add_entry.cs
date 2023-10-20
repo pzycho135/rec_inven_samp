@@ -145,7 +145,7 @@ namespace rec_inven_samp
                     con.adapter.Fill(con.ds);
 
                     cmb_categ.DataSource = con.ds.Tables[0];
-                    cmb_categ.ValueMember = "idrds_category";
+                    cmb_categ.ValueMember = "category_id";
                     cmb_categ.DisplayMember = "category";
                 }
                 con.mycon.Close();

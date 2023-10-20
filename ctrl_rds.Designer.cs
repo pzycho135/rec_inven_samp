@@ -29,13 +29,7 @@ namespace rec_inven_samp
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.SelectQuery selectQuery6 = new DevExpress.DataAccess.Sql.SelectQuery();
-            DevExpress.DataAccess.Sql.AllColumns allColumns6 = new DevExpress.DataAccess.Sql.AllColumns();
-            DevExpress.DataAccess.Sql.Table table6 = new DevExpress.DataAccess.Sql.Table();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrl_rds));
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colrds_id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
@@ -45,8 +39,6 @@ namespace rec_inven_samp
             this.colremarks = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coladd_info = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltime_value = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.button_add = new System.Windows.Forms.Button();
-            this.button_edit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
@@ -54,31 +46,15 @@ namespace rec_inven_samp
             // 
             // gridControl1
             // 
-            this.gridControl1.DataMember = "rds_list";
-            this.gridControl1.DataSource = this.sqlDataSource1;
-            this.gridControl1.Location = new System.Drawing.Point(3, 39);
+            this.gridControl1.Location = new System.Drawing.Point(3, 3);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemMemoEdit1});
-            this.gridControl1.Size = new System.Drawing.Size(1086, 527);
+            this.gridControl1.Size = new System.Drawing.Size(1086, 553);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            // 
-            // sqlDataSource1
-            // 
-            this.sqlDataSource1.ConnectionName = "localhost_records_inventory_Connection 1";
-            this.sqlDataSource1.Name = "sqlDataSource1";
-            table6.MetaSerializable = "<Meta X=\"-100\" Y=\"-80\" Width=\"125\" Height=\"263\" />";
-            table6.Name = "rds_list";
-            allColumns6.Table = table6;
-            selectQuery6.Columns.Add(allColumns6);
-            selectQuery6.Name = "rds_list";
-            selectQuery6.Tables.Add(table6);
-            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            selectQuery6});
-            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // gridView1
             // 
@@ -164,7 +140,7 @@ namespace rec_inven_samp
             this.colitem_name.OptionsColumn.ReadOnly = true;
             this.colitem_name.Visible = true;
             this.colitem_name.VisibleIndex = 1;
-            this.colitem_name.Width = 274;
+            this.colitem_name.Width = 220;
             // 
             // colcategory_id
             // 
@@ -173,7 +149,7 @@ namespace rec_inven_samp
             this.colcategory_id.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colcategory_id.Caption = "CATEGORY";
             this.colcategory_id.ColumnEdit = this.repositoryItemMemoEdit1;
-            this.colcategory_id.FieldName = "category_id";
+            this.colcategory_id.FieldName = "category";
             this.colcategory_id.Name = "colcategory_id";
             this.colcategory_id.OptionsColumn.AllowEdit = false;
             this.colcategory_id.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
@@ -184,7 +160,7 @@ namespace rec_inven_samp
             this.colcategory_id.OptionsColumn.ReadOnly = true;
             this.colcategory_id.Visible = true;
             this.colcategory_id.VisibleIndex = 2;
-            this.colcategory_id.Width = 85;
+            this.colcategory_id.Width = 162;
             // 
             // colretention_total
             // 
@@ -204,7 +180,7 @@ namespace rec_inven_samp
             this.colretention_total.OptionsColumn.ReadOnly = true;
             this.colretention_total.Visible = true;
             this.colretention_total.VisibleIndex = 3;
-            this.colretention_total.Width = 101;
+            this.colretention_total.Width = 92;
             // 
             // colremarks
             // 
@@ -223,7 +199,7 @@ namespace rec_inven_samp
             this.colremarks.OptionsColumn.ReadOnly = true;
             this.colremarks.Visible = true;
             this.colremarks.VisibleIndex = 4;
-            this.colremarks.Width = 174;
+            this.colremarks.Width = 212;
             // 
             // coladd_info
             // 
@@ -242,7 +218,7 @@ namespace rec_inven_samp
             this.coladd_info.OptionsColumn.ReadOnly = true;
             this.coladd_info.Visible = true;
             this.coladd_info.VisibleIndex = 5;
-            this.coladd_info.Width = 263;
+            this.coladd_info.Width = 208;
             // 
             // coltime_value
             // 
@@ -262,51 +238,19 @@ namespace rec_inven_samp
             this.coltime_value.OptionsColumn.ReadOnly = true;
             this.coltime_value.Visible = true;
             this.coltime_value.VisibleIndex = 6;
-            this.coltime_value.Width = 57;
-            // 
-            // button_add
-            // 
-            this.button_add.BackColor = System.Drawing.Color.Transparent;
-            this.button_add.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(226)))), ((int)(((byte)(182)))));
-            this.button_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_add.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_add.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(148)))), ((int)(((byte)(96)))));
-            this.button_add.Location = new System.Drawing.Point(918, 3);
-            this.button_add.Name = "button_add";
-            this.button_add.Size = new System.Drawing.Size(171, 30);
-            this.button_add.TabIndex = 2;
-            this.button_add.Text = "Add RDS / GRDS";
-            this.button_add.UseVisualStyleBackColor = false;
-            // 
-            // button_edit
-            // 
-            this.button_edit.BackColor = System.Drawing.Color.Transparent;
-            this.button_edit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(226)))), ((int)(((byte)(182)))));
-            this.button_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_edit.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(148)))), ((int)(((byte)(96)))));
-            this.button_edit.Location = new System.Drawing.Point(444, 3);
-            this.button_edit.Name = "button_edit";
-            this.button_edit.Size = new System.Drawing.Size(171, 30);
-            this.button_edit.TabIndex = 2;
-            this.button_edit.Text = "Edit RDS / GRDS";
-            this.button_edit.UseVisualStyleBackColor = false;
-            this.button_edit.Click += new System.EventHandler(this.button_edit_Click);
+            this.coltime_value.Width = 60;
             // 
             // ctrl_rds
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.button_edit);
-            this.Controls.Add(this.button_add);
             this.Controls.Add(this.gridControl1);
             this.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ctrl_rds";
             this.Size = new System.Drawing.Size(1092, 569);
-            this.Click += new System.EventHandler(this.ctrl_rds_Click);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
@@ -317,10 +261,7 @@ namespace rec_inven_samp
         #endregion
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
-        private System.Windows.Forms.Button button_add;
-        private System.Windows.Forms.Button button_edit;
         private DevExpress.XtraGrid.Columns.GridColumn colrds_id;
         private DevExpress.XtraGrid.Columns.GridColumn colitem_name;
         private DevExpress.XtraGrid.Columns.GridColumn colcategory_id;

@@ -343,11 +343,5 @@ namespace rec_inven_samp
             SizeF size = gr.MeasureString(gridView.RowCount.ToString(), gridView.PaintAppearance.Row.GetFont());
             gridView.IndicatorWidth = Convert.ToInt32(size.Width + 0.999f) + GridPainter.Indicator.ImageSize.Width + 5;
         }
-
-        //--- test
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

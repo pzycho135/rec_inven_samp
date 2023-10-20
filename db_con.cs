@@ -30,6 +30,7 @@ namespace rec_inven_samp
         public string district = "list_district";
         public string school = "list_school";
 
+        //--- unused yet
         //--- nest in outside select for specific columns
         public string q_div = "select * from nap1_identifier as t1" +
                               " join nap1_entries using (nap1_code)" +

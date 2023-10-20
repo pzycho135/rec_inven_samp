@@ -44,6 +44,9 @@ namespace rec_inven_samp
         {
             InitializeComponent();
 
+            button2.Enabled = false;
+
+            //--- date should be actual submission date, not the entry date - should have option for manual date override
             lbl_dt.Text = DateTime.Now.ToString("yyyy, MMMM dd" + "\n" + "hh:mm:ss tt");
             _dt_timer();
 
@@ -233,21 +236,21 @@ namespace rec_inven_samp
             {
                 //--- office
                 case "DIVISION":
-                    office_fill = "list_office";
+                    office_fill = "list_office order by office_name ASC";
                     office_vm = "office_code";
                     office_dm = "office_name";
                     _fill_office();
                     break;
 
                 case "DISTRICT":
-                    office_fill = "list_district";
+                    office_fill = "list_district order by district_name ASC";
                     office_vm = "office_code";
                     office_dm = "district_name";
                     _fill_office();
                     break;
 
                 case "SCHOOL":
-                    office_fill = "list_school";
+                    office_fill = "list_school order by school_name ASC";
                     office_vm = "office_code";
                     office_dm = "school_name";
                     _fill_office();
@@ -369,6 +372,12 @@ namespace rec_inven_samp
                 }
             }
 
+            gridView1.FocusInvalidRow();
+            button3.Enabled = false;
+        }
+
+        private void gridControl1_Leave(object sender, EventArgs e)
+        {//--- need to modify for click outside of grid
             gridView1.FocusInvalidRow();
             button3.Enabled = false;
         }

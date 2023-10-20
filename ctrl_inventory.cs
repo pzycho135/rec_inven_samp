@@ -26,8 +26,6 @@ namespace rec_inven_samp
         {
             InitializeComponent();
 
-            button_edit.Enabled = false; //--- comment to enable edit button
-
             _refresher();
         }
 
