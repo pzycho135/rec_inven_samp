@@ -444,18 +444,18 @@
             // lbl_dt
             // 
             this.lbl_dt.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_dt.Location = new System.Drawing.Point(734, 43);
+            this.lbl_dt.Location = new System.Drawing.Point(742, 69);
             this.lbl_dt.Name = "lbl_dt";
-            this.lbl_dt.Size = new System.Drawing.Size(201, 61);
+            this.lbl_dt.Size = new System.Drawing.Size(201, 40);
             this.lbl_dt.TabIndex = 18;
-            this.lbl_dt.Text = "2023, September 29 12:00:00 tt";
+            this.lbl_dt.Text = "2023, September 29";
             this.lbl_dt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(649, 12);
+            this.label12.Location = new System.Drawing.Point(690, 41);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(145, 21);

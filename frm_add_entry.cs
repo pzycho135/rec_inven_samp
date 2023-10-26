@@ -74,6 +74,9 @@ namespace rec_inven_samp
             cmb_categ.SelectedIndex = -1;
             cmb_series.SelectedIndex = -1;
             cmb_util_val.SelectedIndex = -1;
+
+            dtp_start.MaxDate = DateTime.Now;
+            dtp_end.MaxDate = DateTime.Now;
         }
 
         private void button1_Click(object sender, EventArgs e)

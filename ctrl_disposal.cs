@@ -18,33 +18,6 @@ namespace rec_inven_samp
         public ctrl_disposal()
         {
             InitializeComponent();
-
-            dgv_refresh();
-        }
-
-        private void dgv_refresh()
-        {
-            try
-            {
-                string sql1 = "select * from test_table;";
-
-                //con.mycon.Open();
-                using (con.cmd = new MySqlCommand(sql1, con.mycon))
-                {
-                    con.adapter = new MySqlDataAdapter(con.cmd);
-                    con.ds = new DataSet();
-                    con.adapter.Fill(con.ds);
-                    //cmd.ExecuteNonQuery();
-
-                    dataGridView1.DataSource = con.ds.Tables[0];
-                }
-                //con.mycon.Close();
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
     }
 }

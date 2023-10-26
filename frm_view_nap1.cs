@@ -86,7 +86,7 @@ namespace rec_inven_samp
                         txt_name.Text = dr["nap1_submit_name"].ToString();
                         txt_office.Text = dr["ofis"].ToString();
 
-                        string dt_format = "yyyy, MMMM dd" + "\n" + "hh:mm:ss tt";
+                        string dt_format = "yyyy, MMMM dd";
                         string dt = Convert.ToDateTime(dr["nap1_submit_date"]).ToString(dt_format);
                         lbl_dt.Text = dt;
                     }

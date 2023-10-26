@@ -35,7 +35,6 @@
             this.cmb_office_categ = new System.Windows.Forms.ComboBox();
             this.cmb_office = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.lbl_dt = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -63,6 +62,7 @@
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.button2 = new System.Windows.Forms.Button();
+            this.dtp_submit_date = new System.Windows.Forms.DateTimePicker();
             this.grp_encoder.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -158,26 +158,16 @@
             this.label4.TabIndex = 1;
             this.label4.Text = "Office:";
             // 
-            // lbl_dt
-            // 
-            this.lbl_dt.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_dt.Location = new System.Drawing.Point(818, 37);
-            this.lbl_dt.Name = "lbl_dt";
-            this.lbl_dt.Size = new System.Drawing.Size(201, 61);
-            this.lbl_dt.TabIndex = 13;
-            this.lbl_dt.Text = "2023, September 29 12:00:00 tt";
-            this.lbl_dt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(763, 60);
+            this.label12.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(801, 27);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(48, 17);
+            this.label12.Size = new System.Drawing.Size(181, 21);
             this.label12.TabIndex = 12;
-            this.label12.Text = "Date:";
+            this.label12.Text = "Date of Submission:";
             // 
             // groupBox1
             // 
@@ -199,7 +189,7 @@
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemMemoEdit1});
-            this.gridControl1.Size = new System.Drawing.Size(1007, 326);
+            this.gridControl1.Size = new System.Drawing.Size(1001, 326);
             this.gridControl1.TabIndex = 14;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -556,15 +546,32 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // dtp_submit_date
+            // 
+            this.dtp_submit_date.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
+            this.dtp_submit_date.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
+            this.dtp_submit_date.Checked = false;
+            this.dtp_submit_date.CustomFormat = "yyyy, MMMM dd";
+            this.dtp_submit_date.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_submit_date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_submit_date.Location = new System.Drawing.Point(770, 62);
+            this.dtp_submit_date.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.dtp_submit_date.Name = "dtp_submit_date";
+            this.dtp_submit_date.ShowCheckBox = true;
+            this.dtp_submit_date.Size = new System.Drawing.Size(243, 26);
+            this.dtp_submit_date.TabIndex = 16;
+            this.dtp_submit_date.TabStop = false;
+            this.dtp_submit_date.Value = new System.DateTime(2023, 8, 15, 15, 20, 21, 0);
+            // 
             // frm_add_nap1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1031, 577);
+            this.Controls.Add(this.dtp_submit_date);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.lbl_dt);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.grp_encoder);
             this.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -592,7 +599,6 @@
         private System.Windows.Forms.ComboBox cmb_office_categ;
         private System.Windows.Forms.ComboBox cmb_office;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lbl_dt;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button3;
@@ -620,5 +626,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DateTimePicker dtp_submit_date;
     }
 }
