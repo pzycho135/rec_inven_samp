@@ -291,6 +291,7 @@ namespace rec_inven_samp
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                con.mycon.Close();
             }
         }
 

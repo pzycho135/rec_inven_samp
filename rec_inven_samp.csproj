@@ -122,6 +122,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frm_add_nap3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_add_nap3.Designer.cs">
+      <DependentUpon>frm_add_nap3.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_view_nap1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_add_nap1.resx">
       <DependentUpon>frm_add_nap1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_add_nap3.resx">
+      <DependentUpon>frm_add_nap3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_main.resx">
       <DependentUpon>frm_main.cs</DependentUpon>

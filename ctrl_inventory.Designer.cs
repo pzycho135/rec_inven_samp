@@ -56,7 +56,7 @@ namespace rec_inven_samp
             this.button_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_add.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_add.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(155)))), ((int)(((byte)(177)))));
-            this.button_add.Location = new System.Drawing.Point(901, 4);
+            this.button_add.Location = new System.Drawing.Point(944, 4);
             this.button_add.Margin = new System.Windows.Forms.Padding(4);
             this.button_add.Name = "button_add";
             this.button_add.Size = new System.Drawing.Size(144, 32);
