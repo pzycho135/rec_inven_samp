@@ -12,6 +12,8 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//sample
+
 namespace rec_inven_samp
 {
     public partial class frm_add_entry : Form
